@@ -368,53 +368,20 @@
         let filteredEvents = [];
         let currentView = 'calendar';
         
-        // Configuration - Update these URLs to point to your data sources
-        const DATA_SOURCES = {
-            // Option 1: Google Drive JSON file (make sure it's public)
-            googleDrive: 'https://drive.google.com/uc?id=YOUR_FILE_ID&export=download',
-            
-            // Option 2: Your own API endpoint
-            api: 'https://your-domain.com/api/events.json',
-            
-            // Option 3: GitHub Pages or other static hosting
-            static: 'https://your-username.github.io/clubhouse-calendar/events.json',
-            
-            // Option 4: Fallback sample data (for testing)
-            sample: 'sample'
-        };
+        // Configuration - GitHub repository data source
+        const DATA_SOURCE = 'https://clubhousecal.github.io/events.json';
 
         // Load events data
         async function loadEvents() {
             try {
-                // Try different data sources in order of preference
-                let data = null;
+                console.log('Loading events from:', DATA_SOURCE);
+                const response = await fetch(DATA_SOURCE + '?_=' + Date.now()); // Cache busting
                 
-                // Try to load from your configured source
-                try {
-                    const response = await fetch(DATA_SOURCES.api);
-                    if (response.ok) {
-                        data = await response.json();
-                    }
-                } catch (e) {
-                    console.log('API source failed, trying alternative...');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 
-                // If API fails, try Google Drive
-                if (!data) {
-                    try {
-                        const response = await fetch(DATA_SOURCES.googleDrive);
-                        if (response.ok) {
-                            data = await response.json();
-                        }
-                    } catch (e) {
-                        console.log('Google Drive source failed, using sample data...');
-                    }
-                }
-                
-                // If all else fails, use sample data
-                if (!data) {
-                    data = getSampleData();
-                }
+                const data = await response.json();
                 
                 // Process the loaded data
                 if (data && data.events) {
@@ -423,10 +390,13 @@
                         date: new Date(event.date)
                     }));
                     
-                    // Show last updated time if available
+                    console.log(`Loaded ${events.length} events`);
+                    
+                    // Show last updated time
                     if (data.lastUpdated) {
                         const lastUpdated = document.getElementById('lastUpdated');
-                        lastUpdated.textContent = `Last updated: ${new Date(data.lastUpdated).toLocaleString()}`;
+                        const updateDate = new Date(data.lastUpdated);
+                        lastUpdated.textContent = `Last updated: ${updateDate.toLocaleString()}`;
                         lastUpdated.classList.remove('hidden');
                     }
                     
@@ -439,13 +409,56 @@
                     document.getElementById('controls').classList.remove('hidden');
                     document.getElementById('calendarView').classList.remove('hidden');
                 } else {
-                    throw new Error('Invalid data format');
+                    throw new Error('Invalid data format - no events found');
                 }
                 
             } catch (error) {
                 console.error('Error loading events:', error);
+                
+                // Show error message
+                const errorMsg = document.getElementById('errorMessage');
+                errorMsg.innerHTML = `
+                    <strong>Failed to load events:</strong> ${error.message}<br>
+                    <small>Please check that events.json exists in the GitHub repository.</small>
+                `;
+                
                 document.getElementById('loadingMessage').classList.add('hidden');
-                document.getElementById('errorMessage').classList.remove('hidden');
+                errorMsg.classList.remove('hidden');
+                
+                // Try to load sample data as fallback
+                console.log('Attempting to load sample data...');
+                loadSampleData();
+            }
+        }
+
+        // Load sample data as fallback
+        function loadSampleData() {
+            try {
+                const data = getSampleData();
+                events = data.events.map(event => ({
+                    ...event,
+                    date: new Date(event.date)
+                }));
+                
+                filteredEvents = [...events];
+                populateFilterOptions();
+                initCalendar();
+                
+                // Show sample data notice
+                const errorMsg = document.getElementById('errorMessage');
+                errorMsg.innerHTML = `
+                    <strong>Notice:</strong> Showing sample data because events.json could not be loaded.<br>
+                    <small>Upload events.json to your GitHub repository to see live events.</small>
+                `;
+                errorMsg.classList.remove('hidden');
+                
+                // Show controls
+                document.getElementById('controls').classList.remove('hidden');
+                document.getElementById('calendarView').classList.remove('hidden');
+                
+                console.log('Loaded sample data successfully');
+            } catch (error) {
+                console.error('Failed to load sample data:', error);
             }
         }
 
@@ -558,4 +571,187 @@
 
             for (let day = 1; day <= daysInMonth; day++) {
                 const dayElement = document.createElement('div');
-                dayElement.className
+                dayElement.className = 'calendar-day';
+                
+                const dayNumber = document.createElement('div');
+                dayNumber.className = 'day-number';
+                dayNumber.textContent = day;
+                dayElement.appendChild(dayNumber);
+
+                const dayDate = new Date(currentYear, currentMonth, day);
+                const dayEvents = filteredEvents.filter(event => 
+                    event.date.toDateString() === dayDate.toDateString()
+                );
+
+                dayEvents.forEach(event => {
+                    const eventElement = document.createElement('div');
+                    eventElement.className = 'event-item';
+                    eventElement.textContent = event.title;
+                    eventElement.onclick = () => showEventDetails(event);
+                    dayElement.appendChild(eventElement);
+                });
+
+                calendar.appendChild(dayElement);
+            }
+        }
+
+        // Generate event cards for list view
+        function generateEventCards() {
+            const container = document.getElementById('eventCards');
+            container.innerHTML = '';
+
+            filteredEvents.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                card.innerHTML = `
+                    <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='https://via.placeholder.com/300x200/9b59b6/ffffff?text=${encodeURIComponent(event.title)}'">
+                    <div class="event-content">
+                        <h3 class="event-title">${event.title}</h3>
+                        <div class="event-date">${formatEventDate(event.date)}</div>
+                        <div class="event-description">${event.description}</div>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Stage:</span>
+                                <span class="detail-value">${event.stage}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Duration:</span>
+                                <span class="detail-value">${event.duration}</span>
+                            </div>
+                        </div>
+                        <div class="contact-links">
+                            ${event.email ? `<a href="mailto:${event.email}" class="contact-link">Email Link</a>` : ''}
+                            ${event.instagram ? `<a href="https://instagram.com/${event.instagram.replace('@', '')}" class="contact-link">IG Link</a>` : ''}
+                            ${event.website ? `<a href="https://${event.website.startsWith('http') ? event.website : 'https://' + event.website}" class="contact-link">Website</a>` : ''}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Format date for display
+        function formatEventDate(date) {
+            const options = { 
+                weekday: 'long',
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        // Initialize the calendar
+        function initCalendar() {
+            generateCalendar();
+            generateEventCards();
+            setupEventListeners();
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            document.getElementById('listViewBtn').onclick = () => switchView('list');
+            document.getElementById('calendarViewBtn').onclick = () => switchView('calendar');
+
+            document.getElementById('searchInput').oninput = filterEvents;
+            document.getElementById('stageFilter').onchange = filterEvents;
+            document.getElementById('genreFilter').onchange = filterEvents;
+            document.getElementById('dateFilter').onchange = filterEvents;
+        }
+
+        // Switch between calendar and list view
+        function switchView(view) {
+            currentView = view;
+            
+            const calendarView = document.getElementById('calendarView');
+            const listView = document.getElementById('listView');
+            const calendarBtn = document.getElementById('calendarViewBtn');
+            const listBtn = document.getElementById('listViewBtn');
+
+            if (view === 'calendar') {
+                calendarView.classList.remove('hidden');
+                listView.classList.add('hidden');
+                calendarBtn.classList.add('active');
+                listBtn.classList.remove('active');
+            } else {
+                calendarView.classList.add('hidden');
+                listView.classList.remove('hidden');
+                listBtn.classList.add('active');
+                calendarBtn.classList.remove('active');
+                generateEventCards();
+            }
+        }
+
+        // Filter events based on search and filters
+        function filterEvents() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const stageFilter = document.getElementById('stageFilter').value;
+            const genreFilter = document.getElementById('genreFilter').value;
+            const dateFilter = document.getElementById('dateFilter').value;
+
+            filteredEvents = events.filter(event => {
+                const matchesSearch = !searchTerm || 
+                    event.title.toLowerCase().includes(searchTerm) ||
+                    event.description.toLowerCase().includes(searchTerm);
+                
+                const matchesStage = !stageFilter || event.stage === stageFilter;
+                const matchesGenre = !genreFilter || event.genre === genreFilter;
+                
+                let matchesDate = true;
+                if (dateFilter === 'today') {
+                    const today = new Date();
+                    matchesDate = event.date.toDateString() === today.toDateString();
+                } else if (dateFilter === 'this-week') {
+                    const today = new Date();
+                    const weekFromNow = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+                    matchesDate = event.date >= today && event.date <= weekFromNow;
+                } else if (dateFilter === 'this-month') {
+                    const today = new Date();
+                    matchesDate = event.date.getMonth() === today.getMonth() && 
+                                  event.date.getFullYear() === today.getFullYear();
+                }
+
+                return matchesSearch && matchesStage && matchesGenre && matchesDate;
+            });
+
+            if (currentView === 'list') {
+                generateEventCards();
+            } else {
+                generateCalendar();
+            }
+        }
+
+        // Show event details
+        function showEventDetails(event) {
+            const details = `
+Event: ${event.title}
+Date: ${formatEventDate(event.date)}
+Stage: ${event.stage}
+Genre: ${event.genre}
+Duration: ${event.duration}
+
+Description: ${event.description}
+
+Contact:
+${event.email ? `Email: ${event.email}` : ''}
+${event.instagram ? `Instagram: ${event.instagram}` : ''}
+${event.website ? `Website: ${event.website}` : ''}
+            `;
+            alert(details);
+        }
+
+        // Auto-refresh data every 10 minutes
+        function setupAutoRefresh() {
+            setInterval(loadEvents, 10 * 60 * 1000); // 10 minutes
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEvents();
+            setupAutoRefresh();
+        });
+    </script>
+</body>
+</html>
