@@ -481,6 +481,9 @@
                 document.getElementById('controls').classList.remove('hidden');
                 document.getElementById('calendarView').classList.remove('hidden');
                 
+                // Setup calendar navigation after elements are visible
+                setTimeout(setupCalendarNavigation, 100);
+                
                 console.log('Loaded sample data successfully');
             } catch (error) {
                 console.error('Failed to load sample data:', error);
