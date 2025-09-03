@@ -684,6 +684,42 @@
             document.getElementById('stageFilter').onchange = filterEvents;
             document.getElementById('genreFilter').onchange = filterEvents;
             document.getElementById('dateFilter').onchange = filterEvents;
+
+            // Calendar navigation
+            document.getElementById('prevMonthBtn').onclick = () => changeMonth(-1);
+            document.getElementById('nextMonthBtn').onclick = () => changeMonth(1);
+            document.getElementById('todayBtn').onclick = () => goToToday();
+
+            // Keyboard navigation for calendar
+            document.addEventListener('keydown', handleKeyPress);
+        }
+
+        // Handle keyboard navigation
+        function handleKeyPress(event) {
+            if (currentView === 'calendar') {
+                if (event.key === 'ArrowLeft') {
+                    event.preventDefault();
+                    changeMonth(-1);
+                } else if (event.key === 'ArrowRight') {
+                    event.preventDefault();
+                    changeMonth(1);
+                } else if (event.key === 'Home') {
+                    event.preventDefault();
+                    goToToday();
+                }
+            }
+        }
+
+        // Change calendar month
+        function changeMonth(direction) {
+            currentDate.setMonth(currentDate.getMonth() + direction);
+            generateCalendar();
+        }
+
+        // Go to today's month
+        function goToToday() {
+            currentDate = new Date();
+            generateCalendar();
         }
 
         // Switch between calendar and list view
