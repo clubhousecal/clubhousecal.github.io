@@ -375,22 +375,34 @@
         async function loadEvents() {
             try {
                 console.log('Loading events from:', DATA_SOURCE);
+                
+                // Show which URL we're trying to load
+                document.getElementById('loadingMessage').textContent = `Loading events from ${DATA_SOURCE}...`;
+                
                 const response = await fetch(DATA_SOURCE + '?_=' + Date.now()); // Cache busting
                 
+                console.log('Response status:', response.status);
+                console.log('Response ok:', response.ok);
+                
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    if (response.status === 404) {
+                        throw new Error(`events.json not found. Please upload events.json to your GitHub repository.`);
+                    } else {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
                 }
                 
                 const data = await response.json();
+                console.log('Received data:', data);
                 
                 // Process the loaded data
-                if (data && data.events) {
+                if (data && data.events && Array.isArray(data.events)) {
                     events = data.events.map(event => ({
                         ...event,
                         date: new Date(event.date)
                     }));
                     
-                    console.log(`Loaded ${events.length} events`);
+                    console.log(`✅ Loaded ${events.length} events successfully`);
                     
                     // Show last updated time
                     if (data.lastUpdated) {
@@ -409,25 +421,38 @@
                     document.getElementById('controls').classList.remove('hidden');
                     document.getElementById('calendarView').classList.remove('hidden');
                 } else {
-                    throw new Error('Invalid data format - no events found');
+                    throw new Error('Invalid data format - no events array found');
                 }
                 
             } catch (error) {
-                console.error('Error loading events:', error);
+                console.error('❌ Error loading events:', error);
                 
-                // Show error message
+                // Show detailed error message
                 const errorMsg = document.getElementById('errorMessage');
-                errorMsg.innerHTML = `
-                    <strong>Failed to load events:</strong> ${error.message}<br>
-                    <small>Please check that events.json exists in the GitHub repository.</small>
-                `;
+                let errorHtml = `<strong>Failed to load events:</strong> ${error.message}<br>`;
+                
+                if (error.message.includes('events.json not found')) {
+                    errorHtml += `
+                        <br><strong>To fix this:</strong>
+                        <ol style="margin: 10px 0; padding-left: 20px;">
+                            <li>Run your Google Apps Script to generate events.json</li>
+                            <li>Download events.json from the Google Drive link in the script logs</li>
+                            <li>Upload events.json to your GitHub repository</li>
+                        </ol>
+                        <small>Or use the test data below to verify the calendar is working.</small>
+                    `;
+                } else {
+                    errorHtml += `<small>Check the browser console (F12) for more details.</small>`;
+                }
+                
+                errorMsg.innerHTML = errorHtml;
                 
                 document.getElementById('loadingMessage').classList.add('hidden');
                 errorMsg.classList.remove('hidden');
                 
                 // Try to load sample data as fallback
-                console.log('Attempting to load sample data...');
-                loadSampleData();
+                console.log('🔄 Attempting to load sample data as fallback...');
+                setTimeout(loadSampleData, 1000);
             }
         }
 
