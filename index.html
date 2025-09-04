@@ -33,15 +33,41 @@
     .search-bar::placeholder{color:rgba(236,240,241,.6)}
     .search-icon{position:absolute;right:12px;top:50%;translate:0 -50%;opacity:.65}
     .filters{display:flex;gap:10px;flex-wrap:wrap}
-    .filter-select{padding:10px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
-        border-radius:8px;color:var(--text);font-size:14px;min-width:130px}
+
+    /* UPDATED: darker dropdowns with visible text */
+    .filter-select{
+      padding:10px 12px;
+      background:#1f2a37;                 /* dark control bg */
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:8px;
+      color:#ecf0f1;
+      font-size:14px;
+      min-width:130px;
+      appearance:none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+    }
+    .filter-select:focus{
+      outline:2px solid rgba(52,152,219,.6);
+      outline-offset:2px;
+    }
+    .filter-select option{
+      background:#0f172a;                 /* dropdown menu bg */
+      color:#ecf0f1;
+    }
+
     .view-toggle{display:flex;gap:8px;justify-content:flex-end}
     .btn{padding:8px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
         border-radius:8px;color:var(--text);cursor:pointer;transition:.2s}
     .btn:hover{background:var(--accent-weak)}
     .btn.active{background:var(--accent);border-color:var(--accent)}
+
     .monthbar{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
     .month-title{font-weight:700;letter-spacing:.3px}
+
+    /* NEW: hide month nav + month/year when in list view */
+    .is-list .monthbar{display:none;}
+
     .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:var(--grid-gap);
         background:var(--glass);border-radius:10px;overflow:hidden;margin-top:10px}
     .calendar-header{background:var(--glass-2);padding:10px;text-align:center;font-weight:600;font-size:13px}
@@ -52,6 +78,7 @@
     .event-item{background:#9b59b6;color:#fff;padding:4px 6px;border-radius:6px;font-size:12px;cursor:pointer;transition:.15s;line-height:1.2}
     .event-item:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.35)}
     .event-chip{display:inline-block;padding:2px 6px;border-radius:999px;font-size:11px;margin-left:6px;opacity:.95}
+
     .event-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;margin-top:14px}
     .event-card{background:var(--card);border-radius:14px;overflow:hidden;transition:.2s;border:1px solid rgba(255,255,255,.12)}
     .event-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.3);border-color:rgba(52,152,219,.45)}
@@ -69,6 +96,7 @@
         color:var(--accent);text-decoration:none;font-size:12px;transition:.15s}
     .link:hover{background:rgba(52,152,219,.3);transform:translateY(-1px)}
     .hidden{display:none}
+
     /* Modal */
     .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:14px;z-index:999}
     .modal{max-width:720px;width:100%;background:rgba(25,32,45,.95);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
@@ -174,7 +202,6 @@ const qsa = sel => Array.from(document.querySelectorAll(sel));
 const safe = s => (s ?? '').toString();
 
 function parseDate(d){
-  // Prefer ISO strings in events.json, but be defensive
   const dt = new Date(d);
   return isNaN(dt) ? null : dt;
 }
@@ -189,7 +216,6 @@ function ymd(dt){
   return dt ? dt.toISOString().slice(0,10) : '';
 }
 function stageColor(stage){
-  // Deterministic HSL from string
   const s = safe(stage);
   let hash = 0; for(let i=0;i<s.length;i++){hash = (hash*31 + s.charCodeAt(i))>>>0}
   const hue = hash % 360;
@@ -238,13 +264,11 @@ async function loadEvents(){
         image: safe(e.image),
         date: parseDate(e.date)
       }))
-      .filter(e=>e.date); // drop invalid
+      .filter(e=>e.date);
 
-    // sort ascending by date
     events.sort((a,b)=>a.date-b.date);
     filteredEvents = [...events];
 
-    // last updated
     if(data.lastUpdated){
       const d = new Date(data.lastUpdated);
       const el = qs('#lastUpdated');
@@ -338,7 +362,6 @@ function generateCalendar(){
       const it = document.createElement('div');
       it.className='event-item';
       it.textContent = ev.title;
-      // stage chip
       if(ev.stage){
         const chip = document.createElement('span');
         chip.className='event-chip';
@@ -389,18 +412,11 @@ function generateEventCards(){
           <a class="link" target="_blank" rel="noopener" href="${gcalUrl}">Add to Google Calendar</a>
           <a class="link" href="${ics}" download="${eventId(ev)}.ics">Download .ics</a>
           <button class="link" type="button" data-id="${eventId(ev)}">Details</button>
-          <button class="link" type="button" data-copy="${shareLink(ev)}">Copy Link</button>
         </div>
       </div>
     `;
-    // wire buttons
     const btn = card.querySelector('[data-id]');
     btn.addEventListener('click',()=>openEventModal(ev));
-    const copyBtn = card.querySelector('[data-copy]');
-    copyBtn.addEventListener('click', async (e)=>{
-      const link = e.currentTarget.getAttribute('data-copy');
-      try{ await navigator.clipboard.writeText(link); e.currentTarget.textContent='Copied!'; setTimeout(()=>e.currentTarget.textContent='Copy Link',900);}catch(_){}
-    });
 
     wrap.appendChild(card);
   });
@@ -442,15 +458,12 @@ function openEventModal(ev){
     </div>
   `;
   md.style.display='flex';
-  // focus trap-ish
   qs('#modalClose').focus();
 }
-
 function closeModal(){ qs('#modalBackdrop').style.display='none' }
 
 /* =============== Calendar Links =============== */
 function googleCalendarUrl(ev){
-  // All-day vs timed: treat as timed; if duration parseable, add end. Fallback +1h.
   const start = isoForGCal(ev.date);
   const end = isoForGCal(endFromDuration(ev.date, ev.duration));
   const text = encodeURIComponent(ev.title);
@@ -460,7 +473,6 @@ function googleCalendarUrl(ev){
 }
 function isoForGCal(dt){
   const z = new Date(dt);
-  // yyyymmddThhmmssZ — use UTC to avoid offset issues
   return z.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
 }
 function endFromDuration(start, dur){
@@ -504,36 +516,24 @@ function formatICS(d){
   const z = new Date(d);
   return `${z.getUTCFullYear()}${pad(z.getUTCMonth()+1)}${pad(z.getUTCDate())}T${pad(z.getUTCHours())}${pad(z.getUTCMinutes())}00Z`;
 }
-function shareLink(ev){
-  const u = new URL(location.href);
-  u.searchParams.set('view', 'list');
-  u.searchParams.set('focus', eventId(ev));
-  return u.toString();
-}
 
-/* =============== View Switching =============== */
+/* =============== View Switching (UPDATED to toggle body class) =============== */
 function switchView(view){
   currentView = view;
   setParam('view', view);
   const cal = qs('#calendarView'), list = qs('#listView');
   const calBtn = qs('#calendarViewBtn'), listBtn = qs('#listViewBtn');
+
   if(view==='calendar'){
+    document.body.classList.remove('is-list');
     cal.classList.remove('hidden'); list.classList.add('hidden');
     calBtn.classList.add('active'); listBtn.classList.remove('active');
     generateCalendar();
   }else{
+    document.body.classList.add('is-list');
     list.classList.remove('hidden'); cal.classList.add('hidden');
     listBtn.classList.add('active'); calBtn.classList.remove('active');
     generateEventCards();
-    // focus target if provided
-    const focusId = url.searchParams.get('focus');
-    if(focusId){
-      const idx = filteredEvents.findIndex(e=>eventId(e)===focusId);
-      if(idx>=0){
-        const node = qs('#eventCards').children[idx];
-        if(node) node.scrollIntoView({behavior:'smooth',block:'center'});
-      }
-    }
   }
 }
 
@@ -550,7 +550,6 @@ function setupListeners(){
   qs('#nextMonthBtn').onclick = nextMonth;
   qs('#todayBtn').onclick = goToToday;
 
-  // modal
   qs('#modalClose').onclick = closeModal;
   qs('#modalBackdrop').addEventListener('click', e=>{ if(e.target.id==='modalBackdrop') closeModal(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
@@ -558,26 +557,22 @@ function setupListeners(){
 
 /* =============== URL -> UI init =============== */
 function initFromURL(){
-  // view
   const v = url.searchParams.get('view');
   if(v==='list') currentView='list';
   setParam('view', currentView);
 
-  // month
   const m = url.searchParams.get('month'); // YYYY-MM
   const now = new Date();
   if(m && /^\d{4}-\d{2}$/.test(m)){
     const [y,mm]=m.split('-'); currentYear=+y; currentMonth=(+mm)-1;
   } else { currentYear=now.getFullYear(); currentMonth=now.getMonth(); setParam('month', `${currentYear}-${String(currentMonth+1).padStart(2,'0')}`); }
 
-  // filters
   ['q','stage','genre','date'].forEach(k=>{
     const val = url.searchParams.get(k) || '';
     const el = qs(k==='q' ? '#searchInput' : `#${k}Filter`);
     if(el) el.value = val;
   });
 
-  // initial renders
   setupListeners();
   (currentView==='list' ? switchView('list') : switchView('calendar'));
   applyFilters();
