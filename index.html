@@ -90,7 +90,25 @@
     .monthbar{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-top:6px}
     .month-title{font-weight:700;letter-spacing:.3px}
     .is-list .monthbar{display:none;} /* hide nav in list view */
-    .mode-toggle{display:flex;gap:8px;align-items:center}
+
+    /* segmented control for Month/Week */
+    .mode-toggle{display:flex; gap:12px; align-items:center}
+    .segmented{
+      display:inline-flex;
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .seg-btn{
+      padding:10px 16px;
+      min-height:44px;
+      background:transparent;
+      border:0;
+      color:var(--text);
+      cursor:pointer;
+    }
+    .seg-btn + .seg-btn{ border-left:1px solid rgba(255,255,255,.25) }
+    .seg-btn.active{ background:var(--accent) }
 
     /* Calendar containers */
     .calendar-scroll{width:100%}
@@ -163,11 +181,15 @@
         .desktop-only{display:none}
         .mobile-only{display:inline-flex}
         .controls{border-radius:0;margin:0 -20px 10px;padding:12px 20px}
+
+        /* Make topbar stack and search field full-width on mobile */
+        .topbar{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+        .search-wrap{width:100%}
+        .view-toggle{justify-content:flex-start}
+
         .calendar-day{min-height:90px;padding:6px}
         .event-cards{grid-template-columns:1fr}
         .modal-grid{grid-template-columns:1fr}
-        /* calendar: we prefer week mode, so no horizontal scroll here */
-        .calendar-grid{min-width:unset}
         /* images can be taller on mobile, still uncropped */
         .event-image{max-height:70vh}
         /* genre sheet-style on mobile */
@@ -243,9 +265,9 @@
             </div>
             <div class="mode-toggle">
                 <div class="month-title" id="monthLabel" aria-live="polite"></div>
-                <div>
-                    <button id="modeMonthBtn" class="btn secondary desktop-only" title="Month view">Month</button>
-                    <button id="modeWeekBtn" class="btn secondary" title="Week view">Week</button>
+                <div class="segmented" role="group" aria-label="Calendar display mode">
+                    <button id="modeMonthBtn" class="seg-btn" type="button">Month</button>
+                    <button id="modeWeekBtn"  class="seg-btn" type="button">Week</button>
                 </div>
             </div>
         </div>
@@ -725,7 +747,7 @@ function formatICS(d){ const z=new Date(d); return `${z.getUTCFullYear()}${pad(z
 function switchView(view){
   currentView = view;
   setParam('view', view);
-  const cal = qs('#calendarView'), list = qs('#listView');
+  const cal = qs('#calendarView'), list = qs('#listView']);
   const calBtn = qs('#calendarViewBtn'), listBtn = qs('#listViewBtn');
 
   if(view==='calendar'){
@@ -743,7 +765,7 @@ function switchView(view){
 function setCalendarMode(mode){
   calendarMode = mode;
   setParam('mode', mode);
-  // visual button state
+  // segmented control button state
   qs('#modeMonthBtn').classList.toggle('active', mode==='month');
   qs('#modeWeekBtn').classList.toggle('active', mode==='week');
   generateCalendar();
@@ -763,7 +785,7 @@ function setupListeners(){
   qs('#nextSpanBtn').onclick = nextSpan;
   qs('#todayBtn').onclick = goToToday;
 
-  // mode buttons
+  // mode buttons (segmented)
   qs('#modeMonthBtn').onclick = ()=>setCalendarMode('month');
   qs('#modeWeekBtn').onclick = ()=>setCalendarMode('week');
 
