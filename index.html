@@ -560,6 +560,18 @@
             document.getElementById('stageFilter').onchange = filterEvents;
             document.getElementById('genreFilter').onchange = filterEvents;
             document.getElementById('dateFilter').onchange = filterEvents;
+            
+            // Today button
+            const todayBtn = document.getElementById('todayBtn');
+            if (todayBtn) {
+                todayBtn.onclick = () => goToToday();
+            }
+        }
+
+        // Go to today's month
+        function goToToday() {
+            currentDate = new Date();
+            generateCalendar();
         }
 
         // Switch between calendar and list view
