@@ -425,11 +425,12 @@
                 }
                 
             } catch (error) {
-                console.error('❌ Error loading events:', error);
+                console.error('❌ Error in loadEvents:', error);
+                console.log('Error details:', error.message, error.stack);
                 
                 // Show detailed error message
                 const errorMsg = document.getElementById('errorMessage');
-                let errorHtml = `<strong>Failed to load events:</strong> ${error.message}<br>`;
+                let errorHtml = `<strong>JavaScript Error:</strong> ${error.message}<br>`;
                 
                 if (error.message.includes('events.json not found')) {
                     errorHtml += `
@@ -450,9 +451,13 @@
                 document.getElementById('loadingMessage').classList.add('hidden');
                 errorMsg.classList.remove('hidden');
                 
-                // Try to load sample data as fallback
-                console.log('🔄 Attempting to load sample data as fallback...');
-                setTimeout(loadSampleData, 1000);
+                // Only try sample data if we actually failed to load events
+                if (events.length === 0) {
+                    console.log('🔄 No events loaded, trying sample data as fallback...');
+                    setTimeout(loadSampleData, 1000);
+                } else {
+                    console.log('⚠️ Error occurred but events were loaded, not using fallback');
+                }
             }
         }
 
