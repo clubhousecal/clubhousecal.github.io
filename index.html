@@ -42,7 +42,7 @@
         border:1px solid rgba(255,255,255,.25);border-radius:8px;color:var(--text);font-size:16px
     }
     .search-bar::placeholder{color:rgba(236,240,241,.6)}
-    .search-icon{position:absolute;right:12px;top:50%;translate:0 -50%;opacity:.65}
+    .search-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);opacity:.65}
 
     .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
     .filters.collapsed{display:none}
@@ -142,7 +142,7 @@
       height:auto;
       object-fit:contain;
       background:linear-gradient(135deg,#34495e,#2c3e50);
-      max-height:420px; /* desktop guardrail */
+      max-height:420px;
       cursor:pointer
     }
     .event-content{padding:16px}
@@ -167,7 +167,6 @@
     .modal-close{border:0;background:transparent;color:#fff;font-size:20px;cursor:pointer;opacity:.8}
     .modal-body{padding:16px}
     .modal-grid{display:grid;grid-template-columns:320px 1fr;gap:14px;align-items:start}
-    /* PHOTO: modal also shows full image (no crop) */
     .modal-img{
       width:100%;height:auto;object-fit:contain;max-height:70vh;
       background:linear-gradient(135deg,#34495e,#2c3e50);border-radius:10px
@@ -190,9 +189,7 @@
         .calendar-day{min-height:90px;padding:6px}
         .event-cards{grid-template-columns:1fr}
         .modal-grid{grid-template-columns:1fr}
-        /* images can be taller on mobile, still uncropped */
         .event-image{max-height:70vh}
-        /* genre sheet-style on mobile */
         .multi-panel{
           position:fixed;left:0;right:0;bottom:0;top:auto;z-index:1000;
           border-radius:14px 14px 0 0;max-height:70vh;min-width:auto;margin:0 12px 12px
@@ -303,26 +300,30 @@ let currentView = 'calendar';
 let calendarMode = 'month';      // 'month' | 'week'
 let cursorDate = new Date();     // reference date for nav
 const DATA_SOURCE = './events.json';
-const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Los_Angeles';
-const url = new URL(window.location);
+const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone) || 'America/Los_Angeles';
+const url = new URL(window.location.href); // ensure string param
 
 /* Genres state */
 let allGenres = [];
 const selectedGenres = new Set();
 
 /* =============== Helpers =============== */
-const qs = sel => document.querySelector(sel);
-const qsa = sel => Array.from(document.querySelectorAll(sel));
-const safe = s => (s ?? '').toString();
+const qs = function(sel){ return document.querySelector(sel); };
+const qsa = function(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); };
+const safe = function(s){ return (s != null ? s : '').toString(); };
 
 function parseDate(d){
-  const dt = new Date(d);
+  var dt = new Date(d);
   return isNaN(dt) ? null : dt;
 }
 function parseGenresField(g){
-  if(Array.isArray(g)) return g.map(s=>safe(s).trim()).filter(Boolean);
-  return safe(g).split(',').map(s=>s.trim()).filter(Boolean)
-    .reduce((acc,tag)=>{ const k=tag.toLowerCase(); if(!acc.map(t=>t.toLowerCase()).includes(k)) acc.push(tag); return acc; },[]);
+  if(Array.isArray(g)) return g.map(function(s){return safe(s).trim();}).filter(Boolean);
+  return safe(g).split(',').map(function(s){return s.trim();}).filter(Boolean)
+    .reduce(function(acc,tag){
+      var k = tag.toLowerCase();
+      if(acc.map(function(t){return t.toLowerCase();}).indexOf(k) === -1) acc.push(tag);
+      return acc;
+    },[]);
 }
 function fmtDate(dt){
   if(!dt) return '';
@@ -333,35 +334,35 @@ function fmtDate(dt){
 }
 function ymd(dt){ return dt ? dt.toISOString().slice(0,10) : '' }
 function stageColor(stage){
-  const s = safe(stage); let hash=0; for(let i=0;i<s.length;i++){hash=(hash*31+s.charCodeAt(i))>>>0}
-  const hue = hash % 360; return `hsl(${hue} 55% 45% / 1)`;
+  var s = safe(stage); var hash=0; for(var i=0;i<s.length;i++){hash=(hash*31+s.charCodeAt(i))>>>0}
+  var hue = hash % 360; return 'hsl(' + hue + ' 55% 45% / 1)';
 }
 function slugify(str){return safe(str).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')}
-function eventId(ev){ return `${ymd(ev.date)}-${slugify(ev.title)}`}
+function eventId(ev){ return ymd(ev.date) + '-' + slugify(ev.title) }
 
 /* Calendar helpers */
-function firstDayOfGrid(y,m){ const first=new Date(y,m,1); const weekday=(first.getDay()+6)%7; const start=new Date(y,m,1-weekday); start.setHours(0,0,0,0); return start; }
-function startOfWeek(d){ const x=new Date(d); const wd=(x.getDay()+6)%7; x.setDate(x.getDate()-wd); x.setHours(0,0,0,0); return x; }
-function endOfWeek(s){ const e=new Date(s); e.setDate(e.getDate()+6); e.setHours(23,59,59,999); return e; }
+function firstDayOfGrid(y,m){ var first=new Date(y,m,1); var weekday=(first.getDay()+6)%7; var start=new Date(y,m,1-weekday); start.setHours(0,0,0,0); return start; }
+function startOfWeek(d){ var x=new Date(d); var wd=(x.getDay()+6)%7; x.setDate(x.getDate()-wd); x.setHours(0,0,0,0); return x; }
+function endOfWeek(s){ var e=new Date(s); e.setDate(e.getDate()+6); e.setHours(23,59,59,999); return e; }
 function formatWeekRange(s,e){
-  const sameMonth = s.getMonth()===e.getMonth() && s.getFullYear()===e.getFullYear();
+  var sameMonth = s.getMonth()===e.getMonth() && s.getFullYear()===e.getFullYear();
   if(sameMonth){
-    return `${s.toLocaleString('en-US',{month:'long'})} ${s.getDate()}–${e.getDate()}, ${e.getFullYear()}`;
+    return s.toLocaleString('en-US',{month:'long'}) + ' ' + s.getDate() + '–' + e.getDate() + ', ' + e.getFullYear();
   } else {
-    const p1 = s.toLocaleString('en-US',{month:'short',day:'numeric'});
-    const p2 = e.toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric'});
-    return `${p1} – ${p2}`;
+    var p1 = s.toLocaleString('en-US',{month:'short',day:'numeric'});
+    var p2 = e.toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    return p1 + ' – ' + p2;
   }
 }
 
 /* URL sync */
 function setParam(key,val){
   if(val!==null && val!=='') url.searchParams.set(key,val); else url.searchParams.delete(key);
-  history.replaceState(null,'',url);
+  history.replaceState(null,'',url.toString());
 }
 
 /* Debounce */
-function debounce(fn,ms=250){let t;return (...args)=>{clearTimeout(t);t=setTimeout(()=>fn(...args),ms)}}
+function debounce(fn,ms){ var t; ms = ms||250; return function(){ var args=arguments; clearTimeout(t); t=setTimeout(function(){ fn.apply(null,args); }, ms); }; }
 
 /* =============== Loading =============== */
 async function loadEvents(){
@@ -372,10 +373,10 @@ async function loadEvents(){
     if(!data || !Array.isArray(data.events)) throw new Error('Invalid data format');
 
     events = data.events
-      .map(e=>{
-        const genresArr = parseGenresField(e.genres ?? e.genre);
+      .map(function(e){
+        var sourceGenres = (e.genres != null ? e.genres : e.genre);
+        var genresArr = parseGenresField(sourceGenres);
         return {
-          ...e,
           title: safe(e.title),
           stage: safe(e.stage),
           description: safe(e.description),
@@ -385,19 +386,19 @@ async function loadEvents(){
           duration: safe(e.duration),
           image: safe(e.image),
           date: parseDate(e.date),
-          genres: genresArr,
+          genres: genresArr
         };
       })
-      .filter(e=>e.date);
+      .filter(function(e){ return e.date; });
 
-    events.sort((a,b)=>a.date-b.date);
-    filteredEvents = [...events];
+    events.sort(function(a,b){ return a.date-b.date; });
+    filteredEvents = events.slice();
 
-    const tzEl = qs('#tzLabel'); tzEl.textContent = `Times shown in ${tz}`; tzEl.classList.remove('hidden');
+    var tzEl = qs('#tzLabel'); tzEl.textContent = 'Times shown in ' + tz; tzEl.classList.remove('hidden');
     if(data.lastUpdated){
-      const d = new Date(data.lastUpdated);
-      const el = qs('#lastUpdated');
-      el.textContent = `Last updated: ${d.toLocaleString()}`;
+      var d = new Date(data.lastUpdated);
+      var el = qs('#lastUpdated');
+      el.textContent = 'Last updated: ' + d.toLocaleString();
       el.classList.remove('hidden');
     }
 
@@ -417,35 +418,39 @@ async function loadEvents(){
 
 /* =============== Filters / Search =============== */
 function populateFilterOptions(){
-  const stages = [...new Set(events.map(e=>e.stage).filter(Boolean))].sort();
-  const stageSel = qs('#stageFilter');
+  var stages = Array.from(new Set(events.map(function(e){return e.stage;}).filter(Boolean))).sort();
+  var stageSel = qs('#stageFilter');
   stageSel.innerHTML = '<option value="">Stage</option>';
-  stages.forEach(s=>{
-    const o=document.createElement('option'); o.value=s; o.textContent=s; stageSel.appendChild(o);
+  stages.forEach(function(s){
+    var o=document.createElement('option'); o.value=s; o.textContent=s; stageSel.appendChild(o);
   });
 
   // genres
-  const seen = new Set(); allGenres = [];
-  events.forEach(e=> (e.genres||[]).forEach(g=>{ const k=g.toLowerCase(); if(!seen.has(k)){ seen.add(k); allGenres.push(g); } }));
-  allGenres.sort((a,b)=>a.localeCompare(b,undefined,{sensitivity:'base'}));
+  var seen = {}; allGenres = [];
+  events.forEach(function(e){
+    (e.genres||[]).forEach(function(g){
+      var k=g.toLowerCase(); if(!seen[k]){ seen[k]=1; allGenres.push(g); }
+    });
+  });
+  allGenres.sort(function(a,b){ return a.localeCompare(b,undefined,{sensitivity:'base'}); });
   buildGenreList(allGenres);
   updateGenreButtonLabel();
 }
 
 function buildGenreList(list){
-  const cont = qs('#genreList');
+  var cont = qs('#genreList');
   cont.innerHTML = '';
-  list.forEach(g=>{
-    const id = 'g-' + slugify(g);
-    const row = document.createElement('label');
+  list.forEach(function(g){
+    var id = 'g-' + slugify(g);
+    var row = document.createElement('label');
     row.className = 'multi-item';
-    row.innerHTML = `<input type="checkbox" id="${id}" value="${g}"><span>${g}</span>`;
+    row.innerHTML = '<input type="checkbox" id="'+id+'" value="'+g+'"><span>'+g+'</span>';
     cont.appendChild(row);
   });
-  cont.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
+  cont.querySelectorAll('input[type="checkbox"]').forEach(function(cb){
     cb.checked = selectedGenres.has(cb.value.toLowerCase());
-    cb.addEventListener('change', ()=>{
-      const key = cb.value.toLowerCase();
+    cb.addEventListener('change', function(){
+      var key = cb.value.toLowerCase();
       if(cb.checked) selectedGenres.add(key); else selectedGenres.delete(key);
       updateGenreButtonLabel();
       applyFilters();
@@ -453,97 +458,96 @@ function buildGenreList(list){
   });
 }
 function updateGenreButtonLabel(){
-  const btnLabel = qs('#genreBtnLabel');
-  const count = selectedGenres.size;
+  var btnLabel = qs('#genreBtnLabel');
+  var count = selectedGenres.size;
   if(count===0){ btnLabel.textContent = 'Genre (any)'; }
   else if(count===1){
-    const key = [...selectedGenres][0];
-    const disp = allGenres.find(g=>g.toLowerCase()===key) || key;
+    var key = Array.from(selectedGenres)[0];
+    var disp = allGenres.find(function(g){return g.toLowerCase()===key;}) || key;
     btnLabel.textContent = disp;
   } else {
-    btnLabel.innerHTML = [...selectedGenres].map(k=>{
-      const disp = allGenres.find(g=>g.toLowerCase()===k) || k;
-      return `<span class="pill">${disp}</span>`;
+    btnLabel.innerHTML = Array.from(selectedGenres).map(function(k){
+      var disp = allGenres.find(function(g){return g.toLowerCase()===k;}) || k;
+      return '<span class="pill">'+disp+'</span>';
     }).join(' ');
   }
-  setParam('genres', count? [...selectedGenres].join(',') : null);
+  setParam('genres', count? Array.from(selectedGenres).join(',') : null);
 }
 
 function applyFilters(){
-  const q = safe(qs('#searchInput').value).toLowerCase();
-  const stage = qs('#stageFilter').value;
-  const dateF = qs('#dateFilter').value;
+  var q = safe(qs('#searchInput').value).toLowerCase();
+  var stage = qs('#stageFilter').value;
+  var dateF = qs('#dateFilter').value;
 
   setParam('q', q || null);
   setParam('stage', stage || null);
   setParam('date', dateF || null);
-  setParam('genres', selectedGenres.size? [...selectedGenres].join(',') : null);
+  setParam('genres', selectedGenres.size? Array.from(selectedGenres).join(',') : null);
 
-  const now = new Date(); now.setHours(0,0,0,0);
-  const weekEnd = new Date(now.getTime()+7*86400000);
+  var now = new Date(); now.setHours(0,0,0,0);
+  var weekEnd = new Date(now.getTime()+7*86400000);
 
-  filteredEvents = events.filter(e=>{
-    const txt = (e.title+' '+e.description+' '+e.stage+' '+(e.genres||[]).join(' ')).toLowerCase();
-    const mQ = !q || txt.includes(q);
-    const mS = !stage || e.stage===stage;
-    const mG = selectedGenres.size===0 || e.genres.some(g=>selectedGenres.has(g.toLowerCase()));
-    let mD = true;
-    if(dateF==='today'){ mD = ymd(e.date)===ymd(new Date()) }
-    else if(dateF==='this-week'){ mD = e.date >= now && e.date < weekEnd }
-    else if(dateF==='this-month'){ const t=new Date(); mD = e.date.getMonth()===t.getMonth() && e.date.getFullYear()===t.getFullYear() }
+  filteredEvents = events.filter(function(e){
+    var txt = (e.title+' '+e.description+' '+e.stage+' '+(e.genres||[]).join(' ')).toLowerCase();
+    var mQ = !q || txt.indexOf(q) !== -1;
+    var mS = !stage || e.stage===stage;
+    var mG = selectedGenres.size===0 || (e.genres||[]).some(function(g){return selectedGenres.has(g.toLowerCase());});
+    var mD = true;
+    if(dateF==='today'){ mD = ymd(e.date)===ymd(new Date()); }
+    else if(dateF==='this-week'){ mD = e.date >= now && e.date < weekEnd; }
+    else if(dateF==='this-month'){ var t=new Date(); mD = e.date.getMonth()===t.getMonth() && e.date.getFullYear()===t.getFullYear(); }
     return mQ && mS && mG && mD;
   });
 
   if(currentView==='list') generateEventCards(); else generateCalendar();
 }
 
-const debouncedFilter = debounce(applyFilters, 200);
+var debouncedFilter = debounce(applyFilters, 200);
 
 function clearFilters(){
   qs('#searchInput').value = '';
   qs('#stageFilter').value = '';
   qs('#dateFilter').value = '';
   selectedGenres.clear();
-  qsa('#genreList input[type="checkbox"]').forEach(cb=>cb.checked=false);
+  qsa('#genreList input[type="checkbox"]').forEach(function(cb){ cb.checked=false; });
   updateGenreButtonLabel();
   applyFilters();
 }
 
 /* =============== Calendar Render =============== */
 function generateCalendar(){
-  const grid = qs('#calendarGrid'); grid.innerHTML = '';
+  var grid = qs('#calendarGrid'); grid.innerHTML = '';
 
-  // Update label and grid classes
   if(calendarMode==='month'){
     grid.classList.remove('week');
-    const y = cursorDate.getFullYear(), m = cursorDate.getMonth();
+    var y = cursorDate.getFullYear(), m = cursorDate.getMonth();
     qs('#monthLabel').textContent = new Date(y, m, 1).toLocaleString('en-US',{month:'long', year:'numeric'});
 
-    const daysOfWeek = ['MON','TUE','WED','THU','FRI','SAT','SUN'];
-    daysOfWeek.forEach(d=>{
-      const h = document.createElement('div'); h.className='calendar-header'; h.textContent=d; grid.appendChild(h);
+    var daysOfWeek = ['MON','TUE','WED','THU','FRI','SAT','SUN'];
+    daysOfWeek.forEach(function(d){
+      var h = document.createElement('div'); h.className='calendar-header'; h.textContent=d; grid.appendChild(h);
     });
 
-    const start = firstDayOfGrid(y,m);
-    const today = new Date(); today.setHours(0,0,0,0);
+    var start = firstDayOfGrid(y,m);
+    var today = new Date(); today.setHours(0,0,0,0);
 
-    for(let i=0;i<42;i++){
-      const dayDate = new Date(start.getFullYear(), start.getMonth(), start.getDate()+i);
-      const cell = document.createElement('div');
+    for(var i=0;i<42;i++){
+      var dayDate = new Date(start.getFullYear(), start.getMonth(), start.getDate()+i);
+      var cell = document.createElement('div');
       cell.className = 'calendar-day' + (dayDate.getMonth()!==m ? ' muted' : '') + (ymd(dayDate)===ymd(today)?' today':'');
 
-      const dn = document.createElement('div'); dn.className='day-number'; dn.textContent=dayDate.getDate(); cell.appendChild(dn);
+      var dn = document.createElement('div'); dn.className='day-number'; dn.textContent=dayDate.getDate(); cell.appendChild(dn);
 
-      const dayEvents = filteredEvents.filter(e=> ymd(e.date)===ymd(dayDate));
-      dayEvents.forEach(ev=>{
-        const it = document.createElement('div');
+      var dayEvents = filteredEvents.filter(function(e){ return ymd(e.date)===ymd(dayDate); });
+      dayEvents.forEach(function(ev){
+        var it = document.createElement('div');
         it.className='event-item';
         it.textContent = ev.title;
         if(ev.stage){
-          const chip = document.createElement('span'); chip.className='event-chip'; chip.style.background = stageColor(ev.stage); chip.textContent = ev.stage;
+          var chip = document.createElement('span'); chip.className='event-chip'; chip.style.background = stageColor(ev.stage); chip.textContent = ev.stage;
           it.appendChild(chip);
         }
-        it.onclick = ()=>openEventModal(ev);
+        it.onclick = function(){ openEventModal(ev); };
         cell.appendChild(it);
       });
 
@@ -551,37 +555,37 @@ function generateCalendar(){
     }
   } else { // week mode
     grid.classList.add('week');
-    const start = startOfWeek(cursorDate);
-    const end = endOfWeek(start);
-    qs('#monthLabel').textContent = `Week of ${formatWeekRange(start,end)}`;
+    var startW = startOfWeek(cursorDate);
+    var endW = endOfWeek(startW);
+    qs('#monthLabel').textContent = 'Week of ' + formatWeekRange(startW,endW);
 
-    for(let i=0;i<7;i++){
-      const d = new Date(start); d.setDate(start.getDate()+i);
-      const section = document.createElement('div');
+    for(var j=0;j<7;j++){
+      var d = new Date(startW); d.setDate(startW.getDate()+j);
+      var section = document.createElement('div');
       section.className = 'week-day';
-      const head = document.createElement('div');
+      var head = document.createElement('div');
       head.className = 'week-head';
-      head.innerHTML = `<span>${d.toLocaleString('en-US',{weekday:'short'})}</span><span>${d.toLocaleString('en-US',{month:'short', day:'numeric'})}</span>`;
+      head.innerHTML = '<span>'+d.toLocaleString('en-US',{weekday:'short'})+'</span><span>'+d.toLocaleString('en-US',{month:'short', day:'numeric'})+'</span>';
       section.appendChild(head);
 
-      const dayEvents = filteredEvents.filter(e=> ymd(e.date)===ymd(d));
-      if(dayEvents.length===0){
-        const empty = document.createElement('div');
+      var dayEventsW = filteredEvents.filter(function(e){ return ymd(e.date)===ymd(d); });
+      if(dayEventsW.length===0){
+        var empty = document.createElement('div');
         empty.style.opacity = .6;
         empty.style.fontSize = '13px';
         empty.textContent = 'No events';
         section.appendChild(empty);
       } else {
-        dayEvents.forEach(ev=>{
-          const it = document.createElement('div');
+        dayEventsW.forEach(function(ev){
+          var it = document.createElement('div');
           it.className='event-item';
           it.style.margin='4px 0';
           it.textContent = ev.title;
           if(ev.stage){
-            const chip = document.createElement('span'); chip.className='event-chip'; chip.style.background = stageColor(ev.stage); chip.textContent = ev.stage;
+            var chip = document.createElement('span'); chip.className='event-chip'; chip.style.background = stageColor(ev.stage); chip.textContent = ev.stage;
             it.appendChild(chip);
           }
-          it.onclick = ()=>openEventModal(ev);
+          it.onclick = function(){ openEventModal(ev); };
           section.appendChild(it);
         });
       }
@@ -591,7 +595,7 @@ function generateCalendar(){
   }
 }
 
-function prevSpan(){ // prev month or prev week
+function prevSpan(){
   if(calendarMode==='month'){
     cursorDate = new Date(cursorDate.getFullYear(), cursorDate.getMonth()-1, 1);
   } else {
@@ -617,138 +621,134 @@ function goToToday(){
 
 /* =============== List Render =============== */
 function generateEventCards(){
-  const wrap = qs('#eventCards'); wrap.innerHTML='';
-  filteredEvents.forEach(ev=>{
-    const card = document.createElement('div');
+  var wrap = qs('#eventCards'); wrap.innerHTML='';
+  filteredEvents.forEach(function(ev){
+    var card = document.createElement('div');
     card.className='event-card';
-    const imgSrc = ev.image || '';
-    const fallback = `https://via.placeholder.com/800x420/9b59b6/ffffff?text=${encodeURIComponent(ev.title)}`;
-    const websiteHref = ev.website ? (ev.website.startsWith('http') ? ev.website : 'https://'+ev.website) : '';
-    const gcalUrl = googleCalendarUrl(ev);
-    const ics = buildICS(ev);
+    var imgSrc = ev.image || '';
+    var fallback = 'https://via.placeholder.com/800x420/9b59b6/ffffff?text='+encodeURIComponent(ev.title);
+    var websiteHref = ev.website ? (ev.website.indexOf('http')===0 ? ev.website : 'https://'+ev.website) : '';
+    var gcalUrl = googleCalendarUrl(ev);
+    var ics = buildICS(ev);
 
-    card.innerHTML = `
-      <img src="${imgSrc}" alt="${ev.title}" class="event-image" loading="lazy" onerror="this.src='${fallback}'">
-      <div class="event-content">
-        <div class="event-title">${ev.title}
-          ${ev.stage ? `<span class="event-chip" style="background:${stageColor(ev.stage)}">${ev.stage}</span>`:''}
-        </div>
-        <div class="event-date">${fmtDate(ev.date)}</div>
-        <div class="event-description">${ev.description || ''}</div>
-        <div class="event-details">
-          <div class="detail-item"><span class="detail-label">Genres:</span><span class="detail-value">${(ev.genres||[]).join(', ') || '—'}</span></div>
-          <div class="detail-item"><span class="detail-label">Duration:</span><span class="detail-value">${ev.duration || '—'}</span></div>
-        </div>
-        <div class="links">
-          ${ev.email ? `<a class="link" href="mailto:${ev.email}">Email</a>`:''}
-          ${ev.instagram ? `<a class="link" target="_blank" rel="noopener" href="https://instagram.com/${ev.instagram.replace('@','')}">Instagram</a>`:''}
-          ${websiteHref ? `<a class="link" target="_blank" rel="noopener" href="${websiteHref}">Website</a>`:''}
-          <a class="link" target="_blank" rel="noopener" href="${gcalUrl}">Add to Google Calendar</a>
-          <a class="link" href="${ics}" download="${eventId(ev)}.ics">Download .ics</a>
-          <button class="link" type="button" data-id="${eventId(ev)}">Details</button>
-        </div>
-      </div>
-    `;
-    card.querySelector('[data-id]').addEventListener('click',()=>openEventModal(ev));
-    card.querySelector('.event-image').addEventListener('click', ()=>openEventModal(ev));
+    card.innerHTML = ''
+      + '<img src="'+imgSrc+'" alt="'+ev.title+'" class="event-image" loading="lazy" onerror="this.src=\''+fallback+'\'">'
+      + '<div class="event-content">'
+      +   '<div class="event-title">'+ev.title+(ev.stage ? ' <span class="event-chip" style="background:'+stageColor(ev.stage)+'">'+ev.stage+'</span>' : '')+'</div>'
+      +   '<div class="event-date">'+fmtDate(ev.date)+'</div>'
+      +   '<div class="event-description">'+(ev.description||'')+'</div>'
+      +   '<div class="event-details">'
+      +     '<div class="detail-item"><span class="detail-label">Genres:</span><span class="detail-value">'+((ev.genres||[]).join(', ') || '—')+'</span></div>'
+      +     '<div class="detail-item"><span class="detail-label">Duration:</span><span class="detail-value">'+(ev.duration || '—')+'</span></div>'
+      +   '</div>'
+      +   '<div class="links">'
+      +     (ev.email ? '<a class="link" href="mailto:'+ev.email+'">Email</a>' : '')
+      +     (ev.instagram ? '<a class="link" target="_blank" rel="noopener" href="https://instagram.com/'+ev.instagram.replace('@','')+'">Instagram</a>' : '')
+      +     (websiteHref ? '<a class="link" target="_blank" rel="noopener" href="'+websiteHref+'">Website</a>' : '')
+      +     '<a class="link" target="_blank" rel="noopener" href="'+gcalUrl+'">Add to Google Calendar</a>'
+      +     '<a class="link" href="'+ics+'" download="'+eventId(ev)+'.ics">Download .ics</a>'
+      +     '<button class="link" type="button" data-id="'+eventId(ev)+'">Details</button>'
+      +   '</div>'
+      + '</div>';
+
+    card.querySelector('[data-id]').addEventListener('click',function(){ openEventModal(ev); });
+    card.querySelector('.event-image').addEventListener('click', function(){ openEventModal(ev); });
+
     wrap.appendChild(card);
   });
 
-  // Auto-scroll to next upcoming in list view
-  const now = new Date();
-  const idx = filteredEvents.findIndex(e=>e.date>=now);
+  var now = new Date();
+  var idx = filteredEvents.findIndex(function(e){return e.date>=now;});
   if(idx>=0){
-    const node = wrap.children[idx];
+    var node = wrap.children[idx];
     if(node) node.scrollIntoView({behavior:'smooth',block:'center'});
   }
 }
 
 /* =============== Modal (includes image) =============== */
 function openEventModal(ev){
-  const mb = qs('#modalBody'), md = qs('#modalBackdrop'), mt = qs('#modalTitle');
+  var mb = qs('#modalBody'), md = qs('#modalBackdrop'), mt = qs('#modalTitle');
   mt.textContent = ev.title;
-  const websiteHref = ev.website ? (ev.website.startsWith('http') ? ev.website : 'https://'+ev.website) : '';
-  const gcalUrl = googleCalendarUrl(ev);
-  const ics = buildICS(ev);
-  const img = ev.image || '';
-  const fallback = `https://via.placeholder.com/800x420/9b59b6/ffffff?text=${encodeURIComponent(ev.title)}`;
+  var websiteHref = ev.website ? (ev.website.indexOf('http')===0 ? ev.website : 'https://'+ev.website) : '';
+  var gcalUrl = googleCalendarUrl(ev);
+  var ics = buildICS(ev);
+  var img = ev.image || '';
+  var fallback = 'https://via.placeholder.com/800x420/9b59b6/ffffff?text='+encodeURIComponent(ev.title);
 
-  mb.innerHTML = `
-    <div class="modal-grid">
-      <div>
-        <img class="modal-img" src="${img}" alt="${ev.title}" onerror="this.src='${fallback}'">
-      </div>
-      <div>
-        <p><strong>Date:</strong> ${fmtDate(ev.date)}</p>
-        <p><strong>Stage:</strong> ${ev.stage || '—'}</p>
-        <p><strong>Genres:</strong> ${(ev.genres||[]).join(', ') || '—'}</p>
-        <p><strong>Duration:</strong> ${ev.duration || '—'}</p>
-        <p class="event-description" style="margin-top:8px">${ev.description || ''}</p>
-        <div class="links" style="margin-top:10px">
-          ${ev.email ? `<a class="link" href="mailto:${ev.email}">Email</a>`:''}
-          ${ev.instagram ? `<a class="link" target="_blank" rel="noopener" href="https://instagram.com/${ev.instagram.replace('@','')}">Instagram</a>`:''}
-          ${websiteHref ? `<a class="link" target="_blank" rel="noopener" href="${websiteHref}">Website</a>`:''}
-          <a class="link" target="_blank" rel="noopener" href="${gcalUrl}">Google Calendar</a>
-          <a class="link" href="${ics}" download="${eventId(ev)}.ics">Download .ics</a>
-        </div>
-      </div>
-    </div>
-  `;
+  mb.innerHTML = ''
+   + '<div class="modal-grid">'
+   +   '<div><img class="modal-img" src="'+img+'" alt="'+ev.title+'" onerror="this.src=\''+fallback+'\'"></div>'
+   +   '<div>'
+   +     '<p><strong>Date:</strong> '+fmtDate(ev.date)+'</p>'
+   +     '<p><strong>Stage:</strong> '+(ev.stage || '—')+'</p>'
+   +     '<p><strong>Genres:</strong> '+((ev.genres||[]).join(', ') || '—')+'</p>'
+   +     '<p><strong>Duration:</strong> '+(ev.duration || '—')+'</p>'
+   +     '<p class="event-description" style="margin-top:8px">'+(ev.description || '')+'</p>'
+   +     '<div class="links" style="margin-top:10px">'
+   +       (ev.email ? '<a class="link" href="mailto:'+ev.email+'">Email</a>' : '')
+   +       (ev.instagram ? '<a class="link" target="_blank" rel="noopener" href="https://instagram.com/'+ev.instagram.replace('@','')+'">Instagram</a>' : '')
+   +       (websiteHref ? '<a class="link" target="_blank" rel="noopener" href="'+websiteHref+'">Website</a>' : '')
+   +       '<a class="link" target="_blank" rel="noopener" href="'+gcalUrl+'">Google Calendar</a>'
+   +       '<a class="link" href="'+ics+'" download="'+eventId(ev)+'.ics">Download .ics</a>'
+   +     '</div>'
+   +   '</div>'
+   + '</div>';
+
   md.style.display='flex';
   qs('#modalClose').focus();
 }
-function closeModal(){ qs('#modalBackdrop').style.display='none' }
+function closeModal(){ qs('#modalBackdrop').style.display='none'; }
 
 /* =============== Calendar Links =============== */
 function googleCalendarUrl(ev){
-  const start = isoForGCal(ev.date);
-  const end = isoForGCal(endFromDuration(ev.date, ev.duration));
-  const text = encodeURIComponent(ev.title);
-  const details = encodeURIComponent(ev.description||'');
-  const location = encodeURIComponent(ev.stage||'Clubhouse');
-  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${start}/${end}&details=${details}&location=${location}`;
+  var start = isoForGCal(ev.date);
+  var end = isoForGCal(endFromDuration(ev.date, ev.duration));
+  var text = encodeURIComponent(ev.title);
+  var details = encodeURIComponent(ev.description||'');
+  var location = encodeURIComponent(ev.stage||'Clubhouse');
+  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+text+'&dates='+start+'/'+end+'&details='+details+'&location='+location;
 }
-function isoForGCal(dt){ const z=new Date(dt); return z.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z'); }
+function isoForGCal(dt){ var z=new Date(dt); return z.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z'); }
 function endFromDuration(start, dur){
-  const s = new Date(start);
+  var s = new Date(start);
   if(!dur) { s.setHours(s.getHours()+1); return s; }
-  const m = /(\d+)\s*h(?:ours?)?|\b(\d+)\s*m(?:in)?/gi;
-  let hours=0, mins=0, match;
+  var m = /(\d+)\s*h(?:ours?)?|\b(\d+)\s*m(?:in)?/gi;
+  var hours=0, mins=0, match;
   while((match=m.exec(dur))!==null){ if(match[1]) hours += parseInt(match[1],10); if(match[2]) mins += parseInt(match[2],10); }
   if(hours===0 && mins===0){ hours=1; }
   s.setHours(s.getHours()+hours); s.setMinutes(s.getMinutes()+mins); return s;
 }
 function buildICS(ev){
-  const uid = eventId(ev)+'@clubhousecal';
-  const dtStart = formatICS(ev.date);
-  const dtEnd = formatICS(endFromDuration(ev.date, ev.duration));
-  const desc = (ev.description||'').replace(/\n/g,'\\n');
-  const loc = (ev.stage||'Clubhouse').replace(/\n/g,'\\n');
-  const body =
-`BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//clubhousecal//EN
-BEGIN:VEVENT
-UID:${uid}
-DTSTAMP:${formatICS(new Date())}
-DTSTART:${dtStart}
-DTEND:${dtEnd}
-SUMMARY:${ev.title}
-DESCRIPTION:${desc}
-LOCATION:${loc}
-END:VEVENT
-END:VCALENDAR`;
+  var uid = eventId(ev)+'@clubhousecal';
+  var dtStart = formatICS(ev.date);
+  var dtEnd = formatICS(endFromDuration(ev.date, ev.duration));
+  var desc = (ev.description||'').replace(/\n/g,'\\n');
+  var loc = (ev.stage||'Clubhouse').replace(/\n/g,'\\n');
+  var body =
+'BEGIN:VCALENDAR\n'
++'VERSION:2.0\n'
++'PRODID:-//clubhousecal//EN\n'
++'BEGIN:VEVENT\n'
++'UID:'+uid+'\n'
++'DTSTAMP:'+formatICS(new Date())+'\n'
++'DTSTART:'+dtStart+'\n'
++'DTEND:'+dtEnd+'\n'
++'SUMMARY:'+ev.title+'\n'
++'DESCRIPTION:'+desc+'\n'
++'LOCATION:'+loc+'\n'
++'END:VEVENT\n'
++'END:VCALENDAR';
   return 'data:text/calendar;charset=utf-8,'+encodeURIComponent(body);
 }
-function pad(n){ return String(n).padStart(2,'0') }
-function formatICS(d){ const z=new Date(d); return `${z.getUTCFullYear()}${pad(z.getUTCMonth()+1)}${pad(z.getUTCDate())}T${pad(z.getUTCHours())}${pad(z.getUTCMinutes())}00Z`; }
+function pad(n){ return String(n).padStart(2,'0'); }
+function formatICS(d){ var z=new Date(d); return z.getUTCFullYear()+pad(z.getUTCMonth()+1)+pad(z.getUTCDate())+'T'+pad(z.getUTCHours())+pad(z.getUTCMinutes())+'00Z'; }
 
 /* =============== View + Mode Switching =============== */
 function switchView(view){
   currentView = view;
   setParam('view', view);
-  const cal = qs('#calendarView'), list = qs('#listView');
-  const calBtn = qs('#calendarViewBtn'), listBtn = qs('#listViewBtn');
+  var cal = qs('#calendarView'), list = qs('#listView');
+  var calBtn = qs('#calendarViewBtn'), listBtn = qs('#listViewBtn');
 
   if(view==='calendar'){
     document.body.classList.remove('is-list');
@@ -765,7 +765,6 @@ function switchView(view){
 function setCalendarMode(mode){
   calendarMode = mode;
   setParam('mode', mode);
-  // segmented control button state
   qs('#modeMonthBtn').classList.toggle('active', mode==='month');
   qs('#modeWeekBtn').classList.toggle('active', mode==='week');
   generateCalendar();
@@ -773,8 +772,8 @@ function setCalendarMode(mode){
 
 /* =============== Wiring =============== */
 function setupListeners(){
-  qs('#listViewBtn').onclick = ()=>switchView('list');
-  qs('#calendarViewBtn').onclick = ()=>switchView('calendar');
+  qs('#listViewBtn').onclick = function(){ switchView('list'); };
+  qs('#calendarViewBtn').onclick = function(){ switchView('calendar'); };
   qs('#searchInput').addEventListener('input', debouncedFilter);
   qs('#stageFilter').addEventListener('change', applyFilters);
   qs('#dateFilter').addEventListener('change', applyFilters);
@@ -786,36 +785,36 @@ function setupListeners(){
   qs('#todayBtn').onclick = goToToday;
 
   // mode buttons (segmented)
-  qs('#modeMonthBtn').onclick = ()=>setCalendarMode('month');
-  qs('#modeWeekBtn').onclick = ()=>setCalendarMode('week');
+  qs('#modeMonthBtn').onclick = function(){ setCalendarMode('month'); };
+  qs('#modeWeekBtn').onclick = function(){ setCalendarMode('week'); };
 
   // modal
   qs('#modalClose').onclick = closeModal;
-  qs('#modalBackdrop').addEventListener('click', e=>{ if(e.target.id==='modalBackdrop') closeModal(); });
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+  qs('#modalBackdrop').addEventListener('click', function(e){ if(e.target.id==='modalBackdrop') closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
 
   // genre multi
-  const multi = qs('#genreMulti'); const btn = qs('#genreBtn'); const panel = qs('#genrePanel'); const search = qs('#genreSearch');
-  btn.addEventListener('click', ()=>{
-    const open = multi.classList.toggle('open');
+  var multi = qs('#genreMulti'); var btn = qs('#genreBtn'); var panel = qs('#genrePanel'); var search = qs('#genreSearch');
+  btn.addEventListener('click', function(){
+    var open = multi.classList.toggle('open');
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     if(open) search.focus();
   });
-  document.addEventListener('click', (e)=>{
+  document.addEventListener('click', function(e){
     if(!multi.contains(e.target)){ multi.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
   });
-  search.addEventListener('input', ()=>{
-    const q = search.value.toLowerCase();
-    const filtered = allGenres.filter(g=>g.toLowerCase().includes(q));
+  search.addEventListener('input', function(){
+    var q = search.value.toLowerCase();
+    var filtered = allGenres.filter(function(g){return g.toLowerCase().indexOf(q)!==-1;});
     buildGenreList(filtered);
   });
 
   // Mobile: filters drawer toggle
-  const filters = qs('#filters');
-  const toggle = qs('#filtersToggleBtn');
+  var filters = qs('#filters');
+  var toggle = qs('#filtersToggleBtn');
   if(toggle){
-    toggle.addEventListener('click', ()=>{
-      const isCollapsed = filters.classList.toggle('collapsed');
+    toggle.addEventListener('click', function(){
+      var isCollapsed = filters.classList.toggle('collapsed');
       toggle.setAttribute('aria-expanded', String(!isCollapsed));
     });
   }
@@ -823,32 +822,29 @@ function setupListeners(){
 
 /* =============== URL -> UI init =============== */
 function initFromURL(){
-  // view
-  const v = url.searchParams.get('view');
+  var v = url.searchParams.get('view');
   if(v==='list' || v==='calendar') currentView=v;
-  else if(window.innerWidth <= 768) currentView='list'; // default on mobile
+  else if(window.innerWidth <= 768) currentView='list';
 
-  // mode
-  const m = url.searchParams.get('mode');
+  var m = url.searchParams.get('mode');
   if(m==='week' || m==='month') calendarMode=m;
-  else if(window.innerWidth <= 768) calendarMode='week'; // default to week on mobile
+  else if(window.innerWidth <= 768) calendarMode='week';
   else calendarMode='month';
 
-  // cursor date
-  const c = url.searchParams.get('cursor');
+  var c = url.searchParams.get('cursor');
   cursorDate = c ? new Date(c) : new Date();
 
-  // Inputs
-  const qVal = url.searchParams.get('q') || '';
-  const stageVal = url.searchParams.get('stage') || '';
-  const dateVal = url.searchParams.get('date') || '';
+  var qVal = url.searchParams.get('q') || '';
+  var stageVal = url.searchParams.get('stage') || '';
+  var dateVal = url.searchParams.get('date') || '';
   qs('#searchInput').value = qVal;
   qs('#stageFilter').value = stageVal;
   qs('#dateFilter').value = dateVal;
 
-  // Genres (comma separated keys)
-  const gParam = url.searchParams.get('genres');
-  if(gParam){ gParam.split(',').forEach(k=> selectedGenres.add(k.toLowerCase())); }
+  var gParam = url.searchParams.get('genres');
+  if(gParam){
+    gParam.split(',').forEach(function(k){ selectedGenres.add(k.toLowerCase()); });
+  }
   updateGenreButtonLabel();
   buildGenreList(allGenres);
 
@@ -857,7 +853,6 @@ function initFromURL(){
   setCalendarMode(calendarMode);
   applyFilters();
 
-  // filters collapsed state for mobile
   if(window.innerWidth <= 768){ qs('#filters').classList.add('collapsed'); }
   else { qs('#filters').classList.remove('collapsed'); }
 }
