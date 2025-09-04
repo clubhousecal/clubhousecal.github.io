@@ -10,7 +10,7 @@
         --text:#ecf0f1;--muted:rgba(236,240,241,.75);
         --accent:#3498db;--accent-weak:rgba(52,152,219,.3);
         --error:#e74c3c;--glass:rgba(0,0,0,.2);--glass-2:rgba(0,0,0,.3);
-        --grid-gap:1px;
+        --grid-gap:1px;--panel:#1f2a37;--panel-2:#0f172a;
     }
     *{margin:0;padding:0;box-sizing:border-box}
     body{
@@ -32,41 +32,49 @@
         border:1px solid rgba(255,255,255,.25);border-radius:8px;color:var(--text);font-size:16px}
     .search-bar::placeholder{color:rgba(236,240,241,.6)}
     .search-icon{position:absolute;right:12px;top:50%;translate:0 -50%;opacity:.65}
-    .filters{display:flex;gap:10px;flex-wrap:wrap}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 
-    /* UPDATED: darker dropdowns with visible text */
+    /* dropdowns */
     .filter-select{
-      padding:10px 12px;
-      background:#1f2a37;                 /* dark control bg */
-      border:1px solid rgba(255,255,255,.25);
-      border-radius:8px;
-      color:#ecf0f1;
-      font-size:14px;
-      min-width:130px;
-      appearance:none;
-      -webkit-appearance:none;
-      -moz-appearance:none;
+      padding:10px 12px;background:var(--panel);
+      border:1px solid rgba(255,255,255,.25);border-radius:8px;color:#ecf0f1;
+      font-size:14px;min-width:130px;appearance:none;-webkit-appearance:none;-moz-appearance:none;
     }
-    .filter-select:focus{
-      outline:2px solid rgba(52,152,219,.6);
-      outline-offset:2px;
+    .filter-select:focus{outline:2px solid rgba(52,152,219,.6);outline-offset:2px}
+    .filter-select option{background:var(--panel-2);color:#ecf0f1}
+
+    /* multi-select (Genre) */
+    .multi{position:relative}
+    .multi-btn{
+      display:flex;align-items:center;gap:8px;cursor:pointer;
+      background:var(--panel);border:1px solid rgba(255,255,255,.25);border-radius:8px;
+      color:#ecf0f1;font-size:14px;min-width:180px;padding:10px 12px;
     }
-    .filter-select option{
-      background:#0f172a;                 /* dropdown menu bg */
-      color:#ecf0f1;
+    .multi-btn:focus{outline:2px solid rgba(52,152,219,.6);outline-offset:2px}
+    .multi-panel{
+      position:absolute;top:110%;left:0;z-index:10;background:var(--panel-2);
+      border:1px solid rgba(255,255,255,.2);border-radius:10px;min-width:220px;padding:8px;display:none;
+      box-shadow:0 10px 24px rgba(0,0,0,.35)
     }
+    .multi.open .multi-panel{display:block}
+    .multi-search{width:100%;padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
+      background:rgba(255,255,255,.06);color:#ecf0f1;margin-bottom:6px}
+    .multi-list{max-height:220px;overflow:auto;display:grid;gap:6px;padding-right:4px}
+    .multi-item{display:flex;align-items:center;gap:8px}
+    .multi-item input{accent-color:#3aa6ff}
+    .pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:2px 8px;border-radius:999px;font-size:12px}
 
     .view-toggle{display:flex;gap:8px;justify-content:flex-end}
     .btn{padding:8px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
         border-radius:8px;color:var(--text);cursor:pointer;transition:.2s}
     .btn:hover{background:var(--accent-weak)}
     .btn.active{background:var(--accent);border-color:var(--accent)}
+    .btn.secondary{background:rgba(255,255,255,.08)}
+    .btn.warning{background:rgba(231,76,60,.18);border-color:rgba(231,76,60,.4)}
 
     .monthbar{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
     .month-title{font-weight:700;letter-spacing:.3px}
-
-    /* NEW: hide month nav + month/year when in list view */
-    .is-list .monthbar{display:none;}
+    .is-list .monthbar{display:none;} /* hide in list view */
 
     .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:var(--grid-gap);
         background:var(--glass);border-radius:10px;overflow:hidden;margin-top:10px}
@@ -99,13 +107,13 @@
 
     /* Modal */
     .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:14px;z-index:999}
-    .modal{max-width:720px;width:100%;background:rgba(25,32,45,.95);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
+    .modal{max-width:820px;width:100%;background:rgba(25,32,45,.95);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
     .modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(255,255,255,.06)}
     .modal-title{font-weight:700}
     .modal-close{border:0;background:transparent;color:#fff;font-size:20px;cursor:pointer;opacity:.8}
     .modal-body{padding:16px}
-    .modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    .modal-grid{display:grid;grid-template-columns:320px 1fr;gap:14px;align-items:start}
+    .modal-img{width:100%;height:auto;object-fit:contain;background:linear-gradient(135deg,#34495e,#2c3e50);border-radius:10px}
     @media(max-width:768px){
         .header h1{font-size:1.8rem}
         .calendar-day{min-height:90px;padding:6px}
@@ -145,15 +153,27 @@
             <select class="filter-select" id="stageFilter" aria-label="Filter by stage">
                 <option value="">Stage</option>
             </select>
-            <select class="filter-select" id="genreFilter" aria-label="Filter by genre">
-                <option value="">Genre</option>
-            </select>
+
+            <!-- Multi-select Genre -->
+            <div class="multi" id="genreMulti">
+              <button type="button" class="multi-btn" id="genreBtn" aria-haspopup="listbox" aria-expanded="false">
+                <span id="genreBtnLabel">Genre (any)</span> ▼
+              </button>
+              <div class="multi-panel" id="genrePanel">
+                <input type="text" class="multi-search" id="genreSearch" placeholder="Filter genres…" />
+                <div class="multi-list" id="genreList" role="listbox" aria-multiselectable="true"></div>
+              </div>
+            </div>
+
             <select class="filter-select" id="dateFilter" aria-label="Quick date filter">
                 <option value="">Date</option>
                 <option value="today">Today</option>
                 <option value="this-week">This Week</option>
                 <option value="this-month">This Month</option>
             </select>
+
+            <!-- Clear Filters -->
+            <button class="btn secondary" id="clearFiltersBtn" title="Clear all filters">Clear Filters</button>
         </div>
 
         <div class="monthbar">
@@ -196,6 +216,10 @@ const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Los_Ange
 let currentYear, currentMonth; // numeric month (0-11)
 const url = new URL(window.location);
 
+/* Genres state (multi-select) */
+let allGenres = [];
+const selectedGenres = new Set();
+
 /* =============== Helpers =============== */
 const qs = sel => document.querySelector(sel);
 const qsa = sel => Array.from(document.querySelectorAll(sel));
@@ -235,7 +259,7 @@ function firstDayOfGrid(y,m){
 
 /* URL sync */
 function setParam(key,val){
-  if(val) url.searchParams.set(key,val); else url.searchParams.delete(key);
+  if(val!==null && val!=='') url.searchParams.set(key,val); else url.searchParams.delete(key);
   history.replaceState(null,'',url);
 }
 
@@ -294,28 +318,62 @@ async function loadEvents(){
 /* =============== Filters / Search =============== */
 function populateFilterOptions(){
   const stages = [...new Set(events.map(e=>e.stage).filter(Boolean))].sort();
-  const genres = [...new Set(events.map(e=>e.genre).filter(Boolean))].sort();
-  const stageSel = qs('#stageFilter'); const genreSel = qs('#genreFilter');
+  allGenres = [...new Set(events.map(e=>e.genre).filter(Boolean))].sort();
+
+  const stageSel = qs('#stageFilter');
   stageSel.innerHTML = '<option value="">Stage</option>';
-  genreSel.innerHTML = '<option value="">Genre</option>';
   stages.forEach(s=>{
     const o=document.createElement('option'); o.value=s; o.textContent=s; stageSel.appendChild(o);
   });
-  genres.forEach(g=>{
-    const o=document.createElement('option'); o.value=g; o.textContent=g; genreSel.appendChild(o);
+
+  // Build genre multi list
+  buildGenreList(allGenres);
+  updateGenreButtonLabel();
+}
+
+function buildGenreList(list){
+  const cont = qs('#genreList');
+  cont.innerHTML = '';
+  list.forEach(g=>{
+    const id = 'g-' + slugify(g);
+    const row = document.createElement('label');
+    row.className = 'multi-item';
+    row.innerHTML = `
+      <input type="checkbox" id="${id}" value="${g}">
+      <span>${g}</span>
+    `;
+    cont.appendChild(row);
   });
+
+  // (Re)wire checkboxes
+  cont.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
+    cb.checked = selectedGenres.has(cb.value);
+    cb.addEventListener('change', ()=>{
+      if(cb.checked) selectedGenres.add(cb.value); else selectedGenres.delete(cb.value);
+      updateGenreButtonLabel();
+      applyFilters();
+    });
+  });
+}
+
+function updateGenreButtonLabel(){
+  const btnLabel = qs('#genreBtnLabel');
+  const count = selectedGenres.size;
+  if(count===0){ btnLabel.textContent = 'Genre (any)'; }
+  else if(count===1){ btnLabel.textContent = [...selectedGenres][0]; }
+  else { btnLabel.innerHTML = [...selectedGenres].map(g=>`<span class="pill">${g}</span>`).join(' '); }
+  setParam('genres', count? [...selectedGenres].join(',') : null);
 }
 
 function applyFilters(){
   const q = safe(qs('#searchInput').value).toLowerCase();
   const stage = qs('#stageFilter').value;
-  const genre = qs('#genreFilter').value;
   const dateF = qs('#dateFilter').value;
 
   setParam('q', q || null);
   setParam('stage', stage || null);
-  setParam('genre', genre || null);
   setParam('date', dateF || null);
+  setParam('genres', selectedGenres.size? [...selectedGenres].join(',') : null);
 
   const now = new Date(); now.setHours(0,0,0,0);
   const weekEnd = new Date(now.getTime()+7*86400000);
@@ -324,7 +382,10 @@ function applyFilters(){
     const txt = (e.title+' '+e.description+' '+e.stage+' '+e.genre).toLowerCase();
     const mQ = !q || txt.includes(q);
     const mS = !stage || e.stage===stage;
-    const mG = !genre || e.genre===genre;
+
+    // OR logic for genres: any selected genre matches the event
+    const mG = selectedGenres.size===0 || selectedGenres.has(e.genre);
+
     let mD = true;
     if(dateF==='today'){ mD = ymd(e.date)===ymd(new Date()) }
     else if(dateF==='this-week'){ mD = e.date >= now && e.date < weekEnd }
@@ -336,6 +397,18 @@ function applyFilters(){
 }
 
 const debouncedFilter = debounce(applyFilters, 200);
+
+/* Clear all filters */
+function clearFilters(){
+  qs('#searchInput').value = '';
+  qs('#stageFilter').value = '';
+  qs('#dateFilter').value = '';
+  selectedGenres.clear();
+  // uncheck all genre boxes
+  qsa('#genreList input[type="checkbox"]').forEach(cb=>cb.checked=false);
+  updateGenreButtonLabel();
+  applyFilters();
+}
 
 /* =============== Calendar Render =============== */
 function generateCalendar(){
@@ -430,24 +503,28 @@ function generateEventCards(){
   }
 }
 
-/* =============== Modal =============== */
+/* =============== Modal (includes image) =============== */
 function openEventModal(ev){
   const mb = qs('#modalBody'), md = qs('#modalBackdrop'), mt = qs('#modalTitle');
   mt.textContent = ev.title;
   const websiteHref = ev.website ? (ev.website.startsWith('http') ? ev.website : 'https://'+ev.website) : '';
   const gcalUrl = googleCalendarUrl(ev);
   const ics = buildICS(ev);
+  const img = ev.image || '';
+  const fallback = `https://via.placeholder.com/600x320/9b59b6/ffffff?text=${encodeURIComponent(ev.title)}`;
+
   mb.innerHTML = `
     <div class="modal-grid">
+      <div>
+        <img class="modal-img" src="${img}" alt="${ev.title}" onerror="this.src='${fallback}'">
+      </div>
       <div>
         <p><strong>Date:</strong> ${fmtDate(ev.date)}</p>
         <p><strong>Stage:</strong> ${ev.stage || '—'}</p>
         <p><strong>Genre:</strong> ${ev.genre || '—'}</p>
         <p><strong>Duration:</strong> ${ev.duration || '—'}</p>
-      </div>
-      <div>
-        <p class="event-description">${ev.description || ''}</p>
-        <div class="links" style="margin-top:6px">
+        <p class="event-description" style="margin-top:8px">${ev.description || ''}</p>
+        <div class="links" style="margin-top:10px">
           ${ev.email ? `<a class="link" href="mailto:${ev.email}">Email</a>`:''}
           ${ev.instagram ? `<a class="link" target="_blank" rel="noopener" href="https://instagram.com/${ev.instagram.replace('@','')}">Instagram</a>`:''}
           ${websiteHref ? `<a class="link" target="_blank" rel="noopener" href="${websiteHref}">Website</a>`:''}
@@ -517,7 +594,7 @@ function formatICS(d){
   return `${z.getUTCFullYear()}${pad(z.getUTCMonth()+1)}${pad(z.getUTCDate())}T${pad(z.getUTCHours())}${pad(z.getUTCMinutes())}00Z`;
 }
 
-/* =============== View Switching (UPDATED to toggle body class) =============== */
+/* =============== View Switching =============== */
 function switchView(view){
   currentView = view;
   setParam('view', view);
@@ -543,16 +620,34 @@ function setupListeners(){
   qs('#calendarViewBtn').onclick = ()=>switchView('calendar');
   qs('#searchInput').addEventListener('input', debouncedFilter);
   qs('#stageFilter').addEventListener('change', applyFilters);
-  qs('#genreFilter').addEventListener('change', applyFilters);
   qs('#dateFilter').addEventListener('change', applyFilters);
+  qs('#clearFiltersBtn').addEventListener('click', clearFilters);
 
+  // month nav
   qs('#prevMonthBtn').onclick = prevMonth;
   qs('#nextMonthBtn').onclick = nextMonth;
   qs('#todayBtn').onclick = goToToday;
 
+  // modal
   qs('#modalClose').onclick = closeModal;
   qs('#modalBackdrop').addEventListener('click', e=>{ if(e.target.id==='modalBackdrop') closeModal(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+
+  // genre multi behavior
+  const multi = qs('#genreMulti'); const btn = qs('#genreBtn'); const panel = qs('#genrePanel'); const search = qs('#genreSearch');
+  btn.addEventListener('click', ()=>{
+    const open = multi.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(open) search.focus();
+  });
+  document.addEventListener('click', (e)=>{
+    if(!multi.contains(e.target)){ multi.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  });
+  search.addEventListener('input', ()=>{
+    const q = search.value.toLowerCase();
+    const filtered = allGenres.filter(g=>g.toLowerCase().includes(q));
+    buildGenreList(filtered);
+  });
 }
 
 /* =============== URL -> UI init =============== */
@@ -567,11 +662,21 @@ function initFromURL(){
     const [y,mm]=m.split('-'); currentYear=+y; currentMonth=(+mm)-1;
   } else { currentYear=now.getFullYear(); currentMonth=now.getMonth(); setParam('month', `${currentYear}-${String(currentMonth+1).padStart(2,'0')}`); }
 
-  ['q','stage','genre','date'].forEach(k=>{
-    const val = url.searchParams.get(k) || '';
-    const el = qs(k==='q' ? '#searchInput' : `#${k}Filter`);
-    if(el) el.value = val;
-  });
+  // Text query, stage, date
+  const qVal = url.searchParams.get('q') || '';
+  const stageVal = url.searchParams.get('stage') || '';
+  const dateVal = url.searchParams.get('date') || '';
+  qs('#searchInput').value = qVal;
+  qs('#stageFilter').value = stageVal;
+  qs('#dateFilter').value = dateVal;
+
+  // Genres (comma separated)
+  const gParam = url.searchParams.get('genres');
+  if(gParam){
+    gParam.split(',').forEach(g=> selectedGenres.add(g));
+  }
+  updateGenreButtonLabel();
+  buildGenreList(allGenres);
 
   setupListeners();
   (currentView==='list' ? switchView('list') : switchView('calendar'));
