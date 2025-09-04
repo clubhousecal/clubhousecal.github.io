@@ -18,21 +18,34 @@
         background:linear-gradient(135deg,var(--bg1),var(--bg2));color:var(--text);min-height:100vh
     }
     .container{max-width:1200px;margin:0 auto;padding:20px}
+
     .header{text-align:center;margin-bottom:24px}
     .header h1{font-size:2.25rem;margin-bottom:.35rem;font-weight:600}
     .header p{opacity:.85;margin:.2rem 0}
     .header a{color:#fff;text-decoration:underline dotted}
     .meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:.35rem;opacity:.8;font-size:.9rem}
+
     .loading{text-align:center;padding:32px;font-size:18px;opacity:.8}
     .error{background:rgba(231,76,60,.2);border:1px solid rgba(231,76,60,.5);padding:12px;border-radius:8px;margin:16px 0}
-    .controls{background:var(--glass);padding:16px;border-radius:12px;margin:18px 0;display:grid;gap:12px}
-    .topbar{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+
+    /* Sticky controls bar with blur */
+    .controls{
+        position:sticky; top:0; z-index:50;
+        backdrop-filter: blur(6px);
+        background:rgba(0,0,0,.35);
+        padding:16px;border-radius:12px;margin:18px 0;display:grid;gap:12px
+    }
+    .topbar{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center}
     .search-wrap{position:relative}
-    .search-bar{width:100%;padding:12px 40px 12px 14px;background:rgba(255,255,255,.1);
-        border:1px solid rgba(255,255,255,.25);border-radius:8px;color:var(--text);font-size:16px}
+    .search-bar{
+        width:100%;padding:12px 40px 12px 14px;background:rgba(255,255,255,.1);
+        border:1px solid rgba(255,255,255,.25);border-radius:8px;color:var(--text);font-size:16px
+    }
     .search-bar::placeholder{color:rgba(236,240,241,.6)}
     .search-icon{position:absolute;right:12px;top:50%;translate:0 -50%;opacity:.65}
     .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    /* mobile: collapsed by default */
+    .filters.collapsed{display:none}
 
     /* dropdowns */
     .filter-select{
@@ -48,13 +61,13 @@
     .multi-btn{
       display:flex;align-items:center;gap:8px;cursor:pointer;
       background:var(--panel);border:1px solid rgba(255,255,255,.25);border-radius:8px;
-      color:#ecf0f1;font-size:14px;min-width:180px;padding:10px 12px;
+      color:#ecf0f1;font-size:14px;min-width:180px;padding:10px 12px
     }
     .multi-btn:focus{outline:2px solid rgba(52,152,219,.6);outline-offset:2px}
     .multi-panel{
-      position:absolute;top:110%;left:0;z-index:10;background:var(--panel-2);
-      border:1px solid rgba(255,255,255,.2);border-radius:10px;min-width:220px;padding:8px;display:none;
-      box-shadow:0 10px 24px rgba(0,0,0,.35)
+      position:absolute;top:110%;left:0;z-index:100;background:var(--panel-2);
+      border:1px solid rgba(255,255,255,.2);border-radius:10px;min-width:240px;padding:8px;display:none;
+      box-shadow:0 10px 24px rgba(0,0,0,.35);max-height:260px;overflow:auto
     }
     .multi.open .multi-panel{display:block}
     .multi-search{width:100%;padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
@@ -65,8 +78,11 @@
     .pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:2px 8px;border-radius:999px;font-size:12px}
 
     .view-toggle{display:flex;gap:8px;justify-content:flex-end}
-    .btn{padding:8px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
-        border-radius:8px;color:var(--text);cursor:pointer;transition:.2s}
+    .btn{
+      padding:10px 14px;min-height:44px;
+      background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+      border-radius:10px;color:var(--text);cursor:pointer;transition:.2s
+    }
     .btn:hover{background:var(--accent-weak)}
     .btn.active{background:var(--accent);border-color:var(--accent)}
     .btn.secondary{background:rgba(255,255,255,.08)}
@@ -75,8 +91,12 @@
     .month-title{font-weight:700;letter-spacing:.3px}
     .is-list .monthbar{display:none;} /* hide in list view */
 
-    .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:var(--grid-gap);
-        background:var(--glass);border-radius:10px;overflow:hidden;margin-top:10px}
+    /* Calendar scroll wrapper for mobile */
+    .calendar-scroll{width:100%}
+    .calendar-grid{
+        display:grid;grid-template-columns:repeat(7,1fr);gap:var(--grid-gap);
+        background:var(--glass);border-radius:10px;overflow:hidden;margin-top:10px
+    }
     .calendar-header{background:var(--glass-2);padding:10px;text-align:center;font-weight:600;font-size:13px}
     .calendar-day{background:rgba(255,255,255,.06);min-height:120px;padding:8px;position:relative;display:flex;flex-direction:column;gap:4px}
     .calendar-day.muted{opacity:.4}
@@ -89,7 +109,7 @@
     .event-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;margin-top:14px}
     .event-card{background:var(--card);border-radius:14px;overflow:hidden;transition:.2s;border:1px solid rgba(255,255,255,.12)}
     .event-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.3);border-color:rgba(52,152,219,.45)}
-    .event-image{width:100%;height:auto;object-fit:contain;background:linear-gradient(135deg,#34495e,#2c3e50);cursor:pointer}
+    .event-image{width:100%;height:auto;object-fit:cover;max-height:260px;background:linear-gradient(135deg,#34495e,#2c3e50);cursor:pointer}
     .event-content{padding:16px}
     .event-title{font-size:1.15rem;font-weight:700;margin-bottom:4px}
     .event-date{color:var(--accent);font-weight:600;margin:6px 0 10px}
@@ -99,8 +119,8 @@
     .detail-label{opacity:.7}
     .detail-value{color:var(--accent)}
     .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .link{padding:6px 10px;background:rgba(52,152,219,.18);border:1px solid rgba(52,152,219,.35);border-radius:8px;
-        color:var(--accent);text-decoration:none;font-size:12px;transition:.15s}
+    .link{padding:8px 12px;background:rgba(52,152,219,.18);border:1px solid rgba(52,152,219,.35);border-radius:10px;
+        color:var(--accent);text-decoration:none;font-size:13px;transition:.15s}
     .link:hover{background:rgba(52,152,219,.3);transform:translateY(-1px)}
     .hidden{display:none}
 
@@ -112,12 +132,27 @@
     .modal-close{border:0;background:transparent;color:#fff;font-size:20px;cursor:pointer;opacity:.8}
     .modal-body{padding:16px}
     .modal-grid{display:grid;grid-template-columns:320px 1fr;gap:14px;align-items:start}
-    .modal-img{width:100%;height:auto;object-fit:contain;background:linear-gradient(135deg,#34495e,#2c3e50);border-radius:10px}
+    .modal-img{width:100%;height:auto;object-fit:cover;max-height:360px;background:linear-gradient(135deg,#34495e,#2c3e50);border-radius:10px}
+
+    /* Mobile tweaks */
+    .mobile-only{display:none}
+    .desktop-only{display:inline-flex}
     @media(max-width:768px){
         .header h1{font-size:1.8rem}
+        .desktop-only{display:none}
+        .mobile-only{display:inline-flex}
+        .controls{border-radius:0;margin:0 -20px 10px;padding:12px 20px}
         .calendar-day{min-height:90px;padding:6px}
         .event-cards{grid-template-columns:1fr}
         .modal-grid{grid-template-columns:1fr}
+        /* calendar becomes horizontally scrollable */
+        .calendar-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+        .calendar-grid{min-width:860px}
+        /* genre sheet-style on mobile */
+        .multi-panel{
+          position:fixed;left:0;right:0;bottom:0;top:auto;z-index:1000;
+          border-radius:14px 14px 0 0;max-height:70vh;min-width:auto;margin:0 12px 12px
+        }
     }
 </style>
 </head>
@@ -142,18 +177,22 @@
                 <input id="searchInput" type="search" class="search-bar" placeholder="Search for a show…" aria-label="Search shows"/>
                 <span class="search-icon" aria-hidden="true">🔎</span>
             </div>
+
+            <!-- Mobile Filters toggle -->
+            <button class="btn secondary mobile-only" id="filtersToggleBtn" aria-expanded="false" aria-controls="filters">Filters</button>
+
             <div class="view-toggle" role="tablist" aria-label="View toggle">
                 <button class="btn" id="listViewBtn" role="tab" aria-controls="listView">📋 List</button>
                 <button class="btn active" id="calendarViewBtn" role="tab" aria-controls="calendarView" aria-selected="true">📅 Calendar</button>
             </div>
         </div>
 
-        <div class="filters">
+        <div class="filters collapsed" id="filters">
             <select class="filter-select" id="stageFilter" aria-label="Filter by stage">
                 <option value="">Stage</option>
             </select>
 
-            <!-- Multi-select Genre (from individual tags) -->
+            <!-- Multi-select Genre -->
             <div class="multi" id="genreMulti">
               <button type="button" class="multi-btn" id="genreBtn" aria-haspopup="listbox" aria-expanded="false">
                 <span id="genreBtnLabel">Genre (any)</span> ▼
@@ -185,7 +224,9 @@
     </div>
 
     <div id="calendarView" class="hidden" role="region" aria-label="Calendar view">
-        <div class="calendar-grid" id="calendarGrid"></div>
+        <div class="calendar-scroll" id="calendarScroll">
+            <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
     </div>
 
     <div id="listView" class="hidden" role="region" aria-label="List view">
@@ -209,7 +250,7 @@
 let events = [];
 let filteredEvents = [];
 let currentView = 'calendar';
-const DATA_SOURCE = './events.json';
+const DATA_SOURCE = './events.json'; // relative path for same-origin fetch
 const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Los_Angeles';
 let currentYear, currentMonth; // numeric month (0-11)
 const url = new URL(window.location);
@@ -227,7 +268,7 @@ function parseDate(d){
   const dt = new Date(d);
   return isNaN(dt) ? null : dt;
 }
-/* split a comma-separated tag string (case-insensitive dedupe), e.g. "Improv, Jam" */
+/* split a comma-separated tag string (case-insensitive dedupe) */
 function parseGenresField(g){
   if(Array.isArray(g)) return g.map(s=>safe(s).trim()).filter(Boolean);
   return safe(g)
@@ -294,13 +335,13 @@ async function loadEvents(){
           title: safe(e.title),
           stage: safe(e.stage),
           description: safe(e.description),
-          email: safe(e.email),
-          instagram: safe(e.instagram),
-          website: safe(e.website),
+          email: safe(e.email) || '',
+          instagram: safe(e.instagram) || '',
+          website: safe(e.website) || '',
           duration: safe(e.duration),
           image: safe(e.image),
           date: parseDate(e.date),
-          genres: genresArr,                // normalized array of individual tags
+          genres: genresArr,
         };
       })
       .filter(e=>e.date);
@@ -308,24 +349,13 @@ async function loadEvents(){
     events.sort((a,b)=>a.date-b.date);
     filteredEvents = [...events];
 
-    // build unique list of all genres (case-insensitive)
-    const seen = new Set();
-    allGenres = [];
-    events.forEach(e=>{
-      e.genres.forEach(g=>{
-        const key = g.toLowerCase();
-        if(!seen.has(key)){ seen.add(key); allGenres.push(g); }
-      });
-    });
-    allGenres.sort((a,b)=>a.localeCompare(b,undefined,{sensitivity:'base'}));
-
+    const tzEl = qs('#tzLabel'); tzEl.textContent = `Times shown in ${tz}`; tzEl.classList.remove('hidden');
     if(data.lastUpdated){
       const d = new Date(data.lastUpdated);
       const el = qs('#lastUpdated');
       el.textContent = `Last updated: ${d.toLocaleString()}`;
       el.classList.remove('hidden');
     }
-    const tzEl = qs('#tzLabel'); tzEl.textContent = `Times shown in ${tz}`; tzEl.classList.remove('hidden');
 
     populateFilterOptions();
     initFromURL();
@@ -350,7 +380,13 @@ function populateFilterOptions(){
     const o=document.createElement('option'); o.value=s; o.textContent=s; stageSel.appendChild(o);
   });
 
-  // Build genre multi list from individual tags
+  // Build unique list of genres
+  const seen = new Set(); allGenres = [];
+  events.forEach(e=> (e.genres||[]).forEach(g=>{
+    const key = g.toLowerCase(); if(!seen.has(key)){ seen.add(key); allGenres.push(g); }
+  }));
+  allGenres.sort((a,b)=>a.localeCompare(b,undefined,{sensitivity:'base'}));
+
   buildGenreList(allGenres);
   updateGenreButtonLabel();
 }
@@ -369,7 +405,6 @@ function buildGenreList(list){
     cont.appendChild(row);
   });
 
-  // (Re)wire checkboxes
   cont.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
     cb.checked = selectedGenres.has(cb.value.toLowerCase());
     cb.addEventListener('change', ()=>{
@@ -385,12 +420,11 @@ function updateGenreButtonLabel(){
   const btnLabel = qs('#genreBtnLabel');
   const count = selectedGenres.size;
   if(count===0){ btnLabel.textContent = 'Genre (any)'; }
-  else if(count===1){ 
+  else if(count===1){
     const key = [...selectedGenres][0];
     const disp = allGenres.find(g=>g.toLowerCase()===key) || key;
     btnLabel.textContent = disp;
-  }
-  else {
+  } else {
     btnLabel.innerHTML = [...selectedGenres].map(k=>{
       const disp = allGenres.find(g=>g.toLowerCase()===k) || k;
       return `<span class="pill">${disp}</span>`;
@@ -416,10 +450,7 @@ function applyFilters(){
     const txt = (e.title+' '+e.description+' '+e.stage+' '+(e.genres||[]).join(' ')).toLowerCase();
     const mQ = !q || txt.includes(q);
     const mS = !stage || e.stage===stage;
-
-    // OR logic vs selected tag keys
     const mG = selectedGenres.size===0 || e.genres.some(g=>selectedGenres.has(g.toLowerCase()));
-
     let mD = true;
     if(dateF==='today'){ mD = ymd(e.date)===ymd(new Date()) }
     else if(dateF==='this-week'){ mD = e.date >= now && e.date < weekEnd }
@@ -494,13 +525,13 @@ function generateEventCards(){
     const card = document.createElement('div');
     card.className='event-card';
     const imgSrc = ev.image || '';
-    const fallback = `https://via.placeholder.com/600x320/9b59b6/ffffff?text=${encodeURIComponent(ev.title)}`;
+    const fallback = `https://via.placeholder.com/800x420/9b59b6/ffffff?text=${encodeURIComponent(ev.title)}`;
     const websiteHref = ev.website ? (ev.website.startsWith('http') ? ev.website : 'https://'+ev.website) : '';
     const gcalUrl = googleCalendarUrl(ev);
     const ics = buildICS(ev);
 
     card.innerHTML = `
-      <img src="${imgSrc}" alt="${ev.title}" class="event-image" onerror="this.src='${fallback}'">
+      <img src="${imgSrc}" alt="${ev.title}" class="event-image" loading="lazy" onerror="this.src='${fallback}'">
       <div class="event-content">
         <div class="event-title">${ev.title}
           ${ev.stage ? `<span class="event-chip" style="background:${stageColor(ev.stage)}">${ev.stage}</span>`:''}
@@ -523,15 +554,12 @@ function generateEventCards(){
     `;
     const btn = card.querySelector('[data-id]');
     btn.addEventListener('click',()=>openEventModal(ev));
-
-    // NEW: clicking the image opens details, too
-    const imgEl = card.querySelector('.event-image');
-    imgEl.addEventListener('click', ()=>openEventModal(ev));
+    card.querySelector('.event-image').addEventListener('click', ()=>openEventModal(ev));
 
     wrap.appendChild(card);
   });
 
-  // Auto-scroll to next upcoming
+  // Auto-scroll to next upcoming in list view
   const now = new Date();
   const idx = filteredEvents.findIndex(e=>e.date>=now);
   if(idx>=0){
@@ -548,7 +576,7 @@ function openEventModal(ev){
   const gcalUrl = googleCalendarUrl(ev);
   const ics = buildICS(ev);
   const img = ev.image || '';
-  const fallback = `https://via.placeholder.com/600x320/9b59b6/ffffff?text=${encodeURIComponent(ev.title)}`;
+  const fallback = `https://via.placeholder.com/800x420/9b59b6/ffffff?text=${encodeURIComponent(ev.title)}`;
 
   mb.innerHTML = `
     <div class="modal-grid">
@@ -685,12 +713,25 @@ function setupListeners(){
     const filtered = allGenres.filter(g=>g.toLowerCase().includes(q));
     buildGenreList(filtered);
   });
+
+  // Mobile: filters drawer toggle
+  const filters = qs('#filters');
+  const toggle = qs('#filtersToggleBtn');
+  if(toggle){
+    toggle.addEventListener('click', ()=>{
+      const isCollapsed = filters.classList.toggle('collapsed');
+      toggle.setAttribute('aria-expanded', String(!isCollapsed));
+    });
+  }
 }
 
 /* =============== URL -> UI init =============== */
 function initFromURL(){
   const v = url.searchParams.get('view');
+  // Default to list view on narrow screens if not specified
   if(v==='list') currentView='list';
+  else if(v==='calendar') currentView='calendar';
+  else if(window.innerWidth <= 768) currentView='list'; // mobile-first default
   setParam('view', currentView);
 
   const m = url.searchParams.get('month'); // YYYY-MM
@@ -718,6 +759,13 @@ function initFromURL(){
   setupListeners();
   (currentView==='list' ? switchView('list') : switchView('calendar'));
   applyFilters();
+
+  // On mobile, keep filters collapsed initially
+  if(window.innerWidth <= 768){
+    qs('#filters').classList.add('collapsed');
+  } else {
+    qs('#filters').classList.remove('collapsed');
+  }
 }
 
 /* =============== Boot =============== */
