@@ -70,7 +70,6 @@
     .btn:hover{background:var(--accent-weak)}
     .btn.active{background:var(--accent);border-color:var(--accent)}
     .btn.secondary{background:rgba(255,255,255,.08)}
-    .btn.warning{background:rgba(231,76,60,.18);border-color:rgba(231,76,60,.4)}
 
     .monthbar{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
     .month-title{font-weight:700;letter-spacing:.3px}
@@ -90,7 +89,7 @@
     .event-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;margin-top:14px}
     .event-card{background:var(--card);border-radius:14px;overflow:hidden;transition:.2s;border:1px solid rgba(255,255,255,.12)}
     .event-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.3);border-color:rgba(52,152,219,.45)}
-    .event-image{width:100%;height:auto;object-fit:contain;background:linear-gradient(135deg,#34495e,#2c3e50)}
+    .event-image{width:100%;height:auto;object-fit:contain;background:linear-gradient(135deg,#34495e,#2c3e50);cursor:pointer}
     .event-content{padding:16px}
     .event-title{font-size:1.15rem;font-weight:700;margin-bottom:4px}
     .event-date{color:var(--accent);font-weight:600;margin:6px 0 10px}
@@ -154,7 +153,7 @@
                 <option value="">Stage</option>
             </select>
 
-            <!-- Multi-select Genre -->
+            <!-- Multi-select Genre (from individual tags) -->
             <div class="multi" id="genreMulti">
               <button type="button" class="multi-btn" id="genreBtn" aria-haspopup="listbox" aria-expanded="false">
                 <span id="genreBtnLabel">Genre (any)</span> ▼
@@ -172,7 +171,6 @@
                 <option value="this-month">This Month</option>
             </select>
 
-            <!-- Clear Filters -->
             <button class="btn secondary" id="clearFiltersBtn" title="Clear all filters">Clear Filters</button>
         </div>
 
@@ -216,7 +214,7 @@ const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Los_Ange
 let currentYear, currentMonth; // numeric month (0-11)
 const url = new URL(window.location);
 
-/* Genres state (multi-select) */
+/* Genres state (multi-select of individual tags) */
 let allGenres = [];
 const selectedGenres = new Set();
 
@@ -229,6 +227,20 @@ function parseDate(d){
   const dt = new Date(d);
   return isNaN(dt) ? null : dt;
 }
+/* split a comma-separated tag string (case-insensitive dedupe), e.g. "Improv, Jam" */
+function parseGenresField(g){
+  if(Array.isArray(g)) return g.map(s=>safe(s).trim()).filter(Boolean);
+  return safe(g)
+    .split(',')
+    .map(s=>s.trim())
+    .filter(Boolean)
+    .reduce((acc,tag)=>{
+      const exists = acc.find(t=>t.toLowerCase()===tag.toLowerCase());
+      if(!exists) acc.push(tag);
+      return acc;
+    },[]);
+}
+
 function fmtDate(dt){
   if(!dt) return '';
   return dt.toLocaleString('en-US',{
@@ -275,23 +287,37 @@ async function loadEvents(){
     if(!data || !Array.isArray(data.events)) throw new Error('Invalid data format');
 
     events = data.events
-      .map(e=>({
-        ...e,
-        title: safe(e.title),
-        stage: safe(e.stage),
-        genre: safe(e.genre),
-        description: safe(e.description),
-        email: safe(e.email),
-        instagram: safe(e.instagram),
-        website: safe(e.website),
-        duration: safe(e.duration),
-        image: safe(e.image),
-        date: parseDate(e.date)
-      }))
+      .map(e=>{
+        const genresArr = parseGenresField(e.genres ?? e.genre);
+        return {
+          ...e,
+          title: safe(e.title),
+          stage: safe(e.stage),
+          description: safe(e.description),
+          email: safe(e.email),
+          instagram: safe(e.instagram),
+          website: safe(e.website),
+          duration: safe(e.duration),
+          image: safe(e.image),
+          date: parseDate(e.date),
+          genres: genresArr,                // normalized array of individual tags
+        };
+      })
       .filter(e=>e.date);
 
     events.sort((a,b)=>a.date-b.date);
     filteredEvents = [...events];
+
+    // build unique list of all genres (case-insensitive)
+    const seen = new Set();
+    allGenres = [];
+    events.forEach(e=>{
+      e.genres.forEach(g=>{
+        const key = g.toLowerCase();
+        if(!seen.has(key)){ seen.add(key); allGenres.push(g); }
+      });
+    });
+    allGenres.sort((a,b)=>a.localeCompare(b,undefined,{sensitivity:'base'}));
 
     if(data.lastUpdated){
       const d = new Date(data.lastUpdated);
@@ -318,15 +344,13 @@ async function loadEvents(){
 /* =============== Filters / Search =============== */
 function populateFilterOptions(){
   const stages = [...new Set(events.map(e=>e.stage).filter(Boolean))].sort();
-  allGenres = [...new Set(events.map(e=>e.genre).filter(Boolean))].sort();
-
   const stageSel = qs('#stageFilter');
   stageSel.innerHTML = '<option value="">Stage</option>';
   stages.forEach(s=>{
     const o=document.createElement('option'); o.value=s; o.textContent=s; stageSel.appendChild(o);
   });
 
-  // Build genre multi list
+  // Build genre multi list from individual tags
   buildGenreList(allGenres);
   updateGenreButtonLabel();
 }
@@ -347,9 +371,10 @@ function buildGenreList(list){
 
   // (Re)wire checkboxes
   cont.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
-    cb.checked = selectedGenres.has(cb.value);
+    cb.checked = selectedGenres.has(cb.value.toLowerCase());
     cb.addEventListener('change', ()=>{
-      if(cb.checked) selectedGenres.add(cb.value); else selectedGenres.delete(cb.value);
+      const key = cb.value.toLowerCase();
+      if(cb.checked) selectedGenres.add(key); else selectedGenres.delete(key);
       updateGenreButtonLabel();
       applyFilters();
     });
@@ -360,8 +385,17 @@ function updateGenreButtonLabel(){
   const btnLabel = qs('#genreBtnLabel');
   const count = selectedGenres.size;
   if(count===0){ btnLabel.textContent = 'Genre (any)'; }
-  else if(count===1){ btnLabel.textContent = [...selectedGenres][0]; }
-  else { btnLabel.innerHTML = [...selectedGenres].map(g=>`<span class="pill">${g}</span>`).join(' '); }
+  else if(count===1){ 
+    const key = [...selectedGenres][0];
+    const disp = allGenres.find(g=>g.toLowerCase()===key) || key;
+    btnLabel.textContent = disp;
+  }
+  else {
+    btnLabel.innerHTML = [...selectedGenres].map(k=>{
+      const disp = allGenres.find(g=>g.toLowerCase()===k) || k;
+      return `<span class="pill">${disp}</span>`;
+    }).join(' ');
+  }
   setParam('genres', count? [...selectedGenres].join(',') : null);
 }
 
@@ -379,12 +413,12 @@ function applyFilters(){
   const weekEnd = new Date(now.getTime()+7*86400000);
 
   filteredEvents = events.filter(e=>{
-    const txt = (e.title+' '+e.description+' '+e.stage+' '+e.genre).toLowerCase();
+    const txt = (e.title+' '+e.description+' '+e.stage+' '+(e.genres||[]).join(' ')).toLowerCase();
     const mQ = !q || txt.includes(q);
     const mS = !stage || e.stage===stage;
 
-    // OR logic for genres: any selected genre matches the event
-    const mG = selectedGenres.size===0 || selectedGenres.has(e.genre);
+    // OR logic vs selected tag keys
+    const mG = selectedGenres.size===0 || e.genres.some(g=>selectedGenres.has(g.toLowerCase()));
 
     let mD = true;
     if(dateF==='today'){ mD = ymd(e.date)===ymd(new Date()) }
@@ -404,7 +438,6 @@ function clearFilters(){
   qs('#stageFilter').value = '';
   qs('#dateFilter').value = '';
   selectedGenres.clear();
-  // uncheck all genre boxes
   qsa('#genreList input[type="checkbox"]').forEach(cb=>cb.checked=false);
   updateGenreButtonLabel();
   applyFilters();
@@ -475,7 +508,7 @@ function generateEventCards(){
         <div class="event-date">${fmtDate(ev.date)}</div>
         <div class="event-description">${ev.description || ''}</div>
         <div class="event-details">
-          <div class="detail-item"><span class="detail-label">Genre:</span><span class="detail-value">${ev.genre || '—'}</span></div>
+          <div class="detail-item"><span class="detail-label">Genres:</span><span class="detail-value">${(ev.genres||[]).join(', ') || '—'}</span></div>
           <div class="detail-item"><span class="detail-label">Duration:</span><span class="detail-value">${ev.duration || '—'}</span></div>
         </div>
         <div class="links">
@@ -491,10 +524,14 @@ function generateEventCards(){
     const btn = card.querySelector('[data-id]');
     btn.addEventListener('click',()=>openEventModal(ev));
 
+    // NEW: clicking the image opens details, too
+    const imgEl = card.querySelector('.event-image');
+    imgEl.addEventListener('click', ()=>openEventModal(ev));
+
     wrap.appendChild(card);
   });
 
-  // Auto-scroll to the next upcoming event in list view
+  // Auto-scroll to next upcoming
   const now = new Date();
   const idx = filteredEvents.findIndex(e=>e.date>=now);
   if(idx>=0){
@@ -521,7 +558,7 @@ function openEventModal(ev){
       <div>
         <p><strong>Date:</strong> ${fmtDate(ev.date)}</p>
         <p><strong>Stage:</strong> ${ev.stage || '—'}</p>
-        <p><strong>Genre:</strong> ${ev.genre || '—'}</p>
+        <p><strong>Genres:</strong> ${(ev.genres||[]).join(', ') || '—'}</p>
         <p><strong>Duration:</strong> ${ev.duration || '—'}</p>
         <p class="event-description" style="margin-top:8px">${ev.description || ''}</p>
         <div class="links" style="margin-top:10px">
@@ -670,10 +707,10 @@ function initFromURL(){
   qs('#stageFilter').value = stageVal;
   qs('#dateFilter').value = dateVal;
 
-  // Genres (comma separated)
+  // Genres (comma separated keys)
   const gParam = url.searchParams.get('genres');
   if(gParam){
-    gParam.split(',').forEach(g=> selectedGenres.add(g));
+    gParam.split(',').forEach(k=> selectedGenres.add(k.toLowerCase()));
   }
   updateGenreButtonLabel();
   buildGenreList(allGenres);
