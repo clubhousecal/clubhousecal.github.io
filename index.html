@@ -1,664 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unofficial Clubhouse Show Calendar</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: #ecf0f1;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .header p {
-            opacity: 0.8;
-            margin-bottom: 10px;
-        }
-
-        .header a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        .header a:hover {
-            text-decoration: underline;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 50px;
-            font-size: 18px;
-            opacity: 0.7;
-        }
-
-        .error {
-            background: rgba(231, 76, 60, 0.2);
-            border: 1px solid rgba(231, 76, 60, 0.5);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            color: #e74c3c;
-        }
-
-        .last-updated {
-            text-align: center;
-            opacity: 0.6;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .controls {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-
-        .search-bar {
-            width: 100%;
-            padding: 12px 40px 12px 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            color: #ecf0f1;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .search-bar::placeholder {
-            color: rgba(236, 240, 241, 0.6);
-        }
-
-        .filters {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .filter-select {
-            padding: 10px 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
-            color: #ecf0f1;
-            font-size: 14px;
-            min-width: 120px;
-        }
-
-        .filter-select option {
-            background: #2c3e50;
-            color: #ecf0f1;
-        }
-
-        .view-toggle {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-        }
-
-        .view-btn {
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
-            color: #ecf0f1;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .view-btn.active {
-            background: #3498db;
-            border-color: #3498db;
-        }
-
-        .view-btn:hover {
-            background: rgba(52, 152, 219, 0.3);
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 1px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .calendar-header {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .calendar-day {
-            background: rgba(255, 255, 255, 0.05);
-            min-height: 120px;
-            padding: 8px;
-            position: relative;
-        }
-
-        .day-number {
-            font-weight: 600;
-            margin-bottom: 5px;
-            opacity: 0.8;
-        }
-
-        .event-item {
-            background: #9b59b6;
-            color: white;
-            padding: 4px 6px;
-            margin: 2px 0;
-            border-radius: 4px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .event-item:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .event-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .event-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(52, 152, 219, 0.5);
-        }
-
-        .event-image {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            background: linear-gradient(135deg, #34495e, #2c3e50);
-        }
-
-        .event-content {
-            padding: 20px;
-        }
-
-        .event-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #ecf0f1;
-        }
-
-        .event-date {
-            color: #3498db;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .event-description {
-            color: rgba(236, 240, 241, 0.8);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .event-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            font-size: 14px;
-        }
-
-        .detail-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
-        }
-
-        .detail-label {
-            opacity: 0.7;
-        }
-
-        .detail-value {
-            color: #3498db;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .contact-link {
-            padding: 6px 12px;
-            background: rgba(52, 152, 219, 0.2);
-            border: 1px solid rgba(52, 152, 219, 0.3);
-            border-radius: 6px;
-            color: #3498db;
-            text-decoration: none;
-            font-size: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: rgba(52, 152, 219, 0.3);
-            transform: translateY(-1px);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .filters {
-                justify-content: center;
-            }
-            
-            .calendar-grid {
-                grid-template-columns: repeat(7, 1fr);
-                font-size: 12px;
-            }
-            
-            .calendar-day {
-                min-height: 80px;
-                padding: 4px;
-            }
-            
-            .event-cards {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Unofficial Clubhouse Show Calendar</title>
+<style>
+    :root{
+        --bg1:#2c3e50;--bg2:#3498db;--card:rgba(255,255,255,.1);
+        --text:#ecf0f1;--muted:rgba(236,240,241,.75);
+        --accent:#3498db;--accent-weak:rgba(52,152,219,.3);
+        --error:#e74c3c;--glass:rgba(0,0,0,.2);--glass-2:rgba(0,0,0,.3);
+        --grid-gap:1px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+        font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+        background:linear-gradient(135deg,var(--bg1),var(--bg2));color:var(--text);min-height:100vh
+    }
+    .container{max-width:1200px;margin:0 auto;padding:20px}
+    .header{text-align:center;margin-bottom:24px}
+    .header h1{font-size:2.25rem;margin-bottom:.35rem;font-weight:600}
+    .header p{opacity:.85;margin:.2rem 0}
+    .header a{color:#fff;text-decoration:underline dotted}
+    .meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:.35rem;opacity:.8;font-size:.9rem}
+    .loading{text-align:center;padding:32px;font-size:18px;opacity:.8}
+    .error{background:rgba(231,76,60,.2);border:1px solid rgba(231,76,60,.5);padding:12px;border-radius:8px;margin:16px 0}
+    .controls{background:var(--glass);padding:16px;border-radius:12px;margin:18px 0;display:grid;gap:12px}
+    .topbar{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+    .search-wrap{position:relative}
+    .search-bar{width:100%;padding:12px 40px 12px 14px;background:rgba(255,255,255,.1);
+        border:1px solid rgba(255,255,255,.25);border-radius:8px;color:var(--text);font-size:16px}
+    .search-bar::placeholder{color:rgba(236,240,241,.6)}
+    .search-icon{position:absolute;right:12px;top:50%;translate:0 -50%;opacity:.65}
+    .filters{display:flex;gap:10px;flex-wrap:wrap}
+    .filter-select{padding:10px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+        border-radius:8px;color:var(--text);font-size:14px;min-width:130px}
+    .view-toggle{display:flex;gap:8px;justify-content:flex-end}
+    .btn{padding:8px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+        border-radius:8px;color:var(--text);cursor:pointer;transition:.2s}
+    .btn:hover{background:var(--accent-weak)}
+    .btn.active{background:var(--accent);border-color:var(--accent)}
+    .monthbar{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+    .month-title{font-weight:700;letter-spacing:.3px}
+    .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:var(--grid-gap);
+        background:var(--glass);border-radius:10px;overflow:hidden;margin-top:10px}
+    .calendar-header{background:var(--glass-2);padding:10px;text-align:center;font-weight:600;font-size:13px}
+    .calendar-day{background:rgba(255,255,255,.06);min-height:120px;padding:8px;position:relative;display:flex;flex-direction:column;gap:4px}
+    .calendar-day.muted{opacity:.4}
+    .day-number{font-weight:700;opacity:.9;font-size:12px;margin-bottom:2px}
+    .calendar-day.today{outline:2px solid var(--accent);outline-offset:-2px}
+    .event-item{background:#9b59b6;color:#fff;padding:4px 6px;border-radius:6px;font-size:12px;cursor:pointer;transition:.15s;line-height:1.2}
+    .event-item:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.35)}
+    .event-chip{display:inline-block;padding:2px 6px;border-radius:999px;font-size:11px;margin-left:6px;opacity:.95}
+    .event-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;margin-top:14px}
+    .event-card{background:var(--card);border-radius:14px;overflow:hidden;transition:.2s;border:1px solid rgba(255,255,255,.12)}
+    .event-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.3);border-color:rgba(52,152,219,.45)}
+    .event-image{width:100%;height:auto;object-fit:contain;background:linear-gradient(135deg,#34495e,#2c3e50)}
+    .event-content{padding:16px}
+    .event-title{font-size:1.15rem;font-weight:700;margin-bottom:4px}
+    .event-date{color:var(--accent);font-weight:600;margin:6px 0 10px}
+    .event-description{color:var(--muted);line-height:1.55;margin:10px 0}
+    .event-details{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:14px}
+    .detail-item{display:flex;justify-content:space-between;gap:8px}
+    .detail-label{opacity:.7}
+    .detail-value{color:var(--accent)}
+    .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .link{padding:6px 10px;background:rgba(52,152,219,.18);border:1px solid rgba(52,152,219,.35);border-radius:8px;
+        color:var(--accent);text-decoration:none;font-size:12px;transition:.15s}
+    .link:hover{background:rgba(52,152,219,.3);transform:translateY(-1px)}
+    .hidden{display:none}
+    /* Modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:14px;z-index:999}
+    .modal{max-width:720px;width:100%;background:rgba(25,32,45,.95);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
+    .modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(255,255,255,.06)}
+    .modal-title{font-weight:700}
+    .modal-close{border:0;background:transparent;color:#fff;font-size:20px;cursor:pointer;opacity:.8}
+    .modal-body{padding:16px}
+    .modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    @media(max-width:768px){
+        .header h1{font-size:1.8rem}
+        .calendar-day{min-height:90px;padding:6px}
+        .event-cards{grid-template-columns:1fr}
+        .modal-grid{grid-template-columns:1fr}
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Unofficial Clubhouse Show Calendar</h1>
-            <p>To add your show to the calendar use <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwCbm_GQvwf2o8a5i31Y_Sch4cKLl4Xdc1XHysh12XtFRdKA/viewform" target="_blank" rel="noopener">this form</a>.</p>
-            <p>For corrections or suggestions email <a href="mailto:chousecal@gmail.com">chousecal@gmail.com</a></p>
-        </div>
-
-        <div class="loading" id="loadingMessage">Loading events...</div>
-        <div class="error hidden" id="errorMessage">Failed to load events. Please try again later.</div>
-        <div class="last-updated hidden" id="lastUpdated"></div>
-
-        <div class="controls hidden" id="controls">
-            <input type="text" class="search-bar" placeholder="Search for a show here..." id="searchInput">
-            
-            <div class="filters">
-                <select class="filter-select" id="stageFilter">
-                    <option value="">Stage</option>
-                </select>
-                
-                <select class="filter-select" id="genreFilter">
-                    <option value="">Genre</option>
-                </select>
-                
-                <select class="filter-select" id="dateFilter">
-                    <option value="">Date</option>
-                    <option value="today">Today</option>
-                    <option value="this-week">This Week</option>
-                    <option value="this-month">This Month</option>
-                </select>
-            </div>
-
-            <div class="view-toggle">
-                <button class="view-btn" id="listViewBtn">📋 List view</button>
-                <button class="view-btn active" id="calendarViewBtn">📅 Calendar</button>
-            </div>
-        </div>
-
-        <div id="calendarView" class="hidden">
-            <div class="calendar-grid" id="calendarGrid">
-                <!-- Calendar will be populated by JavaScript -->
-            </div>
-        </div>
-
-        <div id="listView" class="hidden">
-            <div class="event-cards" id="eventCards">
-                <!-- Event cards will be populated by JavaScript -->
-            </div>
+<div class="container">
+    <div class="header" role="banner">
+        <h1>Unofficial Clubhouse Show Calendar</h1>
+        <p>To add your show, use <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwCbm_GQvwf2o8a5i31Y_Sch4cKLl4Xdc1XHysh12XtFRdKA/viewform" target="_blank" rel="noopener">this form</a>.</p>
+        <p>Corrections or suggestions: <a href="mailto:chousecal@gmail.com">chousecal@gmail.com</a></p>
+        <div class="meta">
+            <span id="lastUpdated" class="hidden"></span>
+            <span id="tzLabel" class="hidden"></span>
         </div>
     </div>
 
-    <script>
-        // Global variables
-        let events = [];
-        let filteredEvents = [];
-        let currentView = 'calendar';
-        
-        // Configuration - GitHub repository data source
-        const DATA_SOURCE = 'https://clubhousecal.github.io/events.json';
+    <div class="loading" id="loadingMessage">Loading events…</div>
+    <div class="error hidden" id="errorMessage">Failed to load events. Please try again later.</div>
 
-        // Load events data
-        async function loadEvents() {
-            try {
-                console.log('Loading events from:', DATA_SOURCE);
-                const response = await fetch(DATA_SOURCE + '?_=' + Date.now());
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                const data = await response.json();
-                
-                if (data && data.events && Array.isArray(data.events)) {
-                    events = data.events.map(event => ({
-                        ...event,
-                        date: new Date(event.date)
-                    }));
-                    
-                    console.log(`✅ Loaded ${events.length} events successfully`);
-                    
-                    if (data.lastUpdated) {
-                        const lastUpdated = document.getElementById('lastUpdated');
-                        const updateDate = new Date(data.lastUpdated);
-                        lastUpdated.textContent = `Last updated: ${updateDate.toLocaleString()}`;
-                        lastUpdated.classList.remove('hidden');
-                    }
-                    
-                    filteredEvents = [...events];
-                    populateFilterOptions();
-                    initCalendar();
-                    
-                    document.getElementById('loadingMessage').classList.add('hidden');
-                    document.getElementById('controls').classList.remove('hidden');
-                    document.getElementById('calendarView').classList.remove('hidden');
-                } else {
-                    throw new Error('Invalid data format - no events array found');
-                }
-                
-            } catch (error) {
-                console.error('❌ Error loading events:', error);
-                document.getElementById('loadingMessage').classList.add('hidden');
-                document.getElementById('errorMessage').classList.remove('hidden');
-            }
-        }
+    <div id="controls" class="controls hidden" role="region" aria-label="Calendar controls">
+        <div class="topbar">
+            <div class="search-wrap">
+                <input id="searchInput" type="search" class="search-bar" placeholder="Search for a show…" aria-label="Search shows"/>
+                <span class="search-icon" aria-hidden="true">🔎</span>
+            </div>
+            <div class="view-toggle" role="tablist" aria-label="View toggle">
+                <button class="btn" id="listViewBtn" role="tab" aria-controls="listView">📋 List</button>
+                <button class="btn active" id="calendarViewBtn" role="tab" aria-controls="calendarView" aria-selected="true">📅 Calendar</button>
+            </div>
+        </div>
 
-        // Populate filter dropdowns with actual data
-        function populateFilterOptions() {
-            const stages = [...new Set(events.map(event => event.stage).filter(Boolean))];
-            const genres = [...new Set(events.map(event => event.genre).filter(Boolean))];
-            
-            const stageFilter = document.getElementById('stageFilter');
-            const genreFilter = document.getElementById('genreFilter');
-            
-            stageFilter.innerHTML = '<option value="">Stage</option>';
-            genreFilter.innerHTML = '<option value="">Genre</option>';
-            
-            stages.forEach(stage => {
-                const option = document.createElement('option');
-                option.value = stage;
-                option.textContent = stage;
-                stageFilter.appendChild(option);
-            });
-            
-            genres.forEach(genre => {
-                const option = document.createElement('option');
-                option.value = genre;
-                option.textContent = genre;
-                genreFilter.appendChild(option);
-            });
-        }
+        <div class="filters">
+            <select class="filter-select" id="stageFilter" aria-label="Filter by stage">
+                <option value="">Stage</option>
+            </select>
+            <select class="filter-select" id="genreFilter" aria-label="Filter by genre">
+                <option value="">Genre</option>
+            </select>
+            <select class="filter-select" id="dateFilter" aria-label="Quick date filter">
+                <option value="">Date</option>
+                <option value="today">Today</option>
+                <option value="this-week">This Week</option>
+                <option value="this-month">This Month</option>
+            </select>
+        </div>
 
-        // Generate calendar grid
-        function generateCalendar() {
-            const calendar = document.getElementById('calendarGrid');
-            const today = new Date();
-            const currentMonth = today.getMonth();
-            const currentYear = today.getFullYear();
-            
-            const daysOfWeek = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];
-            
-            calendar.innerHTML = '';
-            daysOfWeek.forEach(day => {
-                const header = document.createElement('div');
-                header.className = 'calendar-header';
-                header.textContent = day;
-                calendar.appendChild(header);
-            });
+        <div class="monthbar">
+            <div class="btns">
+                <button id="prevMonthBtn" class="btn" aria-label="Previous month">← Prev</button>
+                <button id="todayBtn" class="btn" aria-label="Jump to current month">Today</button>
+                <button id="nextMonthBtn" class="btn" aria-label="Next month">Next →</button>
+            </div>
+            <div class="month-title" id="monthLabel" aria-live="polite"></div>
+        </div>
+    </div>
 
-            const firstDay = new Date(currentYear, currentMonth, 1);
-            const lastDay = new Date(currentYear, currentMonth + 1, 0);
-            const daysInMonth = lastDay.getDate();
-            
-            let startDay = (firstDay.getDay() + 6) % 7;
-            
-            for (let i = 0; i < startDay; i++) {
-                const emptyDay = document.createElement('div');
-                emptyDay.className = 'calendar-day';
-                calendar.appendChild(emptyDay);
-            }
+    <div id="calendarView" class="hidden" role="region" aria-label="Calendar view">
+        <div class="calendar-grid" id="calendarGrid"></div>
+    </div>
 
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dayElement = document.createElement('div');
-                dayElement.className = 'calendar-day';
-                
-                const dayNumber = document.createElement('div');
-                dayNumber.className = 'day-number';
-                dayNumber.textContent = day;
-                dayElement.appendChild(dayNumber);
+    <div id="listView" class="hidden" role="region" aria-label="List view">
+        <div class="event-cards" id="eventCards"></div>
+    </div>
+</div>
 
-                const dayDate = new Date(currentYear, currentMonth, day);
-                const dayEvents = filteredEvents.filter(event => 
-                    event.date.toDateString() === dayDate.toDateString()
-                );
+<!-- Modal -->
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <div id="modalTitle" class="modal-title">Event</div>
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
 
-                dayEvents.forEach(event => {
-                    const eventElement = document.createElement('div');
-                    eventElement.className = 'event-item';
-                    eventElement.textContent = event.title;
-                    eventElement.onclick = () => showEventDetails(event);
-                    dayElement.appendChild(eventElement);
-                });
+<script>
+/* =============== State =============== */
+let events = [];
+let filteredEvents = [];
+let currentView = 'calendar';
+const DATA_SOURCE = 'https://clubhousecal.github.io/events.json';
+const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Los_Angeles';
+let currentYear, currentMonth; // numeric month (0-11)
+const url = new URL(window.location);
 
-                calendar.appendChild(dayElement);
-            }
-        }
+/* =============== Helpers =============== */
+const qs = sel => document.querySelector(sel);
+const qsa = sel => Array.from(document.querySelectorAll(sel));
+const safe = s => (s ?? '').toString();
 
-        // Generate event cards for list view
-        function generateEventCards() {
-            const container = document.getElementById('eventCards');
-            container.innerHTML = '';
+function parseDate(d){
+  // Prefer ISO strings in events.json, but be defensive
+  const dt = new Date(d);
+  return isNaN(dt) ? null : dt;
+}
+function fmtDate(dt){
+  if(!dt) return '';
+  return dt.toLocaleString('en-US',{
+    weekday:'long',year:'numeric',month:'long',day:'numeric',
+    hour:'2-digit',minute:'2-digit',timeZone:tz
+  });
+}
+function ymd(dt){
+  return dt ? dt.toISOString().slice(0,10) : '';
+}
+function stageColor(stage){
+  // Deterministic HSL from string
+  const s = safe(stage);
+  let hash = 0; for(let i=0;i<s.length;i++){hash = (hash*31 + s.charCodeAt(i))>>>0}
+  const hue = hash % 360;
+  return `hsl(${hue} 55% 45% / 1)`;
+}
+function slugify(str){return safe(str).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')}
+function eventId(ev){ return `${ymd(ev.date)}-${slugify(ev.title)}`}
 
-            filteredEvents.forEach(event => {
-                const card = document.createElement('div');
-                card.className = 'event-card';
-                card.innerHTML = `
-                    <img src="${event.image}" alt="${event.title}" class="event-image" onerror="this.src='https://via.placeholder.com/300x200/9b59b6/ffffff?text=${encodeURIComponent(event.title)}'">
-                    <div class="event-content">
-                        <h3 class="event-title">${event.title}</h3>
-                        <div class="event-date">${formatEventDate(event.date)}</div>
-                        <div class="event-description">${event.description}</div>
-                        <div class="event-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Stage:</span>
-                                <span class="detail-value">${event.stage}</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Duration:</span>
-                                <span class="detail-value">${event.duration}</span>
-                            </div>
-                        </div>
-                        <div class="contact-links">
-                            ${event.email ? `<a href="mailto:${event.email}" class="contact-link">Email Link</a>` : ''}
-                            ${event.instagram ? `<a href="https://instagram.com/${event.instagram.replace('@', '')}" class="contact-link">IG Link</a>` : ''}
-                            ${event.website ? `<a href="https://${event.website.startsWith('http') ? event.website : 'https://' + event.website}" class="contact-link">Website</a>` : ''}
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
+/* Calendar range helpers */
+function firstDayOfGrid(y,m){
+  const first = new Date(y,m,1);
+  const weekday = (first.getDay()+6)%7; // Mon=0
+  const start = new Date(y,m,1-weekday);
+  start.setHours(0,0,0,0);
+  return start;
+}
 
-        // Format date for display
-        function formatEventDate(date) {
-            const options = { 
-                weekday: 'long',
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            };
-            return date.toLocaleDateString('en-US', options);
-        }
+/* URL sync */
+function setParam(key,val){
+  if(val) url.searchParams.set(key,val); else url.searchParams.delete(key);
+  history.replaceState(null,'',url);
+}
 
-        // Initialize the calendar
-        function initCalendar() {
-            generateCalendar();
-            generateEventCards();
-            setupEventListeners();
-        }
+/* Debounce */
+function debounce(fn,ms=250){let t;return (...args)=>{clearTimeout(t);t=setTimeout(()=>fn(...args),ms)}}
 
-        // Setup event listeners
-        function setupEventListeners() {
-            document.getElementById('listViewBtn').onclick = () => switchView('list');
-            document.getElementById('calendarViewBtn').onclick = () => switchView('calendar');
-            document.getElementById('searchInput').oninput = filterEvents;
-            document.getElementById('stageFilter').onchange = filterEvents;
-            document.getElementById('genreFilter').onchange = filterEvents;
-            document.getElementById('dateFilter').onchange = filterEvents;
-            
-            // Today button
-            const todayBtn = document.getElementById('todayBtn');
-            if (todayBtn) {
-                todayBtn.onclick = () => goToToday();
-            }
-        }
+/* =============== Loading =============== */
+async function loadEvents(){
+  try{
+    const res = await fetch(DATA_SOURCE+'?_='+Date.now());
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    if(!data || !Array.isArray(data.events)) throw new Error('Invalid data format');
 
-        // Go to today's month
-        function goToToday() {
-            currentDate = new Date();
-            generateCalendar();
-        }
+    events = data.events
+      .map(e=>({
+        ...e,
+        title: safe(e.title),
+        stage: safe(e.stage),
+        genre: safe(e.genre),
+        description: safe(e.description),
+        email: safe(e.email),
+        instagram: safe(e.instagram),
+        website: safe(e.website),
+        duration: safe(e.duration),
+        image: safe(e.image),
+        date: parseDate(e.date)
+      }))
+      .filter(e=>e.date); // drop invalid
 
-        // Switch between calendar and list view
-        function switchView(view) {
-            currentView = view;
-            
-            const calendarView = document.getElementById('calendarView');
-            const listView = document.getElementById('listView');
-            const calendarBtn = document.getElementById('calendarViewBtn');
-            const listBtn = document.getElementById('listViewBtn');
+    // sort ascending by date
+    events.sort((a,b)=>a.date-b.date);
+    filteredEvents = [...events];
 
-            if (view === 'calendar') {
-                calendarView.classList.remove('hidden');
-                listView.classList.add('hidden');
-                calendarBtn.classList.add('active');
-                listBtn.classList.remove('active');
-            } else {
-                calendarView.classList.add('hidden');
-                listView.classList.remove('hidden');
-                listBtn.classList.add('active');
-                calendarBtn.classList.remove('active');
-                generateEventCards();
-            }
-        }
+    // last updated
+    if(data.lastUpdated){
+      const d = new Date(data.lastUpdated);
+      const el = qs('#lastUpdated');
+      el.textContent = `Last updated: ${d.toLocaleString()}`;
+      el.classList.remove('hidden');
+    }
+    const tzEl = qs('#tzLabel'); tzEl.textContent = `Times shown in ${tz}`; tzEl.classList.remove('hidden');
 
-        // Filter events based on search and filters
-        function filterEvents() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const stageFilter = document.getElementById('stageFilter').value;
-            const genreFilter = document.getElementById('genreFilter').value;
-            const dateFilter = document.getElementById('dateFilter').value;
+    populateFilterOptions();
+    initFromURL();
 
-            filteredEvents = events.filter(event => {
-                const matchesSearch = !searchTerm || 
-                    event.title.toLowerCase().includes(searchTerm) ||
-                    event.description.toLowerCase().includes(searchTerm);
-                
-                const matchesStage = !stageFilter || event.stage === stageFilter;
-                const matchesGenre = !genreFilter || event.genre === genreFilter;
-                
-                let matchesDate = true;
-                if (dateFilter === 'today') {
-                    const today = new Date();
-                    matchesDate = event.date.toDateString() === today.toDateString();
-                } else if (dateFilter === 'this-week') {
-                    const today = new Date();
-                    const weekFromNow = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
-                    matchesDate = event.date >= today && event.date <= weekFromNow;
-                } else if (dateFilter === 'this-month') {
-                    const today = new Date();
-                    matchesDate = event.date.getMonth() === today.getMonth() && 
-                                  event.date.getFullYear() === today.getFullYear();
-                }
+    qs('#loadingMessage').classList.add('hidden');
+    qs('#controls').classList.remove('hidden');
 
-                return matchesSearch && matchesStage && matchesGenre && matchesDate;
-            });
+    (currentView==='calendar' ? qs('#calendarView') : qs('#listView')).classList.remove('hidden');
+  }catch(err){
+    console.error(err);
+    qs('#loadingMessage').classList.add('hidden');
+    qs('#errorMessage').classList.remove('hidden');
+  }
+}
 
-            if (currentView === 'list') {
-                generateEventCards();
-            } else {
-                generateCalendar();
-            }
-        }
+/* =============== Filters / Search =============== */
+function populateFilterOptions(){
+  const stages = [...new Set(events.map(e=>e.stage).filter(Boolean))].sort();
+  const genres = [...new Set(events.map(e=>e.genre).filter(Boolean))].sort();
+  const stageSel = qs('#stageFilter'); const genreSel = qs('#genreFilter');
+  stageSel.innerHTML = '<option value="">Stage</option>';
+  genreSel.innerHTML = '<option value="">Genre</option>';
+  stages.forEach(s=>{
+    const o=document.createElement('option'); o.value=s; o.textContent=s; stageSel.appendChild(o);
+  });
+  genres.forEach(g=>{
+    const o=document.createElement('option'); o.value=g; o.textContent=g; genreSel.appendChild(o);
+  });
+}
 
-        // Show event details
-        function showEventDetails(event) {
-            const details = `
-Event: ${event.title}
-Date: ${formatEventDate(event.date)}
-Stage: ${event.stage}
-Genre: ${event.genre}
-Duration: ${event.duration}
+function applyFilters(){
+  const q = safe(qs('#searchInput').value).toLowerCase();
+  const stage = qs('#stageFilter').value;
+  const genre = qs('#genreFilter').value;
+  const dateF = qs('#dateFilter').value;
 
-Description: ${event.description}
+  setParam('q', q || null);
+  setParam('stage', stage || null);
+  setParam('genre', genre || null);
+  setParam('date', dateF || null);
 
-Contact:
-${event.email ? `Email: ${event.email}` : ''}
-${event.instagram ? `Instagram: ${event.instagram}` : ''}
-${event.website ? `Website: ${event.website}` : ''}
-            `;
-            alert(details);
-        }
+  const now = new Date(); now.setHours(0,0,0,0);
+  const weekEnd = new Date(now.getTime()+7*86400000);
 
-        // Initialize the application
-        document.addEventListener('DOMContentLoaded', function() {
-            loadEvents();
-        });
-    </script>
+  filteredEvents = events.filter(e=>{
+    const txt = (e.title+' '+e.description+' '+e.stage+' '+e.genre).toLowerCase();
+    const mQ = !q || txt.includes(q);
+    const mS = !stage || e.stage===stage;
+    const mG = !genre || e.genre===genre;
+    let mD = true;
+    if(dateF==='today'){ mD = ymd(e.date)===ymd(new Date()) }
+    else if(dateF==='this-week'){ mD = e.date >= now && e.date < weekEnd }
+    else if(dateF==='this-month'){ const t=new Date(); mD = e.date.getMonth()===t.getMonth() && e.date.getFullYear()===t.getFullYear() }
+    return mQ && mS && mG && mD;
+  });
+
+  if(currentView==='list') generateEventCards(); else generateCalendar();
+}
+
+const debouncedFilter = debounce(applyFilters, 200);
+
+/* =============== Calendar Render =============== */
+function generateCalendar(){
+  const grid = qs('#calendarGrid'); grid.innerHTML = '';
+  const daysOfWeek = ['MON','TUE','WED','THU','FRI','SAT','SUN'];
+  daysOfWeek.forEach(d=>{
+    const h = document.createElement('div'); h.className='calendar-header'; h.textContent=d; grid.appendChild(h);
+  });
+
+  qs('#monthLabel').textContent = new Date(currentYear, currentMonth, 1).toLocaleString('en-US',{month:'long', year:'numeric'});
+
+  const start = firstDayOfGrid(currentYear,currentMonth);
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  for(let i=0;i<42;i++){
+    const dayDate = new Date(start.getFullYear(), start.getMonth(), start.getDate()+i);
+    const cell = document.createElement('div');
+    cell.className = 'calendar-day' + (dayDate.getMonth()!==currentMonth ? ' muted' : '') + (ymd(dayDate)===ymd(today)?' today':'');
+
+    const dn = document.createElement('div'); dn.className='day-number'; dn.textContent=dayDate.getDate(); cell.appendChild(dn);
+
+    const dayEvents = filteredEvents.filter(e=> ymd(e.date)===ymd(dayDate));
+    dayEvents.forEach(ev=>{
+      const it = document.createElement('div');
+      it.className='event-item';
+      it.textContent = ev.title;
+      // stage chip
+      if(ev.stage){
+        const chip = document.createElement('span');
+        chip.className='event-chip';
+        chip.style.background = stageColor(ev.stage);
+        chip.textContent = ev.stage;
+        it.appendChild(chip);
+      }
+      it.onclick = ()=>openEventModal(ev);
+      cell.appendChild(it);
+    });
+
+    grid.appendChild(cell);
+  }
+}
+
+function prevMonth(){ const d = new Date(currentYear,currentMonth-1,1); currentYear=d.getFullYear(); currentMonth=d.getMonth(); setParam('month', `${currentYear}-${String(currentMonth+1).padStart(2,'0')}`); generateCalendar(); }
+function nextMonth(){ const d = new Date(currentYear,currentMonth+1,1); currentYear=d.getFullYear(); currentMonth=d.getMonth(); setParam('month', `${currentYear}-${String(currentMonth+1).padStart(2,'0')}`); generateCalendar(); }
+function goToToday(){ const t=new Date(); currentYear=t.getFullYear(); currentMonth=t.getMonth(); setParam('month', `${currentYear}-${String(currentMonth+1).padStart(2,'0')}`); generateCalendar(); }
+
+/* =============== List Render =============== */
+function generateEventCards(){
+  const wrap = qs('#eventCards'); wrap.innerHTML='';
+  filteredEvents.forEach(ev=>{
+    const card = document.createElement('div');
+    card.className='event-card';
+    const imgSrc = ev.image || '';
+    const fallback = `https://via.placeholder.com/600x320/9b59b6/ffffff?text=${encodeURIComponent(ev.title)}`;
+    const websiteHref = ev.website ? (ev.website.startsWith('http') ? ev.website : 'https://'+ev.website) : '';
+    const gcalUrl = googleCalendarUrl(ev);
+    const ics = buildICS(ev);
+
+    card.innerHTML = `
+      <img src="${imgSrc}" alt="${ev.title}" class="event-image" onerror="this.src='${fallback}'">
+      <div class="event-content">
+        <div class="event-title">${ev.title}
+          ${ev.stage ? `<span class="event-chip" style="background:${stageColor(ev.stage)}">${ev.stage}</span>`:''}
+        </div>
+        <div class="event-date">${fmtDate(ev.date)}</div>
+        <div class="event-description">${ev.description || ''}</div>
+        <div class="event-details">
+          <div class="detail-item"><span class="detail-label">Genre:</span><span class="detail-value">${ev.genre || '—'}</span></div>
+          <div class="detail-item"><span class="detail-label">Duration:</span><span class="detail-value">${ev.duration || '—'}</span></div>
+        </div>
+        <div class="links">
+          ${ev.email ? `<a class="link" href="mailto:${ev.email}">Email</a>`:''}
+          ${ev.instagram ? `<a class="link" target="_blank" rel="noopener" href="https://instagram.com/${ev.instagram.replace('@','')}">Instagram</a>`:''}
+          ${websiteHref ? `<a class="link" target="_blank" rel="noopener" href="${websiteHref}">Website</a>`:''}
+          <a class="link" target="_blank" rel="noopener" href="${gcalUrl}">Add to Google Calendar</a>
+          <a class="link" href="${ics}" download="${eventId(ev)}.ics">Download .ics</a>
+          <button class="link" type="button" data-id="${eventId(ev)}">Details</button>
+          <button class="link" type="button" data-copy="${shareLink(ev)}">Copy Link</button>
+        </div>
+      </div>
+    `;
+    // wire buttons
+    const btn = card.querySelector('[data-id]');
+    btn.addEventListener('click',()=>openEventModal(ev));
+    const copyBtn = card.querySelector('[data-copy]');
+    copyBtn.addEventListener('click', async (e)=>{
+      const link = e.currentTarget.getAttribute('data-copy');
+      try{ await navigator.clipboard.writeText(link); e.currentTarget.textContent='Copied!'; setTimeout(()=>e.currentTarget.textContent='Copy Link',900);}catch(_){}
+    });
+
+    wrap.appendChild(card);
+  });
+
+  // Auto-scroll to the next upcoming event in list view
+  const now = new Date();
+  const idx = filteredEvents.findIndex(e=>e.date>=now);
+  if(idx>=0){
+    const node = wrap.children[idx];
+    if(node) node.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+
+/* =============== Modal =============== */
+function openEventModal(ev){
+  const mb = qs('#modalBody'), md = qs('#modalBackdrop'), mt = qs('#modalTitle');
+  mt.textContent = ev.title;
+  const websiteHref = ev.website ? (ev.website.startsWith('http') ? ev.website : 'https://'+ev.website) : '';
+  const gcalUrl = googleCalendarUrl(ev);
+  const ics = buildICS(ev);
+  mb.innerHTML = `
+    <div class="modal-grid">
+      <div>
+        <p><strong>Date:</strong> ${fmtDate(ev.date)}</p>
+        <p><strong>Stage:</strong> ${ev.stage || '—'}</p>
+        <p><strong>Genre:</strong> ${ev.genre || '—'}</p>
+        <p><strong>Duration:</strong> ${ev.duration || '—'}</p>
+      </div>
+      <div>
+        <p class="event-description">${ev.description || ''}</p>
+        <div class="links" style="margin-top:6px">
+          ${ev.email ? `<a class="link" href="mailto:${ev.email}">Email</a>`:''}
+          ${ev.instagram ? `<a class="link" target="_blank" rel="noopener" href="https://instagram.com/${ev.instagram.replace('@','')}">Instagram</a>`:''}
+          ${websiteHref ? `<a class="link" target="_blank" rel="noopener" href="${websiteHref}">Website</a>`:''}
+          <a class="link" target="_blank" rel="noopener" href="${gcalUrl}">Google Calendar</a>
+          <a class="link" href="${ics}" download="${eventId(ev)}.ics">Download .ics</a>
+        </div>
+      </div>
+    </div>
+  `;
+  md.style.display='flex';
+  // focus trap-ish
+  qs('#modalClose').focus();
+}
+
+function closeModal(){ qs('#modalBackdrop').style.display='none' }
+
+/* =============== Calendar Links =============== */
+function googleCalendarUrl(ev){
+  // All-day vs timed: treat as timed; if duration parseable, add end. Fallback +1h.
+  const start = isoForGCal(ev.date);
+  const end = isoForGCal(endFromDuration(ev.date, ev.duration));
+  const text = encodeURIComponent(ev.title);
+  const details = encodeURIComponent(ev.description||'');
+  const location = encodeURIComponent(ev.stage||'Clubhouse');
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${start}/${end}&details=${details}&location=${location}`;
+}
+function isoForGCal(dt){
+  const z = new Date(dt);
+  // yyyymmddThhmmssZ — use UTC to avoid offset issues
+  return z.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
+}
+function endFromDuration(start, dur){
+  const s = new Date(start);
+  if(!dur) { s.setHours(s.getHours()+1); return s; }
+  const m = /(\d+)\s*h(?:ours?)?|\b(\d+)\s*m(?:in)?/gi;
+  let hours=0, mins=0, match;
+  while((match=m.exec(dur))!==null){
+    if(match[1]) hours += parseInt(match[1],10);
+    if(match[2]) mins += parseInt(match[2],10);
+  }
+  if(hours===0 && mins===0){ hours=1; }
+  s.setHours(s.getHours()+hours);
+  s.setMinutes(s.getMinutes()+mins);
+  return s;
+}
+function buildICS(ev){
+  const uid = eventId(ev)+'@clubhousecal';
+  const dtStart = formatICS(ev.date);
+  const dtEnd = formatICS(endFromDuration(ev.date, ev.duration));
+  const desc = (ev.description||'').replace(/\n/g,'\\n');
+  const loc = (ev.stage||'Clubhouse').replace(/\n/g,'\\n');
+  const body =
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//clubhousecal//EN
+BEGIN:VEVENT
+UID:${uid}
+DTSTAMP:${formatICS(new Date())}
+DTSTART:${dtStart}
+DTEND:${dtEnd}
+SUMMARY:${ev.title}
+DESCRIPTION:${desc}
+LOCATION:${loc}
+END:VEVENT
+END:VCALENDAR`;
+  return 'data:text/calendar;charset=utf-8,'+encodeURIComponent(body);
+}
+function pad(n){ return String(n).padStart(2,'0') }
+function formatICS(d){
+  const z = new Date(d);
+  return `${z.getUTCFullYear()}${pad(z.getUTCMonth()+1)}${pad(z.getUTCDate())}T${pad(z.getUTCHours())}${pad(z.getUTCMinutes())}00Z`;
+}
+function shareLink(ev){
+  const u = new URL(location.href);
+  u.searchParams.set('view', 'list');
+  u.searchParams.set('focus', eventId(ev));
+  return u.toString();
+}
+
+/* =============== View Switching =============== */
+function switchView(view){
+  currentView = view;
+  setParam('view', view);
+  const cal = qs('#calendarView'), list = qs('#listView');
+  const calBtn = qs('#calendarViewBtn'), listBtn = qs('#listViewBtn');
+  if(view==='calendar'){
+    cal.classList.remove('hidden'); list.classList.add('hidden');
+    calBtn.classList.add('active'); listBtn.classList.remove('active');
+    generateCalendar();
+  }else{
+    list.classList.remove('hidden'); cal.classList.add('hidden');
+    listBtn.classList.add('active'); calBtn.classList.remove('active');
+    generateEventCards();
+    // focus target if provided
+    const focusId = url.searchParams.get('focus');
+    if(focusId){
+      const idx = filteredEvents.findIndex(e=>eventId(e)===focusId);
+      if(idx>=0){
+        const node = qs('#eventCards').children[idx];
+        if(node) node.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  }
+}
+
+/* =============== Wiring =============== */
+function setupListeners(){
+  qs('#listViewBtn').onclick = ()=>switchView('list');
+  qs('#calendarViewBtn').onclick = ()=>switchView('calendar');
+  qs('#searchInput').addEventListener('input', debouncedFilter);
+  qs('#stageFilter').addEventListener('change', applyFilters);
+  qs('#genreFilter').addEventListener('change', applyFilters);
+  qs('#dateFilter').addEventListener('change', applyFilters);
+
+  qs('#prevMonthBtn').onclick = prevMonth;
+  qs('#nextMonthBtn').onclick = nextMonth;
+  qs('#todayBtn').onclick = goToToday;
+
+  // modal
+  qs('#modalClose').onclick = closeModal;
+  qs('#modalBackdrop').addEventListener('click', e=>{ if(e.target.id==='modalBackdrop') closeModal(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+}
+
+/* =============== URL -> UI init =============== */
+function initFromURL(){
+  // view
+  const v = url.searchParams.get('view');
+  if(v==='list') currentView='list';
+  setParam('view', currentView);
+
+  // month
+  const m = url.searchParams.get('month'); // YYYY-MM
+  const now = new Date();
+  if(m && /^\d{4}-\d{2}$/.test(m)){
+    const [y,mm]=m.split('-'); currentYear=+y; currentMonth=(+mm)-1;
+  } else { currentYear=now.getFullYear(); currentMonth=now.getMonth(); setParam('month', `${currentYear}-${String(currentMonth+1).padStart(2,'0')}`); }
+
+  // filters
+  ['q','stage','genre','date'].forEach(k=>{
+    const val = url.searchParams.get(k) || '';
+    const el = qs(k==='q' ? '#searchInput' : `#${k}Filter`);
+    if(el) el.value = val;
+  });
+
+  // initial renders
+  setupListeners();
+  (currentView==='list' ? switchView('list') : switchView('calendar'));
+  applyFilters();
+}
+
+/* =============== Boot =============== */
+document.addEventListener('DOMContentLoaded', loadEvents);
+</script>
 </body>
 </html>
