@@ -315,7 +315,7 @@
     <div class="container">
         <div class="header">
             <h1>Unofficial Clubhouse Show Calendar</h1>
-            <p>To add your show to the calendar use <a href="#">this form</a>.</p>
+            <p>To add your show to the calendar use <a href="#" target="_blank">this form</a>.</p>
             <p>For corrections or suggestions email <a href="mailto:chousecal@gmail.com">chousecal@gmail.com</a></p>
         </div>
 
@@ -375,27 +375,14 @@
         async function loadEvents() {
             try {
                 console.log('Loading events from:', DATA_SOURCE);
-                
-                // Show which URL we're trying to load
-                document.getElementById('loadingMessage').textContent = `Loading events from ${DATA_SOURCE}...`;
-                
-                const response = await fetch(DATA_SOURCE + '?_=' + Date.now()); // Cache busting
-                
-                console.log('Response status:', response.status);
-                console.log('Response ok:', response.ok);
+                const response = await fetch(DATA_SOURCE + '?_=' + Date.now());
                 
                 if (!response.ok) {
-                    if (response.status === 404) {
-                        throw new Error(`events.json not found. Please upload events.json to your GitHub repository.`);
-                    } else {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 
                 const data = await response.json();
-                console.log('Received data:', data);
                 
-                // Process the loaded data
                 if (data && data.events && Array.isArray(data.events)) {
                     events = data.events.map(event => ({
                         ...event,
@@ -404,7 +391,6 @@
                     
                     console.log(`✅ Loaded ${events.length} events successfully`);
                     
-                    // Show last updated time
                     if (data.lastUpdated) {
                         const lastUpdated = document.getElementById('lastUpdated');
                         const updateDate = new Date(data.lastUpdated);
@@ -416,7 +402,6 @@
                     populateFilterOptions();
                     initCalendar();
                     
-                    // Show controls and hide loading
                     document.getElementById('loadingMessage').classList.add('hidden');
                     document.getElementById('controls').classList.remove('hidden');
                     document.getElementById('calendarView').classList.remove('hidden');
@@ -426,114 +411,9 @@
                 
             } catch (error) {
                 console.error('❌ Error loading events:', error);
-                
-                // Show detailed error message
-                const errorMsg = document.getElementById('errorMessage');
-                let errorHtml = `<strong>Failed to load events:</strong> ${error.message}<br>`;
-                
-                if (error.message.includes('events.json not found')) {
-                    errorHtml += `
-                        <br><strong>To fix this:</strong>
-                        <ol style="margin: 10px 0; padding-left: 20px;">
-                            <li>Run your Google Apps Script to generate events.json</li>
-                            <li>Download events.json from the Google Drive link in the script logs</li>
-                            <li>Upload events.json to your GitHub repository</li>
-                        </ol>
-                        <small>Or use the test data below to verify the calendar is working.</small>
-                    `;
-                } else {
-                    errorHtml += `<small>Check the browser console (F12) for more details.</small>`;
-                }
-                
-                errorMsg.innerHTML = errorHtml;
-                
                 document.getElementById('loadingMessage').classList.add('hidden');
-                errorMsg.classList.remove('hidden');
-                
-                // Try to load sample data as fallback
-                console.log('🔄 Attempting to load sample data as fallback...');
-                setTimeout(loadSampleData, 1000);
+                document.getElementById('errorMessage').classList.remove('hidden');
             }
-        }
-
-        // Load sample data as fallback
-        function loadSampleData() {
-            try {
-                const data = getSampleData();
-                events = data.events.map(event => ({
-                    ...event,
-                    date: new Date(event.date)
-                }));
-                
-                filteredEvents = [...events];
-                populateFilterOptions();
-                initCalendar();
-                
-                // Show sample data notice
-                const errorMsg = document.getElementById('errorMessage');
-                errorMsg.innerHTML = `
-                    <strong>Notice:</strong> Showing sample data because events.json could not be loaded.<br>
-                    <small>Upload events.json to your GitHub repository to see live events.</small>
-                `;
-                errorMsg.classList.remove('hidden');
-                
-                // Show controls
-                document.getElementById('controls').classList.remove('hidden');
-                document.getElementById('calendarView').classList.remove('hidden');
-                
-                console.log('Loaded sample data successfully');
-            } catch (error) {
-                console.error('Failed to load sample data:', error);
-            }
-        }
-
-        // Sample data for testing
-        function getSampleData() {
-            return {
-                lastUpdated: new Date().toISOString(),
-                totalEvents: 3,
-                events: [
-                    {
-                        id: "1",
-                        title: "Musical Improv is Cool Again",
-                        date: new Date(2025, 8, 3, 19, 0).toISOString(),
-                        stage: "Downstairs",
-                        genre: "Musical Improv",
-                        description: "Home to some of LA's best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
-                        image: "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Musical+Improv",
-                        email: "info@example.com",
-                        instagram: "@musicalimprov",
-                        website: "musicalimprov.com",
-                        duration: "90 mins"
-                    },
-                    {
-                        id: "2",
-                        title: "Monday Music Jam",
-                        date: new Date(2025, 8, 8, 20, 0).toISOString(),
-                        stage: "Downstairs",
-                        genre: "Music",
-                        description: "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.",
-                        image: "https://via.placeholder.com/300x200/f39c12/ffffff?text=Music+Jam",
-                        email: "jam@example.com",
-                        instagram: "@mondaymusicjam",
-                        website: "musicjam.com",
-                        duration: "90 mins"
-                    },
-                    {
-                        id: "3",
-                        title: "Key Party Musical Improv",
-                        date: new Date(2025, 8, 10, 19, 30).toISOString(),
-                        stage: "Downstairs",
-                        genre: "Musical Improv",
-                        description: "Musical improv mash up show for musical improv veterans and alumni.",
-                        image: "https://via.placeholder.com/300x200/e74c3c/ffffff?text=Key+Party",
-                        email: "keyparty@example.com",
-                        instagram: "@keypartyimprov",
-                        website: "keyparty.com",
-                        duration: "60 mins"
-                    }
-                ]
-            };
         }
 
         // Populate filter dropdowns with actual data
@@ -544,11 +424,9 @@
             const stageFilter = document.getElementById('stageFilter');
             const genreFilter = document.getElementById('genreFilter');
             
-            // Clear existing options (except the first "All" option)
             stageFilter.innerHTML = '<option value="">Stage</option>';
             genreFilter.innerHTML = '<option value="">Genre</option>';
             
-            // Add stage options
             stages.forEach(stage => {
                 const option = document.createElement('option');
                 option.value = stage;
@@ -556,7 +434,6 @@
                 stageFilter.appendChild(option);
             });
             
-            // Add genre options
             genres.forEach(genre => {
                 const option = document.createElement('option');
                 option.value = genre;
@@ -679,7 +556,6 @@
         function setupEventListeners() {
             document.getElementById('listViewBtn').onclick = () => switchView('list');
             document.getElementById('calendarViewBtn').onclick = () => switchView('calendar');
-
             document.getElementById('searchInput').oninput = filterEvents;
             document.getElementById('stageFilter').onchange = filterEvents;
             document.getElementById('genreFilter').onchange = filterEvents;
@@ -767,15 +643,9 @@ ${event.website ? `Website: ${event.website}` : ''}
             alert(details);
         }
 
-        // Auto-refresh data every 10 minutes
-        function setupAutoRefresh() {
-            setInterval(loadEvents, 10 * 60 * 1000); // 10 minutes
-        }
-
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
             loadEvents();
-            setupAutoRefresh();
         });
     </script>
 </body>
