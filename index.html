@@ -209,7 +209,7 @@
 let events = [];
 let filteredEvents = [];
 let currentView = 'calendar';
-const DATA_SOURCE = 'https://clubhousecal.github.io/events.json';
+const DATA_SOURCE = './events.json';
 const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Los_Angeles';
 let currentYear, currentMonth; // numeric month (0-11)
 const url = new URL(window.location);
