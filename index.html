@@ -747,7 +747,7 @@ function formatICS(d){ const z=new Date(d); return `${z.getUTCFullYear()}${pad(z
 function switchView(view){
   currentView = view;
   setParam('view', view);
-  const cal = qs('#calendarView'), list = qs('#listView']);
+  const cal = qs('#calendarView'), list = qs('#listView');
   const calBtn = qs('#calendarViewBtn'), listBtn = qs('#listViewBtn');
 
   if(view==='calendar'){
