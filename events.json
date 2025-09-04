@@ -1,13 +1,16 @@
 {
-  "lastUpdated": "2025-09-03T23:42:09.971Z",
+  "lastUpdated": "2025-09-04T01:17:21.206Z",
   "totalEvents": 46,
   "events": [
     {
-      "id": "1bc23b11-612b-4b1a-92ec-f4c298ba7a49",
+      "id": "c5f70888-54a6-48f4-abfa-0d4f289a77b3",
       "title": "Musical Improv is Cool Again",
       "date": "2025-09-04T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv",
+      "genres": [
+        "Musical Improv"
+      ],
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
       "email": null,
@@ -16,24 +19,32 @@
       "duration": "90 mins"
     },
     {
-      "id": "94a3a1cd-7c1d-4b65-82e1-a90fa8828aed",
+      "id": "c6ed8daf-ffdd-4603-8796-458f73b07291",
       "title": "Jamwitch",
       "date": "2025-09-08T02:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv, Jam",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv",
+        "Jam"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Jamwitch",
       "email": "monooutbreak@gmail.com",
       "instagram": "@outbreakimprov",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "1f5239e7-cf8a-4981-80e9-f60526d7c094",
+      "id": "42731f42-fe79-4d69-8559-4775739c0819",
       "title": "Monday Music Jam",
       "date": "2025-09-09T02:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv, Jam",
+      "genres": [
+        "Musical Improv",
+        "Jam"
+      ],
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.  ",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
       "email": "musicalimprovjam@gmail.com",
@@ -42,24 +53,31 @@
       "duration": "90 mins"
     },
     {
-      "id": "dff9b034-15f3-4baf-92cf-9ed646880854",
+      "id": "428b63b2-6795-449c-890c-e52b273a3edc",
       "title": "Crash This Party",
       "date": "2025-09-09T02:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Crash%20This%20Party",
       "email": "Sorlen6059@msn.com",
       "instagram": "@sweetdalailama",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "1898bb3f-4fd6-4aa6-8f58-9e0e41a210d0",
+      "id": "2853c40f-b3af-4752-b34c-f08f107ea920",
       "title": "Key Party Musical Improv",
       "date": "2025-09-11T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv",
+      "genres": [
+        "Musical Improv"
+      ],
       "description": "Musical improv mash up show for musical improv students and alumni. ",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
       "email": null,
@@ -68,50 +86,64 @@
       "duration": "60 mins"
     },
     {
-      "id": "6e557042-c01e-4e88-9879-50b5fbc70445",
+      "id": "a94be5a3-867f-4a13-87a8-8688e3054022",
       "title": "The Honeymoon Sweet",
       "date": "2025-09-11T04:00:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=The%20Honeymoon%20Sweet",
       "email": "Honeymoonimprov@gmail.com",
       "instagram": "@honeymoonimprov",
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "9e60bc57-727d-42ac-89d1-30fcae769a36",
+      "id": "e0aebe1d-79a2-4e59-8bd5-06c444f9bbd8",
       "title": "Columbo at The Clubhouse",
       "date": "2025-09-14T02:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Columbo%20at%20The%20Clubhouse",
       "email": "sgsullivan86@gmail.com",
       "instagram": null,
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "574bf1d2-97d6-405b-9d29-bc1d09c674bb",
+      "id": "24a3b330-4dda-42dd-bb2d-e56d58d9e8a3",
       "title": "Crash This Party",
       "date": "2025-09-16T02:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Crash%20This%20Party",
       "email": "Sorlen6059@msn.com",
       "instagram": "@sweetdalailama",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "f0626118-f8c4-4337-93ac-8d34ef632681",
+      "id": "e12f3dbf-625b-49ff-ab9c-408c01220813",
       "title": "Musical Improv is Cool Again",
       "date": "2025-09-18T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv",
+      "genres": [
+        "Musical Improv"
+      ],
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
       "email": null,
@@ -120,38 +152,48 @@
       "duration": "90 mins"
     },
     {
-      "id": "5a69fabe-b052-4e00-b500-b9d629e52053",
+      "id": "dea290d6-f5d0-4968-9e6c-68b4304b3df4",
       "title": "Drawing With Sharpies",
       "date": "2025-09-19T05:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Drawing%20With%20Sharpies",
       "email": "thesilversharpies@gmail.com",
       "instagram": null,
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "8b3efd0a-ebf8-47a3-a228-54c97da0f042",
+      "id": "38854954-eb3f-4067-acb2-d8504e7ef9fc",
       "title": "Jamwitch",
       "date": "2025-09-22T02:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv, Jam",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv",
+        "Jam"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Jamwitch",
       "email": "monooutbreak@gmail.com",
       "instagram": "@outbreakimprov",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "ffa88b88-91a1-4fac-8ce7-e83083c69b41",
+      "id": "57048ac6-4613-43f9-b234-4616fb3826db",
       "title": "Toast, a Jam",
       "date": "2025-09-22T03:30:00.000Z",
       "stage": "Downstairs",
       "genre": "Jam",
-      "description": "Coming soon",
+      "genres": [
+        "Jam"
+      ],
+      "description": "",
       "image": "https://postimg.cc/crBtK5Kw",
       "email": "classes@improv-la.com",
       "instagram": "@improvla",
@@ -159,11 +201,15 @@
       "duration": "1 hr"
     },
     {
-      "id": "e608f2f4-82b3-40d0-8090-14ff6b913efc",
+      "id": "16f3f2e3-0b4f-486d-bbf3-a796f8eb3789",
       "title": "Monday Music Jam",
       "date": "2025-09-23T02:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv, Jam",
+      "genres": [
+        "Musical Improv",
+        "Jam"
+      ],
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.  ",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
       "email": "musicalimprovjam@gmail.com",
@@ -172,37 +218,47 @@
       "duration": "90 mins"
     },
     {
-      "id": "4057ab82-1109-42e6-bcd1-2058e6fd2aac",
+      "id": "7db0b73b-f777-4833-82c3-19d87d7e27d6",
       "title": "The Honeymoon Sweet",
       "date": "2025-09-25T04:00:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=The%20Honeymoon%20Sweet",
       "email": "Honeymoonimprov@gmail.com",
       "instagram": "@honeymoonimprov",
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "3c5b9cd5-452d-48c8-bc6a-ed4c271ce5f3",
+      "id": "8eb71c28-9761-4edd-befe-7a4b1f76763a",
       "title": "Columbo at The Clubhouse",
       "date": "2025-09-28T02:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Columbo%20at%20The%20Clubhouse",
       "email": "sgsullivan86@gmail.com",
       "instagram": null,
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "fc20ae2e-0007-4620-9779-a0d444fcbcdc",
+      "id": "e20d7e52-5b87-4259-a597-76bf58d79cbb",
       "title": "Musical Improv is Cool Again",
       "date": "2025-10-02T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv",
+      "genres": [
+        "Musical Improv"
+      ],
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
       "email": null,
@@ -211,50 +267,65 @@
       "duration": "90 mins"
     },
     {
-      "id": "dfbbe5a9-2bdd-44d8-a189-8848ccc56d26",
+      "id": "131a82a6-d5b5-4046-92bf-180c6754e9ba",
       "title": "Jamwitch",
       "date": "2025-10-06T02:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv, Jam",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv",
+        "Jam"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Jamwitch",
       "email": "monooutbreak@gmail.com",
       "instagram": "@outbreakimprov",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "8ba1b3aa-9250-46ac-97f4-8544a6292bdd",
+      "id": "9bb69f92-109d-43fe-a245-755f5817ba7c",
       "title": "Crash This Party",
       "date": "2025-10-07T02:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Crash%20This%20Party",
       "email": "Sorlen6059@msn.com",
       "instagram": "@sweetdalailama",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "d79001a2-15bd-4da0-8f67-a68d2813f34d",
+      "id": "9bf14d46-b954-42fb-a734-e8238c548075",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2025-10-08T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=The%20Father%20Bible%20Super%20Holy%20Variety%20Hour",
       "email": "sdw126@gmail.com",
       "instagram": "@fatherbible",
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "49b7dc42-8c22-48e1-9943-e50d218a570c",
+      "id": "448a5a14-53c4-4f22-9e83-272aad4f483c",
       "title": "Key Party Musical Improv",
       "date": "2025-10-09T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv",
+      "genres": [
+        "Musical Improv"
+      ],
       "description": "Musical improv mash up show for musical improv students and alumni. ",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
       "email": null,
@@ -263,37 +334,48 @@
       "duration": "60 mins"
     },
     {
-      "id": "856ad3f2-3c14-4820-b5cc-76b39bcb0d51",
+      "id": "78898c07-4b96-4e54-88eb-01fa678b51d4",
       "title": "The Honeymoon Sweet",
       "date": "2025-10-09T04:00:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=The%20Honeymoon%20Sweet",
       "email": "Honeymoonimprov@gmail.com",
       "instagram": "@honeymoonimprov",
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "433a58e9-091a-4702-b1ab-19af03466f21",
+      "id": "c8718aa1-6f55-4a60-9c66-ee0df2a76c7c",
       "title": "Columbo at The Clubhouse",
       "date": "2025-10-12T02:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Columbo%20at%20The%20Clubhouse",
       "email": "sgsullivan86@gmail.com",
       "instagram": null,
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "cb646d97-6337-403d-941e-8574f0a705c0",
+      "id": "2c751ed2-d105-4df9-80ff-4b31980dd3ee",
       "title": "Monday Music Jam",
       "date": "2025-10-14T02:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv, Jam",
+      "genres": [
+        "Musical Improv",
+        "Jam"
+      ],
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.  ",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
       "email": "musicalimprovjam@gmail.com",
@@ -302,24 +384,31 @@
       "duration": "90 mins"
     },
     {
-      "id": "5f054da0-26a4-4f37-b864-b6e95e9ede05",
+      "id": "f285ee76-3f6d-4f31-94e3-6fa4f5866e66",
       "title": "Crash This Party",
       "date": "2025-10-14T02:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Crash%20This%20Party",
       "email": "Sorlen6059@msn.com",
       "instagram": "@sweetdalailama",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "853b61aa-9781-4147-b021-f039642e252b",
+      "id": "a3e06ce7-e354-4c8c-9891-cd36a6dad6c4",
       "title": "Musical Improv is Cool Again",
       "date": "2025-10-16T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv",
+      "genres": [
+        "Musical Improv"
+      ],
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
       "email": null,
@@ -328,38 +417,48 @@
       "duration": "90 mins"
     },
     {
-      "id": "c0a302b8-a8e6-4fd6-a421-c06dc1914442",
+      "id": "e006ba4c-bf61-441a-b404-b4c91f593658",
       "title": "Drawing With Sharpies",
       "date": "2025-10-17T05:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Drawing%20With%20Sharpies",
       "email": "thesilversharpies@gmail.com",
       "instagram": null,
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "4a541ae3-83d6-4d63-92e1-038c2c830c43",
+      "id": "5422371b-7df0-49d3-944e-d22ca12d7dd6",
       "title": "Jamwitch",
       "date": "2025-10-20T02:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv, Jam",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv",
+        "Jam"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Jamwitch",
       "email": "monooutbreak@gmail.com",
       "instagram": "@outbreakimprov",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "84cd2248-ddc8-4072-8218-4a702295a144",
+      "id": "4a23afcc-1db0-4a14-8f36-906636292b9b",
       "title": "Toast, a Jam",
       "date": "2025-10-20T03:30:00.000Z",
       "stage": "Downstairs",
       "genre": "Jam",
-      "description": "Coming soon",
+      "genres": [
+        "Jam"
+      ],
+      "description": "",
       "image": "https://postimg.cc/crBtK5Kw",
       "email": "classes@improv-la.com",
       "instagram": "@improvla",
@@ -367,50 +466,65 @@
       "duration": "1 hr"
     },
     {
-      "id": "6008c59a-aafb-437b-a1eb-7b5a058942b6",
+      "id": "fb097e25-3108-452e-b7fa-75c5657e7bbd",
       "title": "Crash This Party",
       "date": "2025-10-21T02:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Crash%20This%20Party",
       "email": "Sorlen6059@msn.com",
       "instagram": "@sweetdalailama",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "79902171-2263-4d86-98ca-b4633657f3de",
+      "id": "c8a49452-c216-48e6-9f19-7f64e99bd231",
       "title": "The Honeymoon Sweet",
       "date": "2025-10-23T04:00:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=The%20Honeymoon%20Sweet",
       "email": "Honeymoonimprov@gmail.com",
       "instagram": "@honeymoonimprov",
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "c2f16811-918a-4b3d-b69c-0f83d9fe16d5",
+      "id": "51bc048e-07dc-43c9-8686-874cdef1c5ce",
       "title": "Columbo at The Clubhouse",
       "date": "2025-10-26T02:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Columbo%20at%20The%20Clubhouse",
       "email": "sgsullivan86@gmail.com",
       "instagram": null,
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "8de4c035-6c5d-4768-b726-8099f6688c03",
+      "id": "97bd9b50-fac2-44c5-9623-3acf3a9de22c",
       "title": "Monday Music Jam",
       "date": "2025-10-28T02:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv, Jam",
+      "genres": [
+        "Musical Improv",
+        "Jam"
+      ],
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.  ",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
       "email": "musicalimprovjam@gmail.com",
@@ -419,76 +533,99 @@
       "duration": "90 mins"
     },
     {
-      "id": "3d178a07-6d4d-48ba-a891-62c11be7dae4",
+      "id": "7988b7a4-8bdf-4b81-8557-c4732cf3f619",
       "title": "Jamwitch",
       "date": "2025-11-03T03:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv, Jam",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv",
+        "Jam"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Jamwitch",
       "email": "monooutbreak@gmail.com",
       "instagram": "@outbreakimprov",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "d4c2140a-79fb-43dd-98e5-13352f5797b9",
+      "id": "45420d7f-0d80-4724-abc6-1d7184f958f4",
       "title": "Crash This Party",
       "date": "2025-11-04T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Crash%20This%20Party",
       "email": "Sorlen6059@msn.com",
       "instagram": "@sweetdalailama",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "e3aba8b2-1e38-42b4-aa5f-159781a08908",
+      "id": "97010f16-9b68-4b7b-baee-aa926a77f57b",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2025-11-05T04:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=The%20Father%20Bible%20Super%20Holy%20Variety%20Hour",
       "email": "sdw126@gmail.com",
       "instagram": "@fatherbible",
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "2d7dcc6a-076e-4fc5-95a9-fe7a39f267b3",
+      "id": "9a5e688d-b607-405c-b6f4-2215c47037c6",
       "title": "Columbo at The Clubhouse",
       "date": "2025-11-09T03:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Columbo%20at%20The%20Clubhouse",
       "email": "sgsullivan86@gmail.com",
       "instagram": null,
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "a8867032-848a-440c-9dd3-ce96f22dc4dc",
+      "id": "e3973cdb-b8e9-4b12-a96e-e2d288d821d0",
       "title": "Crash This Party",
       "date": "2025-11-11T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Crash%20This%20Party",
       "email": "Sorlen6059@msn.com",
       "instagram": "@sweetdalailama",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "e5ecbbf7-befe-4edd-baac-16c2fb68b302",
+      "id": "2634bc7c-1606-4dc3-a6dc-ea3f0d2e9153",
       "title": "Key Party Musical Improv",
       "date": "2025-11-13T04:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Musical Improv",
+      "genres": [
+        "Musical Improv"
+      ],
       "description": "Musical improv mash up show for musical improv students and alumni. ",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
       "email": null,
@@ -497,38 +634,48 @@
       "duration": "60 mins"
     },
     {
-      "id": "33951386-b4de-4bc2-a81a-007d396bb0ee",
+      "id": "b7b48640-5170-408e-9d7c-d8160c164566",
       "title": "The Honeymoon Sweet",
       "date": "2025-11-13T05:00:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=The%20Honeymoon%20Sweet",
       "email": "Honeymoonimprov@gmail.com",
       "instagram": "@honeymoonimprov",
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "dd1c9097-0041-4e22-9937-becf0e5b444d",
+      "id": "8a8c42b4-c285-456c-8d34-edb50afb356b",
       "title": "Jamwitch",
       "date": "2025-11-17T03:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv, Jam",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv",
+        "Jam"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Jamwitch",
       "email": "monooutbreak@gmail.com",
       "instagram": "@outbreakimprov",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "77af01f0-2e23-4f7d-84cb-6426c90dca58",
+      "id": "70f37d61-f55e-4047-8ff8-21a1a65c9c5b",
       "title": "Toast, a Jam",
       "date": "2025-11-17T04:30:00.000Z",
       "stage": "Downstairs",
       "genre": "Jam",
-      "description": "Coming soon",
+      "genres": [
+        "Jam"
+      ],
+      "description": "",
       "image": "https://postimg.cc/crBtK5Kw",
       "email": "classes@improv-la.com",
       "instagram": "@improvla",
@@ -536,65 +683,83 @@
       "duration": "1 hr"
     },
     {
-      "id": "9389d8aa-6b9c-4edd-91b7-0abc4ba38ff1",
+      "id": "5146aec2-790c-45f5-8b79-8fc112e24633",
       "title": "Crash This Party",
       "date": "2025-11-18T03:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Crash%20This%20Party",
       "email": "Sorlen6059@msn.com",
       "instagram": "@sweetdalailama",
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "6a000f17-1d04-4a9a-9334-71a95a3d23dc",
+      "id": "69a8fa53-2167-4345-b92a-8c49dbba469e",
       "title": "Drawing With Sharpies",
       "date": "2025-11-21T06:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Drawing%20With%20Sharpies",
       "email": "thesilversharpies@gmail.com",
       "instagram": null,
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "13d391de-37d0-4669-b2e5-ecf4628e7bc2",
+      "id": "0496d453-5065-4fcb-8f54-5a8df227d72c",
       "title": "Columbo at The Clubhouse",
       "date": "2025-11-23T03:30:00.000Z",
       "stage": "Upstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Columbo%20at%20The%20Clubhouse",
       "email": "sgsullivan86@gmail.com",
       "instagram": null,
       "website": null,
       "duration": "90 mins"
     },
     {
-      "id": "fae9196a-f43d-461a-8229-2f0e5a971f89",
+      "id": "e372aef6-1ea1-4106-8e05-6ee7d79d7841",
       "title": "The Honeymoon Sweet",
       "date": "2025-11-27T05:00:00.000Z",
       "stage": "Upstairs",
       "genre": "Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=The%20Honeymoon%20Sweet",
       "email": "Honeymoonimprov@gmail.com",
       "instagram": "@honeymoonimprov",
       "website": null,
       "duration": "60 mins"
     },
     {
-      "id": "bc85483d-248a-4f7d-b5bf-9f95521a1c22",
+      "id": "0306393d-2b47-42c1-b1b1-dd95bac645a7",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2025-12-03T04:00:00.000Z",
       "stage": "Downstairs",
       "genre": "Variety, Improv",
-      "description": "Coming soon",
-      "image": "Coming soon",
+      "genres": [
+        "Variety",
+        "Improv"
+      ],
+      "description": "",
+      "image": "https://via.placeholder.com/300x200/9b59b6/ffffff?text=The%20Father%20Bible%20Super%20Holy%20Variety%20Hour",
       "email": "sdw126@gmail.com",
       "instagram": "@fatherbible",
       "website": null,
