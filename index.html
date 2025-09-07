@@ -337,6 +337,23 @@ function fmtDate(dt){
     hour:'2-digit', minute:'2-digit', timeZone: tz,
   });
 }
+// Add N days to a YYYY-MM-DD string (pure date math, tz-agnostic)
+function addDaysToYMD(ymdStr, days){
+  let [y, m, d] = ymdStr.split('-').map(Number); // m = 1..12
+  while (days > 0) {
+    const dim = new Date(y, m, 0).getDate();     // days in month
+    d++;
+    if (d > dim) { d = 1; m++; if (m > 12) { m = 1; y++; } }
+    days--;
+  }
+  return `${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+}
+// Month key in LA timezone, e.g. "2025-09"
+function ym(dt){
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: VENUE_TZ, year: 'numeric', month: '2-digit'
+  }).format(dt);
+}
 // Returns YYYY-MM-DD in the venue timezone (not UTC)
 function ymd(dt){
   if (!dt) return '';
@@ -497,24 +514,33 @@ function applyFilters(){
   setParam('q', q || null);
   setParam('stage', stage || null);
   setParam('date', dateF || null);
-  setParam('genres', selectedGenres.size? Array.from(selectedGenres).join(',') : null);
+  setParam('genres', selectedGenres.size ? Array.from(selectedGenres).join(',') : null);
 
-  var now = new Date(); now.setHours(0,0,0,0);
-  var weekEnd = new Date(now.getTime()+7*86400000);
+  // LA-aware day keys
+  var todayKey   = ymd(new Date());             // e.g. "2025-09-10" in LA
+  var weekEndKey = addDaysToYMD(todayKey, 7);   // 7 LA days ahead
+  var monthKey   = ym(new Date());              // e.g. "2025-09" in LA
 
   filteredEvents = events.filter(function(e){
     var txt = (e.title+' '+e.description+' '+e.stage+' '+(e.genres||[]).join(' ')).toLowerCase();
     var mQ = !q || txt.indexOf(q) !== -1;
-    var mS = !stage || e.stage===stage;
-    var mG = selectedGenres.size===0 || (e.genres||[]).some(function(g){return selectedGenres.has(g.toLowerCase());});
+    var mS = !stage || e.stage === stage;
+    var mG = selectedGenres.size === 0 || (e.genres||[]).some(function(g){ return selectedGenres.has(g.toLowerCase()); });
+
     var mD = true;
-    if(dateF==='today'){ mD = ymd(e.date)===ymd(new Date()); }
-    else if(dateF==='this-week'){ mD = e.date >= now && e.date < weekEnd; }
-    else if(dateF==='this-month'){ var t=new Date(); mD = e.date.getMonth()===t.getMonth() && e.date.getFullYear()===t.getFullYear(); }
+    if (dateF === 'today') {
+      mD = ymd(e.date) === todayKey;
+    } else if (dateF === 'this-week') {
+      var k = ymd(e.date);
+      mD = (k >= todayKey && k <= weekEndKey);
+    } else if (dateF === 'this-month') {
+      mD = ym(e.date) === monthKey;
+    }
+
     return mQ && mS && mG && mD;
   });
 
-  if(currentView==='list') generateEventCards(); else generateCalendar();
+  if (currentView === 'list') generateEventCards(); else generateCalendar();
 }
 
 var debouncedFilter = debounce(applyFilters, 200);
