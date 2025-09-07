@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2025-09-07T11:02:25-07:00",
+  "lastUpdated": "2025-09-07T11:37:20-07:00",
   "tz": "America/Los_Angeles",
-  "totalEvents": 199,
+  "totalEvents": 190,
   "events": [
     {
-      "id": "65fbf54c-0d9b-4f54-88fb-866896389bf0",
+      "id": "0b1142a1-ab41-430f-b6be-ced1fb86e9c7",
       "title": "Jamwitch",
       "date": "2025-09-07T19:30:00-07:00",
       "stage": "Upstairs",
@@ -17,7 +17,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "78793400-ed90-4343-99bb-5e8e9023b70b",
+      "id": "4d094a35-c973-48e9-8c98-54a0864d5ba4",
       "title": "Monday Music Jam",
       "date": "2025-09-08T19:00:00-07:00",
       "stage": "Downstairs",
@@ -30,7 +30,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "c53d0c48-95f8-4b8e-8c56-51a785f4ca44",
+      "id": "958ccff8-f08a-49c4-a268-8b02d12ee2a1",
       "title": "Key Party Musical Improv",
       "date": "2025-09-10T20:00:00-07:00",
       "stage": "Downstairs",
@@ -43,7 +43,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "e4190446-2eee-4d77-9a97-45d28181fdd0",
+      "id": "a502b126-ffd4-4386-9212-86d84b5a51f2",
       "title": "The Honeymoon Sweet",
       "date": "2025-09-10T21:00:00-07:00",
       "stage": "Upstairs",
@@ -56,7 +56,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "349f0e5b-686b-4ffe-8684-6ab2c1c7a962",
+      "id": "7dfdae08-6749-4a5c-a1b9-8ba7cc356452",
       "title": "Columbo at The Clubhouse",
       "date": "2025-09-13T19:30:00-07:00",
       "stage": "Upstairs",
@@ -69,7 +69,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "969224a4-fdfa-4538-804c-009c9e800a71",
+      "id": "005eb315-3205-450a-933d-67df3cafa20e",
       "title": "Musical Improv is Cool Again",
       "date": "2025-09-17T20:00:00-07:00",
       "stage": "Downstairs",
@@ -82,7 +82,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "82abfde3-afaf-4ac4-bafc-7a06d1b8e39b",
+      "id": "a00f7ddf-7b2a-4e8d-8190-6c644782a88d",
       "title": "Drawing With Sharpies",
       "date": "2025-09-18T22:00:00-07:00",
       "stage": "Downstairs",
@@ -95,7 +95,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "ce52cc09-6072-4560-91fc-7e8f41717d08",
+      "id": "bb050932-2568-4290-b4a1-c0d3ea93c7a4",
       "title": "Jamwitch",
       "date": "2025-09-21T19:30:00-07:00",
       "stage": "Upstairs",
@@ -108,7 +108,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "1bcbf9d0-93d6-4716-bee8-b10723c80312",
+      "id": "3ec4b096-2046-4765-98c0-44989d8c8abe",
       "title": "Toast, a Jam",
       "date": "2025-09-21T20:30:00-07:00",
       "stage": "Downstairs",
@@ -121,7 +121,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "4e1f6df3-cd88-4371-9310-cb9fba6806a1",
+      "id": "2242fe66-fb88-4ef0-bcf6-57c057d075f7",
       "title": "Monday Music Jam",
       "date": "2025-09-22T19:00:00-07:00",
       "stage": "Downstairs",
@@ -134,7 +134,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "0cd25f81-bf46-420c-8f1b-8946061550c1",
+      "id": "913c163f-6cad-4f4e-8244-92a2951291bf",
       "title": "The Honeymoon Sweet",
       "date": "2025-09-24T21:00:00-07:00",
       "stage": "Upstairs",
@@ -147,7 +147,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "6d5d5970-c256-4d28-add7-f17ce19b7624",
+      "id": "88cbcf8d-bcc1-45d1-9366-2d54032a00d4",
       "title": "Columbo at The Clubhouse",
       "date": "2025-09-27T19:30:00-07:00",
       "stage": "Upstairs",
@@ -160,7 +160,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "ddbd71f1-c41d-4226-9976-c31936f29cfb",
+      "id": "00438b3b-17fc-46cd-98b1-9a3ed9c3550c",
       "title": "Musical Improv is Cool Again",
       "date": "2025-10-01T20:00:00-07:00",
       "stage": "Downstairs",
@@ -173,7 +173,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "98deab83-ecb9-43b0-ac9b-4441af8de9d5",
+      "id": "57740e25-c7ed-4978-ba79-8fabb8a337d4",
       "title": "Jamwitch",
       "date": "2025-10-05T19:30:00-07:00",
       "stage": "Upstairs",
@@ -186,7 +186,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "bc974c33-f67a-4327-867f-e0ecd355bb45",
+      "id": "3e129cea-e877-46cf-80eb-f6809da548da",
       "title": "Crash This Party",
       "date": "2025-10-06T19:00:00-07:00",
       "stage": "Downstairs",
@@ -199,7 +199,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "5a933952-7483-47c9-9440-25ef20f32cdd",
+      "id": "dbfaf3cf-0159-454e-8f71-31330fc1085e",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2025-10-07T20:00:00-07:00",
       "stage": "Downstairs",
@@ -212,7 +212,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "cb76cf87-f148-46b8-85f0-1c683926093f",
+      "id": "3b59f469-97d4-4aa7-8c9e-7ddce14b5608",
       "title": "Key Party Musical Improv",
       "date": "2025-10-08T20:00:00-07:00",
       "stage": "Downstairs",
@@ -225,7 +225,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "dc416eba-4574-4ab3-b964-d6f131be59a3",
+      "id": "3404305a-6a2c-435e-b83d-ec412ef92720",
       "title": "The Honeymoon Sweet",
       "date": "2025-10-08T21:00:00-07:00",
       "stage": "Upstairs",
@@ -238,7 +238,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "447848a1-52e0-4dc5-83b8-b4e32a3235da",
+      "id": "065626ed-ac31-45c3-975a-644870cf57ea",
       "title": "Columbo at The Clubhouse",
       "date": "2025-10-11T19:30:00-07:00",
       "stage": "Upstairs",
@@ -251,7 +251,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "f55fe132-44b1-4bf1-9f6f-bf4e3e38d1a4",
+      "id": "426cfd21-ddea-4243-aa0f-364ea482661f",
       "title": "Monday Music Jam",
       "date": "2025-10-13T19:00:00-07:00",
       "stage": "Downstairs",
@@ -264,20 +264,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "a36d54ea-800c-4cd9-a0fa-4863b1f4299a",
-      "title": "Crash This Party",
-      "date": "2025-10-13T19:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "Sorlen6059@msn.com",
-      "instagram": "@sweetdalailama",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "1e9430a8-ef67-4ec0-9a3e-167d64f28bfa",
+      "id": "79b90436-f650-462e-90fb-2743892d7467",
       "title": "Musical Improv is Cool Again",
       "date": "2025-10-15T20:00:00-07:00",
       "stage": "Downstairs",
@@ -290,7 +277,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "c65f8eb6-af62-469f-8ddb-b6f999efbda6",
+      "id": "b58584cd-8ba9-49e8-bcd1-bec8cde8844d",
       "title": "Drawing With Sharpies",
       "date": "2025-10-16T22:00:00-07:00",
       "stage": "Downstairs",
@@ -303,7 +290,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "27431674-4d8a-4cc9-bf26-912034daaa28",
+      "id": "0a47887f-de32-4a65-a1d8-ae0bf33483d3",
       "title": "Jamwitch",
       "date": "2025-10-19T19:30:00-07:00",
       "stage": "Upstairs",
@@ -316,7 +303,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "4c3bbb8b-0fc8-474f-8ffa-206afbe417a7",
+      "id": "911b6ffb-8e25-4df5-8d4c-fd97f4cb5894",
       "title": "Toast, a Jam",
       "date": "2025-10-19T20:30:00-07:00",
       "stage": "Downstairs",
@@ -329,7 +316,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "62d79e50-0176-4f89-b1b4-d8b11fb001a6",
+      "id": "400e38a2-15cc-4d31-a7fa-c2798a6d5844",
       "title": "Crash This Party",
       "date": "2025-10-20T19:00:00-07:00",
       "stage": "Downstairs",
@@ -342,7 +329,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "3a15e3b8-4de5-41ee-8610-8292a1ad23c1",
+      "id": "8b4e2b50-4698-46a8-88a8-8b2d67f27d17",
       "title": "The Honeymoon Sweet",
       "date": "2025-10-22T21:00:00-07:00",
       "stage": "Upstairs",
@@ -355,7 +342,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "5fcf3055-0387-4bd4-9ea9-f0ec427a5b97",
+      "id": "75a67695-8fd4-4d6b-9dcd-56751458d1b1",
       "title": "Columbo at The Clubhouse",
       "date": "2025-10-25T19:30:00-07:00",
       "stage": "Upstairs",
@@ -368,7 +355,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "ad378b4e-4a37-460a-99cb-996626b39d00",
+      "id": "78d9abe8-80e6-4c6a-af3d-07f07c4f63f2",
       "title": "Monday Music Jam",
       "date": "2025-10-27T19:00:00-07:00",
       "stage": "Downstairs",
@@ -381,7 +368,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "561a176e-adec-459a-88fd-5d5b22b64a93",
+      "id": "2c2d4f4b-ad15-4d6f-8969-d5cf86664252",
       "title": "Jamwitch",
       "date": "2025-11-02T19:30:00-08:00",
       "stage": "Upstairs",
@@ -394,7 +381,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "1e6c230f-69c9-4520-89fe-9d248800b7a7",
+      "id": "28dba38e-e3ba-41c6-81e6-0c249479c50c",
       "title": "Crash This Party",
       "date": "2025-11-03T19:00:00-08:00",
       "stage": "Downstairs",
@@ -407,7 +394,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "00a75372-b8fc-4bb5-8149-f76c3c97db4e",
+      "id": "9a62bf24-ae9d-4314-9da9-fca65e8b0995",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2025-11-04T20:00:00-08:00",
       "stage": "Downstairs",
@@ -420,7 +407,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "a6f06f11-fea4-4f00-b5bd-73bf8415d14a",
+      "id": "d921418c-3882-41a3-9cbb-e105506b5bbc",
       "title": "Musical Improv is Cool Again",
       "date": "2025-11-05T20:00:00-08:00",
       "stage": "Downstairs",
@@ -433,7 +420,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "81339c13-e5ff-4da4-813a-9f7da929e2a5",
+      "id": "ca3ce53b-0c7b-45fb-b878-67a1a7bf6865",
       "title": "Columbo at The Clubhouse",
       "date": "2025-11-08T19:30:00-08:00",
       "stage": "Upstairs",
@@ -446,7 +433,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "a5f595a9-a916-42a1-85f9-2c9ea5ef4491",
+      "id": "2a80e3ce-55f9-4832-af2d-20d7a1c20dc9",
       "title": "Monday Music Jam",
       "date": "2025-11-10T19:00:00-08:00",
       "stage": "Downstairs",
@@ -459,20 +446,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "1c2eaa33-f4ff-4790-874a-9d19affb4001",
-      "title": "Crash This Party",
-      "date": "2025-11-10T19:00:00-08:00",
-      "stage": "Downstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "Sorlen6059@msn.com",
-      "instagram": "@sweetdalailama",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "86b7e59b-e7df-418e-bd38-367603203b5e",
+      "id": "b92e3ed3-20dc-4a39-b768-3ac681587bf3",
       "title": "Key Party Musical Improv",
       "date": "2025-11-12T20:00:00-08:00",
       "stage": "Downstairs",
@@ -485,7 +459,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "89eba3df-a531-4a9c-b1fc-30fcb22d94e5",
+      "id": "d7819cc8-e5cf-4325-949f-0b59420aa133",
       "title": "The Honeymoon Sweet",
       "date": "2025-11-12T21:00:00-08:00",
       "stage": "Upstairs",
@@ -498,7 +472,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "226f9f15-dec1-427d-a357-6c388355dbc6",
+      "id": "980006b0-6454-4ffa-a84c-5c310a5f582a",
       "title": "Jamwitch",
       "date": "2025-11-16T19:30:00-08:00",
       "stage": "Upstairs",
@@ -511,7 +485,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "d7f1da11-537c-4349-816f-e4289c949b7f",
+      "id": "afb73923-bf91-4b50-b984-88b7b851ebed",
       "title": "Toast, a Jam",
       "date": "2025-11-16T20:30:00-08:00",
       "stage": "Downstairs",
@@ -524,7 +498,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "7f66f261-299d-4d9a-8a25-5ffaf5e5ecb5",
+      "id": "f022bfdb-1003-4f5d-8373-e6a236050939",
       "title": "Crash This Party",
       "date": "2025-11-17T19:00:00-08:00",
       "stage": "Downstairs",
@@ -537,7 +511,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "7d5dafe4-5ac3-4712-9812-ab28b30469eb",
+      "id": "9739acbe-7f1b-4ccc-8191-52458e4cabda",
       "title": "Musical Improv is Cool Again",
       "date": "2025-11-19T20:00:00-08:00",
       "stage": "Downstairs",
@@ -550,7 +524,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "ecca8854-ce17-4616-89e8-d00b0b9d4d7a",
+      "id": "8f9b8e69-e401-4c96-a774-a5584760fffd",
       "title": "Drawing With Sharpies",
       "date": "2025-11-20T22:00:00-08:00",
       "stage": "Downstairs",
@@ -563,7 +537,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "83f388c6-0204-4e05-bc9a-1268b61868c7",
+      "id": "b793b815-9769-40bb-8129-03ee838a30d4",
       "title": "Columbo at The Clubhouse",
       "date": "2025-11-22T19:30:00-08:00",
       "stage": "Upstairs",
@@ -576,7 +550,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "1d9eafa4-1df6-433f-a673-cb67571e96e0",
+      "id": "396ab144-99fb-4708-8eb1-20e902ec77cc",
       "title": "Monday Music Jam",
       "date": "2025-11-24T19:00:00-08:00",
       "stage": "Downstairs",
@@ -589,7 +563,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "d8430ea5-e104-4c87-9517-5194562febd4",
+      "id": "982a1e60-5feb-4a5d-96d2-2e54f5ce8a98",
       "title": "The Honeymoon Sweet",
       "date": "2025-11-26T21:00:00-08:00",
       "stage": "Upstairs",
@@ -602,7 +576,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "ad137f8c-cf6c-4fcf-8fff-e7ce1b82df4a",
+      "id": "9aca7b1d-8e23-4d2d-a950-64451e93378f",
       "title": "Crash This Party",
       "date": "2025-12-01T19:00:00-08:00",
       "stage": "Downstairs",
@@ -615,7 +589,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "328e52b5-832e-4c68-a4b0-4a26ae9687c4",
+      "id": "e4bd4890-43c2-4055-9c9a-b8890d291b4a",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2025-12-02T20:00:00-08:00",
       "stage": "Downstairs",
@@ -628,7 +602,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "4b4c99ef-0f18-40e1-a404-e5249c51d362",
+      "id": "7b211fb3-9da8-4562-a599-a664d31f948c",
       "title": "Musical Improv is Cool Again",
       "date": "2025-12-03T20:00:00-08:00",
       "stage": "Downstairs",
@@ -641,7 +615,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "4ef9212e-bf7f-4311-bc72-8356c90de54c",
+      "id": "a42b39cb-84b9-489c-aed8-fa6ae722cec1",
       "title": "Jamwitch",
       "date": "2025-12-07T19:30:00-08:00",
       "stage": "Upstairs",
@@ -654,7 +628,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "6ce567d3-9e98-4906-bb31-30f4d6da4713",
+      "id": "4991164e-23c4-43eb-9bcc-2705a51c3b3b",
       "title": "Monday Music Jam",
       "date": "2025-12-08T19:00:00-08:00",
       "stage": "Downstairs",
@@ -667,20 +641,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "2c8f5137-8eb1-4932-8ffd-3da351ba6c12",
-      "title": "Crash This Party",
-      "date": "2025-12-08T19:00:00-08:00",
-      "stage": "Downstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "Sorlen6059@msn.com",
-      "instagram": "@sweetdalailama",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "e3bc1a58-8f8b-443c-ab62-c1003960fb27",
+      "id": "3837f1d8-e93d-4f91-a49e-e3a5b90b0754",
       "title": "Key Party Musical Improv",
       "date": "2025-12-10T20:00:00-08:00",
       "stage": "Downstairs",
@@ -693,7 +654,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "f27b25a7-ae26-4c12-b040-edf01ce83d84",
+      "id": "a19f1103-e4a3-4c0b-a49b-451b83ebf844",
       "title": "The Honeymoon Sweet",
       "date": "2025-12-10T21:00:00-08:00",
       "stage": "Upstairs",
@@ -706,7 +667,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "5d6c2d23-33c0-4c99-86d6-ddab4f6ac3c0",
+      "id": "04eeaeb8-8281-4757-bad3-a12d326f7f26",
       "title": "Columbo at The Clubhouse",
       "date": "2025-12-13T19:30:00-08:00",
       "stage": "Upstairs",
@@ -719,7 +680,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "bb9a5696-9142-4e49-853e-836a4f29bcca",
+      "id": "25a4daec-1a20-42df-9c87-0ca617ec92df",
       "title": "Crash This Party",
       "date": "2025-12-15T19:00:00-08:00",
       "stage": "Downstairs",
@@ -732,7 +693,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "da7205f1-a420-4340-a2c8-639bb35c6684",
+      "id": "26bd16dc-c351-4645-b72e-4ef38a243680",
       "title": "Musical Improv is Cool Again",
       "date": "2025-12-17T20:00:00-08:00",
       "stage": "Downstairs",
@@ -745,7 +706,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "ca3bf582-a3d9-4d17-8ddd-67e19451c56c",
+      "id": "7644d2db-20c0-4042-b6b6-c5da9eb9cc2c",
       "title": "Drawing With Sharpies",
       "date": "2025-12-18T22:00:00-08:00",
       "stage": "Downstairs",
@@ -758,7 +719,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "2f2a4674-2e70-4152-90d5-3a0b6075fc51",
+      "id": "e698713c-8446-483e-950c-f0670d55f681",
       "title": "Jamwitch",
       "date": "2025-12-21T19:30:00-08:00",
       "stage": "Upstairs",
@@ -771,7 +732,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "d6204ff1-f58b-49d0-a694-183c762ba7be",
+      "id": "b404bd61-ac8b-4fc2-bfbd-7de9b16e3bce",
       "title": "Toast, a Jam",
       "date": "2025-12-21T20:30:00-08:00",
       "stage": "Downstairs",
@@ -784,7 +745,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "a0f5af71-52d0-443c-a026-f544f8cce106",
+      "id": "bbc0029c-6dd6-4c7d-a662-064012602cef",
       "title": "Monday Music Jam",
       "date": "2025-12-22T19:00:00-08:00",
       "stage": "Downstairs",
@@ -797,7 +758,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "343fe46e-6a1a-49fd-b75b-a8b260d763fb",
+      "id": "23c582cd-9171-4f6a-aa27-b1b89fa95627",
       "title": "The Honeymoon Sweet",
       "date": "2025-12-24T21:00:00-08:00",
       "stage": "Upstairs",
@@ -810,7 +771,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "09e12e73-dac2-4a48-8d47-5fad54801d33",
+      "id": "39378f3a-3398-4a72-bf52-c4efb32cfb71",
       "title": "Columbo at The Clubhouse",
       "date": "2025-12-27T19:30:00-08:00",
       "stage": "Upstairs",
@@ -823,7 +784,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "8ad43e0b-ffbe-4d76-af77-78b933e0cb2c",
+      "id": "5410e72b-582f-495b-8f53-5134b67449d4",
       "title": "Jamwitch",
       "date": "2026-01-04T19:30:00-08:00",
       "stage": "Upstairs",
@@ -836,7 +797,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "e55079ba-16b4-4f3f-b76e-b332ce677a7b",
+      "id": "55c49702-f6f9-4b7a-b511-3b11c9f1eb84",
       "title": "Crash This Party",
       "date": "2026-01-05T19:00:00-08:00",
       "stage": "Downstairs",
@@ -849,7 +810,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "f960e22c-c30e-4ddc-88de-90b45b499099",
+      "id": "d9372b50-2827-4d67-aa75-1464cda4c680",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2026-01-06T20:00:00-08:00",
       "stage": "Downstairs",
@@ -862,7 +823,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "6146d526-16b4-4714-ab40-5f8a11a2b999",
+      "id": "820b1bdc-8bc6-455f-aeb4-6838e15a9ae4",
       "title": "Musical Improv is Cool Again",
       "date": "2026-01-07T20:00:00-08:00",
       "stage": "Downstairs",
@@ -875,7 +836,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "8d635919-c328-4ae2-941f-0817fabdbb56",
+      "id": "59f57ea4-df71-4417-a60d-768d6a364b70",
       "title": "Columbo at The Clubhouse",
       "date": "2026-01-10T19:30:00-08:00",
       "stage": "Upstairs",
@@ -888,7 +849,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "77bc2d7f-a81c-4ac1-8248-1eaa8c3f0156",
+      "id": "90483d6e-baa4-4b03-8ca5-ddc1e93af12c",
       "title": "Monday Music Jam",
       "date": "2026-01-12T19:00:00-08:00",
       "stage": "Downstairs",
@@ -901,20 +862,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "983d19d6-1955-41db-a30b-005aa7dc4a7b",
-      "title": "Crash This Party",
-      "date": "2026-01-12T19:00:00-08:00",
-      "stage": "Downstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "Sorlen6059@msn.com",
-      "instagram": "@sweetdalailama",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "6d83f750-689f-481f-882e-ab62fe1191d6",
+      "id": "bc4ac4ce-d3c7-4d2f-b8c3-8db9cb52b679",
       "title": "Key Party Musical Improv",
       "date": "2026-01-14T20:00:00-08:00",
       "stage": "Downstairs",
@@ -927,7 +875,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "4b4e5278-1abd-4d87-ae32-4572e661ce06",
+      "id": "0d9f1438-105f-4e63-accf-a83e42845738",
       "title": "The Honeymoon Sweet",
       "date": "2026-01-14T21:00:00-08:00",
       "stage": "Upstairs",
@@ -940,7 +888,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "88dc7ba9-1b39-4403-a933-7bfaa69b991b",
+      "id": "e9d8bb70-dbe8-48e0-85d6-111423dcdd9d",
       "title": "Drawing With Sharpies",
       "date": "2026-01-15T22:00:00-08:00",
       "stage": "Downstairs",
@@ -953,7 +901,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "ffae08ab-dff2-4b20-bd59-b0bc83c0ace9",
+      "id": "c79b5e0f-6ac5-4768-9b6b-c9102b1063e8",
       "title": "Jamwitch",
       "date": "2026-01-18T19:30:00-08:00",
       "stage": "Upstairs",
@@ -966,7 +914,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "2ba4f214-1ef7-4a7b-ae5c-f21c2bdb4257",
+      "id": "0b340bfd-7d4f-4423-a953-ad06feeee9c0",
       "title": "Toast, a Jam",
       "date": "2026-01-18T20:30:00-08:00",
       "stage": "Downstairs",
@@ -979,7 +927,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "0f07f65f-e268-459f-b8ac-9f896d556a49",
+      "id": "2bac711d-ee72-42b6-8d4f-790c68ccca37",
       "title": "Crash This Party",
       "date": "2026-01-19T19:00:00-08:00",
       "stage": "Downstairs",
@@ -992,7 +940,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "a2e535d2-f44c-41b7-ba5c-0f200696cae0",
+      "id": "ddf01271-400a-4d99-9f87-de2a08ad7551",
       "title": "Musical Improv is Cool Again",
       "date": "2026-01-21T20:00:00-08:00",
       "stage": "Downstairs",
@@ -1005,7 +953,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "1c6d3c8c-b9fd-4d90-bbbe-a8d1bdae90b9",
+      "id": "867b5408-a0c3-4af7-b17c-6631301fe50b",
       "title": "Columbo at The Clubhouse",
       "date": "2026-01-24T19:30:00-08:00",
       "stage": "Upstairs",
@@ -1018,7 +966,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "13d4df94-e237-45c3-9ddc-164a362e0fc0",
+      "id": "e54d0b4a-93bb-47a5-9a3a-8823e6859915",
       "title": "Monday Music Jam",
       "date": "2026-01-26T19:00:00-08:00",
       "stage": "Downstairs",
@@ -1031,7 +979,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "0ff8b3ee-2446-4b72-b93e-07fa37aea193",
+      "id": "38bbcbce-259b-44fe-bb2a-80692081cdfe",
       "title": "The Honeymoon Sweet",
       "date": "2026-01-28T21:00:00-08:00",
       "stage": "Upstairs",
@@ -1044,7 +992,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "40c6d032-f930-4e27-b0aa-1eb4064497eb",
+      "id": "84c1b067-b79f-4854-9fe9-f69c2d21f86d",
       "title": "Jamwitch",
       "date": "2026-02-01T19:30:00-08:00",
       "stage": "Upstairs",
@@ -1057,7 +1005,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "999d0d10-89c3-4e6a-a970-21f62b09c58b",
+      "id": "42a24d03-dd78-45c6-be8a-e678ce5816fd",
       "title": "Crash This Party",
       "date": "2026-02-02T19:00:00-08:00",
       "stage": "Downstairs",
@@ -1070,7 +1018,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "5a67e785-0a0a-40b8-8080-1dcfe331669f",
+      "id": "f833fb1a-a2e2-4303-8f34-0b47ee2bd33b",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2026-02-03T20:00:00-08:00",
       "stage": "Downstairs",
@@ -1083,7 +1031,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "d4560ceb-9cb3-4263-941d-d6b2e34a3564",
+      "id": "20ada1f7-5721-4ac1-99a4-bceb8194d51a",
       "title": "Musical Improv is Cool Again",
       "date": "2026-02-04T20:00:00-08:00",
       "stage": "Downstairs",
@@ -1096,7 +1044,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "fa9068b0-87b5-4284-a047-ccd15fcae765",
+      "id": "42aced40-a92a-4aad-9f97-2a133ecba6c4",
       "title": "Monday Music Jam",
       "date": "2026-02-09T19:00:00-08:00",
       "stage": "Downstairs",
@@ -1109,20 +1057,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "09620be1-0e00-4193-96fc-91e1c8057609",
-      "title": "Crash This Party",
-      "date": "2026-02-09T19:00:00-08:00",
-      "stage": "Downstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "Sorlen6059@msn.com",
-      "instagram": "@sweetdalailama",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "14a46f7f-ee2e-4003-8e89-16d46343485c",
+      "id": "7c383f7c-f5e6-4eb0-a2d1-b5008452d791",
       "title": "Key Party Musical Improv",
       "date": "2026-02-11T20:00:00-08:00",
       "stage": "Downstairs",
@@ -1135,7 +1070,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "028001b9-be44-42e8-af8f-38d651cc55f7",
+      "id": "1dcf6ffd-f00f-4d48-a7ba-bcffe5370a18",
       "title": "The Honeymoon Sweet",
       "date": "2026-02-11T21:00:00-08:00",
       "stage": "Upstairs",
@@ -1148,7 +1083,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "48dca769-7705-4272-8a2f-0ab718a7a122",
+      "id": "421440c8-60ac-44d8-935b-a8bfcda302bc",
       "title": "Jamwitch",
       "date": "2026-02-15T19:30:00-08:00",
       "stage": "Upstairs",
@@ -1161,7 +1096,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "6e395a5f-4fdc-4101-9877-97503f01e489",
+      "id": "e0f4e393-7d68-4b5c-bcb9-644205045afe",
       "title": "Toast, a Jam",
       "date": "2026-02-15T20:30:00-08:00",
       "stage": "Downstairs",
@@ -1174,7 +1109,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "ca625b3f-d72e-4c87-beab-ca9d516217fa",
+      "id": "c0ad037d-040c-4fec-94ab-bbd5b3b75bd8",
       "title": "Crash This Party",
       "date": "2026-02-16T19:00:00-08:00",
       "stage": "Downstairs",
@@ -1187,7 +1122,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "dd19162c-9ab3-4fce-954c-f07dbcb9475b",
+      "id": "7551dd30-30f6-4ddc-9bf4-5a396059cfa7",
       "title": "Musical Improv is Cool Again",
       "date": "2026-02-18T20:00:00-08:00",
       "stage": "Downstairs",
@@ -1200,7 +1135,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "58cc8627-f127-4772-be67-55cfac5ab7e4",
+      "id": "2658248a-524e-430e-a9c0-eaee082ace02",
       "title": "Drawing With Sharpies",
       "date": "2026-02-19T22:00:00-08:00",
       "stage": "Downstairs",
@@ -1213,7 +1148,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "3b281810-0aa9-4e43-9dc1-7d9329b6415a",
+      "id": "ff085c44-611c-4e48-9ea2-f87899e57666",
       "title": "Monday Music Jam",
       "date": "2026-02-23T19:00:00-08:00",
       "stage": "Downstairs",
@@ -1226,7 +1161,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "384c6e18-6fa8-4292-aecf-ea57058ab531",
+      "id": "61ff7ff8-ddb2-4c0b-95c2-36d0da31b7e7",
       "title": "The Honeymoon Sweet",
       "date": "2026-02-25T21:00:00-08:00",
       "stage": "Upstairs",
@@ -1239,7 +1174,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "95f9aeef-a3dd-4ccd-b8bd-f89de026863e",
+      "id": "9fc243b4-2ce3-4fd1-8b64-689321da5c2b",
       "title": "Jamwitch",
       "date": "2026-03-01T19:30:00-08:00",
       "stage": "Upstairs",
@@ -1252,7 +1187,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "c136dd97-bb29-4f7e-aaf4-e5434ec51ef6",
+      "id": "79971f6c-e1d2-4523-943a-254cf3c66071",
       "title": "Crash This Party",
       "date": "2026-03-02T19:00:00-08:00",
       "stage": "Downstairs",
@@ -1265,7 +1200,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "71844071-ec06-468e-87ac-a0e1093cc219",
+      "id": "90113d80-9401-4b6b-98e2-b391514359f9",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2026-03-03T20:00:00-08:00",
       "stage": "Downstairs",
@@ -1278,7 +1213,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "fbd793e5-8923-4f47-a358-21157e7d85db",
+      "id": "6529a93d-e756-4d7d-85ea-adb6e30e236e",
       "title": "Musical Improv is Cool Again",
       "date": "2026-03-04T20:00:00-08:00",
       "stage": "Downstairs",
@@ -1291,7 +1226,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "52fd6e5f-278c-4dbc-b083-c104d9d91fbb",
+      "id": "6ccbe71d-5554-4e03-8322-efc09a93d042",
       "title": "Monday Music Jam",
       "date": "2026-03-09T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1304,20 +1239,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "556ebd06-9a8e-412e-8bd8-12e397cec63a",
-      "title": "Crash This Party",
-      "date": "2026-03-09T19:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "Sorlen6059@msn.com",
-      "instagram": "@sweetdalailama",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "0e0b45fa-aa6a-4329-be7c-7a2ca87f4222",
+      "id": "1621516a-6cc1-458e-acfb-c0a38effa476",
       "title": "Key Party Musical Improv",
       "date": "2026-03-11T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1330,7 +1252,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "a2476638-2b7e-40e8-b414-47a7852467b6",
+      "id": "1cf851fb-99bb-4132-9fa1-21d1f7c8abe5",
       "title": "The Honeymoon Sweet",
       "date": "2026-03-11T21:00:00-07:00",
       "stage": "Upstairs",
@@ -1343,7 +1265,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "2757b959-be3b-4b8b-89ad-65370d9585eb",
+      "id": "a2280943-1e33-40eb-b2ce-026b7ed8fe4e",
       "title": "Jamwitch",
       "date": "2026-03-15T19:30:00-07:00",
       "stage": "Upstairs",
@@ -1356,7 +1278,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "0be57685-d01f-4c66-97c4-29b855bb43dd",
+      "id": "94a4b611-3af2-4929-b4b6-d3a91350cf49",
       "title": "Toast, a Jam",
       "date": "2026-03-15T20:30:00-07:00",
       "stage": "Downstairs",
@@ -1369,7 +1291,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "d516143c-93a4-47c5-8fc6-213e546380f8",
+      "id": "9f4270f9-f8d5-4dd5-88f2-5406eefee660",
       "title": "Crash This Party",
       "date": "2026-03-16T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1382,7 +1304,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "1bcf9e48-17e1-4bb4-9024-6e61eef5616b",
+      "id": "b7dca2a4-00f7-43ba-a352-b12cbd558437",
       "title": "Musical Improv is Cool Again",
       "date": "2026-03-18T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1395,7 +1317,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "48f9e66b-853a-46af-93a0-ff5224bb08a8",
+      "id": "dbc3c2cf-91b8-4755-a380-2a34b3e484ef",
       "title": "Drawing With Sharpies",
       "date": "2026-03-19T22:00:00-07:00",
       "stage": "Downstairs",
@@ -1408,7 +1330,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "dda85458-f41a-4d76-b0ab-4319d33b218d",
+      "id": "54a2d807-193a-4a2a-8cc5-c91a664ef4c8",
       "title": "Monday Music Jam",
       "date": "2026-03-23T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1421,7 +1343,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "e749f557-0737-4e41-9e68-cc7cba084a72",
+      "id": "aa8bfe3e-a95d-4017-ad9d-543ea15fde7d",
       "title": "Musical Improv is Cool Again",
       "date": "2026-04-01T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1434,7 +1356,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "5629fbf0-ccf4-490b-8ccb-b617c4229fc4",
+      "id": "9456751f-9633-42d0-8cec-1d1e6cc5766b",
       "title": "Jamwitch",
       "date": "2026-04-05T19:30:00-07:00",
       "stage": "Upstairs",
@@ -1447,7 +1369,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "33d1ce21-f040-451d-aa06-915c647b8ad1",
+      "id": "58172b86-0993-48d0-940a-3dcc5dc00788",
       "title": "Crash This Party",
       "date": "2026-04-06T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1460,7 +1382,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "601d8312-1235-4e38-8cd2-d2aaa2cf1036",
+      "id": "24dca62c-a472-4edb-a3a6-268d6afd2850",
       "title": "Key Party Musical Improv",
       "date": "2026-04-08T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1473,7 +1395,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "68d95988-92b9-426c-aa08-6fb018e1306d",
+      "id": "bcb4a11d-e754-413b-a98a-3960446f3845",
       "title": "Monday Music Jam",
       "date": "2026-04-13T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1486,20 +1408,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "acb0c006-205e-4530-91df-2e52a83cf319",
-      "title": "Crash This Party",
-      "date": "2026-04-13T19:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "Sorlen6059@msn.com",
-      "instagram": "@sweetdalailama",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "29c569cc-e93e-45df-98d0-734a86a92669",
+      "id": "1504de90-978e-4c5b-abab-deb8e7108f05",
       "title": "Musical Improv is Cool Again",
       "date": "2026-04-15T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1512,7 +1421,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "ba50ea68-0f01-4797-9d96-b4aec9140c02",
+      "id": "07a626fa-9287-4fea-8ea6-e9c375e03a91",
       "title": "Drawing With Sharpies",
       "date": "2026-04-16T22:00:00-07:00",
       "stage": "Downstairs",
@@ -1525,7 +1434,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "072ccd00-aaa2-42be-9cb2-e6b11667e2f8",
+      "id": "33623312-24c6-4ff1-a765-5579ddb52b86",
       "title": "Jamwitch",
       "date": "2026-04-19T19:30:00-07:00",
       "stage": "Upstairs",
@@ -1538,7 +1447,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "48dca5c4-9e44-4e97-acbf-c06082498f37",
+      "id": "fd1a0be5-da4d-4ffe-b0e0-d33030458d0b",
       "title": "Toast, a Jam",
       "date": "2026-04-19T20:30:00-07:00",
       "stage": "Downstairs",
@@ -1551,7 +1460,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "c327bb36-657e-44ba-ac0c-5a7f41ec31f1",
+      "id": "f1ad11b4-44d9-4aa0-8eb6-44641f71675a",
       "title": "Crash This Party",
       "date": "2026-04-20T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1564,7 +1473,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "76d53922-dbe4-4b0a-97d9-c7d224dcd2c0",
+      "id": "56508bdb-a3fc-4fb7-85bd-9a35d2350692",
       "title": "Monday Music Jam",
       "date": "2026-04-27T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1577,7 +1486,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "ca855583-ddeb-4726-a6cd-fbf76bb58133",
+      "id": "bcfed919-ddc3-47d0-bdb9-e249e2312540",
       "title": "Crash This Party",
       "date": "2026-05-04T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1590,7 +1499,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "6a80e112-6ca9-48a7-b63c-e7b22e95d19e",
+      "id": "707642bb-b118-4018-bad0-9d066b562032",
       "title": "Musical Improv is Cool Again",
       "date": "2026-05-06T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1603,7 +1512,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "ce49b3b7-9172-4af6-ab44-02138cdcbd56",
+      "id": "143da52c-3933-4792-a63c-85029f972730",
       "title": "Monday Music Jam",
       "date": "2026-05-11T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1616,20 +1525,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "eced612f-f73a-4e5a-8d06-d4aa15dfef4b",
-      "title": "Crash This Party",
-      "date": "2026-05-11T19:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "Sorlen6059@msn.com",
-      "instagram": "@sweetdalailama",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "1b6863c9-a396-460f-9da5-2da61891da89",
+      "id": "1dc7e146-d1f1-4e6e-a1a7-3ddf83ff9a87",
       "title": "Key Party Musical Improv",
       "date": "2026-05-13T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1642,7 +1538,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "b3cc3746-a1fc-4292-a757-b96b91da8b65",
+      "id": "eb7869ad-0215-4b26-958b-c5f8fb5ea254",
       "title": "Toast, a Jam",
       "date": "2026-05-17T20:30:00-07:00",
       "stage": "Downstairs",
@@ -1655,7 +1551,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "24bde1ee-3889-47af-8c0a-67dec2e8049b",
+      "id": "d5f59b25-cac7-40ef-9920-e81c7ecebf92",
       "title": "Crash This Party",
       "date": "2026-05-18T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1668,7 +1564,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "801f516e-0c15-4b9f-a7b8-7bc04a4260f2",
+      "id": "bccadd38-5073-4467-a705-c51e1870c5fc",
       "title": "Musical Improv is Cool Again",
       "date": "2026-05-20T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1681,7 +1577,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "4fe7ef91-49f3-4e08-96f7-100c3a0d48d4",
+      "id": "f6e4abe1-127d-4731-80ae-cfb94e98f1d3",
       "title": "Drawing With Sharpies",
       "date": "2026-05-21T22:00:00-07:00",
       "stage": "Downstairs",
@@ -1694,7 +1590,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "a57a6361-95a8-4259-b90d-8b859c773362",
+      "id": "8e23aac6-8f13-40a2-91f6-0021c59c8efe",
       "title": "Monday Music Jam",
       "date": "2026-05-25T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1707,7 +1603,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "6764f181-4966-43be-9e34-ed199151b0bb",
+      "id": "ae06e4df-f7c0-463d-afd1-6d6dc34a34f5",
       "title": "Crash This Party",
       "date": "2026-06-01T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1720,7 +1616,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "daabfac0-5827-4f43-8ee0-87023cd94bc5",
+      "id": "19cc8957-2c87-4829-902e-9b3990e09aac",
       "title": "Musical Improv is Cool Again",
       "date": "2026-06-03T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1733,7 +1629,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "727ad245-2be5-41dc-a244-35a77495578e",
+      "id": "dbaece15-ccfe-4527-8d01-a0011623d150",
       "title": "Monday Music Jam",
       "date": "2026-06-08T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1746,20 +1642,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "377e31cc-da5c-4f9b-aeaf-4af5ea6b83c8",
-      "title": "Crash This Party",
-      "date": "2026-06-08T19:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "Sorlen6059@msn.com",
-      "instagram": "@sweetdalailama",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "8a2c4d1a-fad8-4eee-a4f1-8d156dc4216f",
+      "id": "5e394c00-97fd-4c34-8831-32585fab2341",
       "title": "Key Party Musical Improv",
       "date": "2026-06-10T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1772,7 +1655,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "1d877423-d029-48d3-8a21-db814b98707a",
+      "id": "f1e25727-2906-4c3e-9a39-cafb33f65508",
       "title": "Crash This Party",
       "date": "2026-06-15T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1785,7 +1668,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "0d4fd16a-50a9-4679-929c-8cba7096a874",
+      "id": "bd1b4f31-4d0f-4d54-b82a-37c0abd49efc",
       "title": "Musical Improv is Cool Again",
       "date": "2026-06-17T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1798,7 +1681,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "ee8f754a-46b6-4486-83d1-114e2432e165",
+      "id": "f235c26b-ce39-437e-8848-3a5b146c23d3",
       "title": "Toast, a Jam",
       "date": "2026-06-21T20:30:00-07:00",
       "stage": "Downstairs",
@@ -1811,7 +1694,7 @@
       "duration": "1 hr"
     },
     {
-      "id": "e3c79707-25e1-411f-a41e-d7f3ccef96a3",
+      "id": "46405dd2-cf2d-4676-af14-14222c9a072f",
       "title": "Monday Music Jam",
       "date": "2026-06-22T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1824,7 +1707,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "b40e89d2-ee68-4b3b-8bef-4ee4fa65cb59",
+      "id": "74b47a0a-feb7-4236-b849-c57a0322b336",
       "title": "Musical Improv is Cool Again",
       "date": "2026-07-01T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1837,7 +1720,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "12fe0979-7991-4f00-a61a-dee6ad02fb32",
+      "id": "9f044906-41ac-4a86-91ee-ee212d4bf581",
       "title": "Crash This Party",
       "date": "2026-07-06T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1850,7 +1733,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "83b5b79a-edee-4ee4-bbed-9234749ee08c",
+      "id": "026833d8-df60-41e3-a131-a7e700796609",
       "title": "Key Party Musical Improv",
       "date": "2026-07-08T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1863,7 +1746,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "f12fe98a-5f62-49c6-aad4-392b5a54383c",
+      "id": "6521e2d1-f9e3-45c1-8f13-c904e6f4d418",
       "title": "Monday Music Jam",
       "date": "2026-07-13T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1876,7 +1759,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "49f27665-7533-4100-90d5-71dfbc831f57",
+      "id": "ac8cebfb-318e-4334-9350-f1c34967cb2b",
       "title": "Musical Improv is Cool Again",
       "date": "2026-07-15T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1889,7 +1772,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "fdc1ac21-c4be-4698-b559-f8ef173ace56",
+      "id": "7a5b2a1e-0cef-41c7-a8a6-bf8eb511633b",
       "title": "Monday Music Jam",
       "date": "2026-07-27T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1902,7 +1785,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "09858a6d-e4b2-4ea2-b9b9-ebcfdec56b85",
+      "id": "adc07a05-d6c8-49e0-b029-2be9bcb99008",
       "title": "Musical Improv is Cool Again",
       "date": "2026-08-05T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1915,7 +1798,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "fe1e39b8-88ec-43cb-a928-d4fe7214226f",
+      "id": "153e31c3-2bbe-4b48-b319-49b91804a23d",
       "title": "Monday Music Jam",
       "date": "2026-08-10T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1928,7 +1811,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "9fa52299-6b5a-4e6a-8b4b-6360e01beb9f",
+      "id": "82d73659-249f-49f5-aed4-b654ad42c6fb",
       "title": "Key Party Musical Improv",
       "date": "2026-08-12T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1941,7 +1824,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "951dd1c3-e98f-46b1-8d6b-8b1532178776",
+      "id": "f3fc7f72-ff00-4453-b8b7-7d6e73085aca",
       "title": "Musical Improv is Cool Again",
       "date": "2026-08-19T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1954,7 +1837,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "5239d71f-35cc-4645-b9e0-6cf36f4ddbd2",
+      "id": "cec18616-c315-434c-b26e-6babb67d217f",
       "title": "Monday Music Jam",
       "date": "2026-08-24T19:00:00-07:00",
       "stage": "Downstairs",
@@ -1967,7 +1850,7 @@
       "duration": "90 mins"
     },
     {
-      "id": "2d49001e-d1f4-4518-af4e-e2b857208a92",
+      "id": "d8de9de8-46d6-4165-b0dd-56951f3d71ee",
       "title": "Key Party Musical Improv",
       "date": "2026-09-09T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1980,7 +1863,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "bacbd944-c43e-4c8a-8ebb-5e0d6c60ed23",
+      "id": "e82d5e75-5273-428f-a6df-fb88d6af211c",
       "title": "Key Party Musical Improv",
       "date": "2026-10-14T20:00:00-07:00",
       "stage": "Downstairs",
@@ -1993,7 +1876,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "80108378-1559-4c91-b0b6-7d6efd4045f9",
+      "id": "0295846d-43bf-4652-bba1-6490e63a61d1",
       "title": "Key Party Musical Improv",
       "date": "2026-11-11T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2006,7 +1889,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "f97484d1-6279-4171-b850-033d9e24a5df",
+      "id": "e98cb6bb-dea6-47b2-9567-fec63fe1e422",
       "title": "Key Party Musical Improv",
       "date": "2026-12-09T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2019,7 +1902,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "5a8505ec-c2d9-4743-b4e0-419783346a65",
+      "id": "2e2a702a-3430-43d4-9363-46370eb2b83a",
       "title": "Key Party Musical Improv",
       "date": "2027-01-13T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2032,7 +1915,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "138b9051-20c9-4059-8aa1-c805568dc198",
+      "id": "5c9f2e4c-269d-488f-9734-74e37eba10b0",
       "title": "Key Party Musical Improv",
       "date": "2027-02-10T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2045,7 +1928,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "766e821a-1a6b-4e6d-9e4f-6f7f4e9b79c1",
+      "id": "63b35912-66bd-4fb0-88b1-f031a9d0a4d1",
       "title": "Key Party Musical Improv",
       "date": "2027-03-10T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2058,7 +1941,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "2d2d473e-7889-4a90-8de1-7c8a6fb3845e",
+      "id": "a1e636bf-e741-446e-9aed-16814a837e30",
       "title": "Key Party Musical Improv",
       "date": "2027-04-14T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2071,7 +1954,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "9983eaa3-a4a5-4e02-83cf-cf81e9ed7da1",
+      "id": "f942318f-8e24-453b-a2a3-80f17d0942a7",
       "title": "Key Party Musical Improv",
       "date": "2027-05-12T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2084,7 +1967,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "4a6e8951-eebd-4ff0-abcd-af47197b126f",
+      "id": "d279b955-d17a-4698-b585-19fb3a7d9d84",
       "title": "Key Party Musical Improv",
       "date": "2027-06-09T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2097,7 +1980,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "73bc73ad-f78e-44de-aa3f-388cff675bb6",
+      "id": "1784fe41-b1ca-454c-a430-6d773b7c71d3",
       "title": "Key Party Musical Improv",
       "date": "2027-07-14T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2110,7 +1993,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "d7f36e93-d3cf-4efa-91f7-66aa25033e01",
+      "id": "3ee3483c-1ae3-4b3e-a194-85e01a81e829",
       "title": "Key Party Musical Improv",
       "date": "2027-08-11T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2123,7 +2006,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "a06e6474-1841-4d60-ba5f-6c9431c13654",
+      "id": "b5f204a0-8f08-4176-8b46-81af37392616",
       "title": "Key Party Musical Improv",
       "date": "2027-09-08T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2136,7 +2019,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "afcf2f40-22ec-4268-9f2e-60bdf1e597fa",
+      "id": "32270e2b-464f-4409-9555-a010cbc8eacb",
       "title": "Key Party Musical Improv",
       "date": "2027-10-13T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2149,7 +2032,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "280b7c1a-71c4-49c3-b9e0-d38263a2b3b0",
+      "id": "c16bfa86-2430-434b-bc23-c1419b860440",
       "title": "Key Party Musical Improv",
       "date": "2027-11-10T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2162,7 +2045,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "f13f2e21-08e0-4e54-91f6-69d426694b41",
+      "id": "d12b5261-e9ac-46c1-a3e0-9af5d6ddaedc",
       "title": "Key Party Musical Improv",
       "date": "2027-12-08T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2175,7 +2058,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "bb1a84cb-4b2d-477f-b0e0-03a7e9ad1dfa",
+      "id": "488434bb-b3f7-46fe-9cdd-47180fa693ce",
       "title": "Key Party Musical Improv",
       "date": "2028-01-12T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2188,7 +2071,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "d43e03a7-1305-43f7-bc75-caf9f9d6cccd",
+      "id": "18dec6b8-3eb8-42ee-8196-539ef13d683d",
       "title": "Key Party Musical Improv",
       "date": "2028-02-09T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2201,7 +2084,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "7b9615a8-a166-473d-9eed-0ccb2365a1dd",
+      "id": "52e80fdd-b11d-4e08-9ad4-9abab2584800",
       "title": "Key Party Musical Improv",
       "date": "2028-03-08T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2214,7 +2097,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "5ec1ed4a-5afe-4daf-9a63-96944533c935",
+      "id": "4a169cb7-4b95-4004-855f-2d5b60752b5d",
       "title": "Key Party Musical Improv",
       "date": "2028-04-12T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2227,7 +2110,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "60e3b804-0f5f-4541-831e-5b9949b6fd41",
+      "id": "be3bc599-1b88-4aee-95b6-cc5e18f7f4f6",
       "title": "Key Party Musical Improv",
       "date": "2028-05-10T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2240,7 +2123,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "086c1fbf-1cbb-4bdf-9939-0c8a6f27426c",
+      "id": "fc1b6b47-5ac5-46a9-9e6e-336870c084f1",
       "title": "Key Party Musical Improv",
       "date": "2028-06-14T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2253,7 +2136,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "842c400e-ac70-46f8-beb7-36d333d87f4c",
+      "id": "5b726976-1fce-4116-becf-f15aaa6fa8cd",
       "title": "Key Party Musical Improv",
       "date": "2028-07-12T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2266,7 +2149,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "fb5fbded-70a4-4c15-bfa2-9b524f15b5d4",
+      "id": "397d026c-c8c3-4eca-b465-2db795a9eb7c",
       "title": "Key Party Musical Improv",
       "date": "2028-08-09T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2279,7 +2162,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "705b2294-85c8-4c68-9528-4a8bbf39d3c8",
+      "id": "52304dc8-7ed4-4d94-813c-500aeb3616c3",
       "title": "Key Party Musical Improv",
       "date": "2028-09-13T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2292,7 +2175,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "57108dff-1035-44e7-9d36-d8f9c22b082e",
+      "id": "3c515120-63b7-4a9e-8421-925a83868f94",
       "title": "Key Party Musical Improv",
       "date": "2028-10-11T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2305,7 +2188,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "5fff340f-f22b-433b-be05-243662537821",
+      "id": "bf83f9f6-0e02-4ecf-b43a-a4620c4a0ed0",
       "title": "Key Party Musical Improv",
       "date": "2028-11-08T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2318,7 +2201,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "f6d4301f-f5b1-4272-8391-77a91d4545a0",
+      "id": "8dff1893-8f23-4f14-8fd1-a3d45911344f",
       "title": "Key Party Musical Improv",
       "date": "2028-12-13T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2331,7 +2214,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "2d441b60-3fcc-4b7e-b182-96ce5770ec78",
+      "id": "aa37ceaf-e019-4947-97e5-da2d9078af7d",
       "title": "Key Party Musical Improv",
       "date": "2029-01-10T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2344,7 +2227,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "8d1e4189-84cd-4c0a-a715-dd7bf758018e",
+      "id": "289e5fff-e4e5-4bfe-a832-805d605845ed",
       "title": "Key Party Musical Improv",
       "date": "2029-02-14T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2357,7 +2240,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "19a7cdbc-1dbb-45a8-923e-26fb6e554b7f",
+      "id": "28ed73a2-0e80-4b2c-b78d-773d7d4c887f",
       "title": "Key Party Musical Improv",
       "date": "2029-03-14T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2370,7 +2253,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "b3075a38-a9a7-4ca3-ab15-106977ebb1b4",
+      "id": "4fe96851-24ac-44fe-a2d9-2c3e13e99f2b",
       "title": "Key Party Musical Improv",
       "date": "2029-04-11T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2383,7 +2266,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "e882c4f0-2fc9-4155-907c-f9be899a37c2",
+      "id": "994d192d-8856-49e1-9107-03d2182c7edb",
       "title": "Key Party Musical Improv",
       "date": "2029-05-09T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2396,7 +2279,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "6a0d2ab3-c96c-41dc-83ae-50771a3fea27",
+      "id": "1d4d8bbc-5296-4ab2-baed-0ce702474f54",
       "title": "Key Party Musical Improv",
       "date": "2029-06-13T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2409,7 +2292,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "2d82ec77-9ee7-4c23-aa18-d77aeea49a31",
+      "id": "59792273-34b7-485a-a3bb-acc393741d5b",
       "title": "Key Party Musical Improv",
       "date": "2029-07-11T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2422,7 +2305,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "77ab51fb-f35e-41c7-83a2-4d0e4ca17765",
+      "id": "5b8fd02c-17ca-4ece-9c45-646256210818",
       "title": "Key Party Musical Improv",
       "date": "2029-08-08T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2435,7 +2318,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "fda39c5c-2b21-4af9-896d-393340bbce88",
+      "id": "38b51026-94e7-4489-bea0-1fdef479d667",
       "title": "Key Party Musical Improv",
       "date": "2029-09-12T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2448,7 +2331,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "08300f48-1fdc-4a34-b165-11af55999652",
+      "id": "ca9d13d2-4e96-438e-8a55-879e5d234c56",
       "title": "Key Party Musical Improv",
       "date": "2029-10-10T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2461,7 +2344,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "27b7087e-7af9-44a0-8dbf-8b6ea03d35f9",
+      "id": "b212c21a-ff3d-45ea-b93c-4a68406f16c3",
       "title": "Key Party Musical Improv",
       "date": "2029-11-14T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2474,7 +2357,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "600f0669-7bdb-4ad4-b962-edd5ac064d61",
+      "id": "3f39cf5d-8b0b-4521-9f34-92888d7226ae",
       "title": "Key Party Musical Improv",
       "date": "2029-12-12T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2487,7 +2370,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "bbabf68e-c5d7-43bd-a8ca-14f9d2fdb6c5",
+      "id": "ba2b0246-1fc7-466b-b3e2-8c3e99d81879",
       "title": "Key Party Musical Improv",
       "date": "2030-01-09T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2500,7 +2383,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "59261cef-7d26-409a-9c4b-57f885690765",
+      "id": "c19dc411-413f-4a54-aad0-d67ea3e2431a",
       "title": "Key Party Musical Improv",
       "date": "2030-02-13T20:00:00-08:00",
       "stage": "Downstairs",
@@ -2513,7 +2396,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "c1e0669c-823c-426b-a87a-26d596acdc78",
+      "id": "4c3674f4-5312-42c8-827c-d9c5f1055ab7",
       "title": "Key Party Musical Improv",
       "date": "2030-03-13T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2526,7 +2409,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "d769225b-c105-426b-9c8e-4b2f654ce19b",
+      "id": "e539a136-54be-4dbf-9d83-918f1ff6ac9c",
       "title": "Key Party Musical Improv",
       "date": "2030-04-10T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2539,7 +2422,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "2846bdee-023a-4a25-963d-aac16f4578c3",
+      "id": "80a0c766-acdb-4566-9b16-020c360e5867",
       "title": "Key Party Musical Improv",
       "date": "2030-05-08T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2552,7 +2435,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "966cded5-b066-403a-b484-180c0da542d7",
+      "id": "b106f4ca-aeb6-404f-8de7-bed2c3736a12",
       "title": "Key Party Musical Improv",
       "date": "2030-06-12T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2565,7 +2448,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "f84cb113-5bfb-4965-920d-6ffe888f6919",
+      "id": "dc050e47-655d-4fd8-a50f-d11aec5f835c",
       "title": "Key Party Musical Improv",
       "date": "2030-07-10T20:00:00-07:00",
       "stage": "Downstairs",
@@ -2578,7 +2461,7 @@
       "duration": "60 mins"
     },
     {
-      "id": "f6caf6c3-c882-4860-994c-56d6c38ba728",
+      "id": "0f31de49-a92a-40d9-a6df-1c4f19d92226",
       "title": "Key Party Musical Improv",
       "date": "2030-08-14T20:00:00-07:00",
       "stage": "Downstairs",
