@@ -56,6 +56,10 @@
     .filter-select:focus{outline:2px solid rgba(52,152,219,.6);outline-offset:2px}
     .filter-select option{background:var(--panel-2);color:#ecf0f1}
 
+    /* Show Date filter only in List view */
+    #dateFilter{ display:none; }
+    .is-list #dateFilter{ display:inline-block; }
+   
     /* multi-select (Genre) */
     .multi{position:relative}
     .multi-btn{
@@ -791,6 +795,9 @@ function switchView(view){
   var calBtn = qs('#calendarViewBtn'), listBtn = qs('#listViewBtn');
 
   if(view==='calendar'){
+    // Clear date filter when leaving list view
+    qs('#dateFilter').value = '';
+    setParam('date', null);
     document.body.classList.remove('is-list');
     cal.classList.remove('hidden'); list.classList.add('hidden');
     calBtn.classList.add('active'); listBtn.classList.remove('active');
