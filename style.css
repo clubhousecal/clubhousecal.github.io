@@ -253,7 +253,7 @@ a:hover {
   gap: 10px;
   margin-top: 10px;
 }
-.filters.collapsed { display: none; }
+/*.filters.collapsed { display: none; } */
 
 .select, .multi-btn {
   padding: 8px 12px;
