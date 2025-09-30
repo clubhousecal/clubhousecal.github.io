@@ -40,7 +40,7 @@ const fmtDate = (d) =>
 const fmtDateNoTime = (d) =>
   d.toLocaleString('en-US', { timeZone: VENUE_TZ, month: 'long', day: 'numeric' });
 
-const stageColor = (s) => {
+const venueColor = (s) => {
   s = safe(s);
   let hash = 0;
   for (let i = 0; i < s.length; i++) hash = (hash * 31 + s.charCodeAt(i)) >>> 0;
@@ -75,7 +75,7 @@ async function loadEvents() {
       .map((e) => ({
         ...e,
         title: safe(e.title),
-        stage: safe(e.stage),
+        venue: safe(e.venue),
         description: safe(e.description),
         genres: parseGenres(e.genres || e.genre),
         date: new Date(e.date),
@@ -120,10 +120,10 @@ function parseGenres(g) {
 }
 
 function populateFilters() {
-  // Stage
-  const stages = [...new Set(events.map((e) => e.stage).filter(Boolean))].sort();
-  const stageSel = $('#stageFilter');
-  stageSel.innerHTML = '<option value="">Stage</option>' + stages.map((s) => `<option>${s}</option>`).join('');
+  // venue
+  const venues = [...new Set(events.map((e) => e.venue).filter(Boolean))].sort();
+  const venueSel = $('#venueFilter');
+  venueSel.innerHTML = '<option value="">venue</option>' + venues.map((s) => `<option>${s}</option>`).join('');
 
   // Genres
   const seen = new Set();
@@ -167,7 +167,7 @@ function updateGenreLabel() {
 
 const applyFilters = debounce(() => {
   const q = $('#searchInput').value.toLowerCase();
-  const stage = $('#stageFilter').value;
+  const venue = $('#venueFilter').value;
   const dateF = $('#dateFilter').value;
 
   // Quick date filters (relative to "today" in VENUE_TZ)
@@ -177,10 +177,10 @@ const applyFilters = debounce(() => {
   const monthKey = ym(today);
 
   filtered = events.filter((e) => {
-    const text = (e.title + ' ' + e.description + ' ' + e.stage + ' ' + (e.genres || []).join(' ')).toLowerCase();
+    const text = (e.title + ' ' + e.description + ' ' + e.venue + ' ' + (e.genres || []).join(' ')).toLowerCase();
     const matches =
       (!q || text.includes(q)) &&
-      (!stage || e.stage === stage) &&
+      (!venue || e.venue === venue) &&
       (selectedGenres.size === 0 || e.genres.some((g) => selectedGenres.has(g.toLowerCase())));
 
     let dateMatch = true;
@@ -197,7 +197,7 @@ const applyFilters = debounce(() => {
 
 function clearFilters() {
   $('#searchInput').value = '';
-  $('#stageFilter').value = '';
+  $('#venueFilter').value = '';
   $('#dateFilter').value = '';
   selectedGenres.clear();
   buildGenreList(allGenres);
@@ -244,7 +244,7 @@ function renderMonth(grid) {
     for (const ev of dayEvents) {
       const item = document.createElement('div');
       item.className = 'event-item';
-      item.innerHTML = `${ev.title}${ev.stage ? ` <span class="event-chip" style="background:${stageColor(ev.stage)}">${ev.stage}</span>` : ''}`;
+      item.innerHTML = `${ev.title}${ev.venue ? ` <span class="event-chip" style="background:${venueColor(ev.venue)}">${ev.venue}</span>` : ''}`;
       item.addEventListener('click', () => openModal(ev));
       cell.appendChild(item);
     }
@@ -288,7 +288,7 @@ function renderWeek(grid) {
         const item = document.createElement('div');
         item.className = 'event-item';
         item.style.marginTop = '4px';
-        item.innerHTML = `${ev.title}${ev.stage ? ` <span class="event-chip" style="background:${stageColor(ev.stage)}">${ev.stage}</span>` : ''}`;
+        item.innerHTML = `${ev.title}${ev.venue ? ` <span class="event-chip" style="background:${venueColor(ev.venue)}">${ev.venue}</span>` : ''}`;
         item.addEventListener('click', () => openModal(ev));
         section.appendChild(item);
       }
@@ -346,7 +346,7 @@ function renderList() {
       <div class="event-content">
         <div class="event-title">
           ${e.title}
-          ${e.stage ? `<span class="event-chip" style="background:${stageColor(e.stage)}">${e.stage}</span>` : ''}
+          ${e.venue ? `<span class="event-chip" style="background:${venueColor(e.venue)}">${e.venue}</span>` : ''}
         </div>
         <div class="event-date">${fmtDate(e.date)}</div>
         <div class="event-description">${e.description || ''}</div>
@@ -373,7 +373,7 @@ function openModal(e) {
 
   $('#modalBody').innerHTML = `
     <p><strong>Date:</strong> ${fmtDate(e.date)}</p>
-    <p><strong>Stage:</strong> ${e.stage || '—'}</p>
+    <p><strong>venue:</strong> ${e.venue || '—'}</p>
     <p><strong>Genres:</strong> ${(e.genres || []).join(', ') || '—'}</p>
     <p><strong>Duration:</strong> ${e.duration || '—'}</p>
     <p class="event-description">${e.description || ''}</p>
@@ -395,7 +395,7 @@ $('#modalBackdrop').addEventListener('click', (e) => {
 function googleCalendarUrl(e) {
   const start = toISO(e.date);
   const end = toISO(endFromDuration(e.date, e.duration));
-  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(e.title)}&dates=${start}/${end}&details=${encodeURIComponent(e.description || '')}&location=${encodeURIComponent(e.stage || 'Clubhouse')}`;
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(e.title)}&dates=${start}/${end}&details=${encodeURIComponent(e.description || '')}&location=${encodeURIComponent(e.venue || 'Clubhouse')}`;
 }
 
 const toISO = (d) => new Date(d).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
@@ -429,7 +429,7 @@ DTSTART:${dtStart}
 DTEND:${dtEnd}
 SUMMARY:${e.title}
 DESCRIPTION:${e.description || ''}
-LOCATION:${e.stage || 'Clubhouse'}
+LOCATION:${e.venue || 'Clubhouse'}
 END:VEVENT
 END:VCALENDAR`);
 }
@@ -442,7 +442,7 @@ function setupListeners() {
 
   // Filters
   $('#searchInput').addEventListener('input', applyFilters);
-  $('#stageFilter').addEventListener('change', applyFilters);
+  $('#venueFilter').addEventListener('change', applyFilters);
   $('#dateFilter').addEventListener('change', applyFilters);
   $('#clearFiltersBtn').onclick = clearFilters;
 
@@ -531,7 +531,7 @@ function initFromURL() {
   currentView  = url.searchParams.get('view') || (window.innerWidth <= 768 ? 'list' : 'calendar');
   calendarMode = url.searchParams.get('mode') || (window.innerWidth <= 768 ? 'week' : 'month');
   $('#searchInput').value = url.searchParams.get('q') || '';
-  $('#stageFilter').value = url.searchParams.get('stage') || '';
+  $('#venueFilter').value = url.searchParams.get('venue') || '';
   $('#dateFilter').value  = url.searchParams.get('date') || '';
 
   const g = url.searchParams.get('genres');
