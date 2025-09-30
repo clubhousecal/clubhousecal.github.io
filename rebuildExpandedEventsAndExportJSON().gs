@@ -26,7 +26,7 @@ function rebuildExpandedEventsAndExportJSON() {
     "Show name",
     "Date & Time",
     "Date",
-    "Stage",
+    "Venue",
     "Show Description",
     "Show image",
     "Genre",
@@ -47,7 +47,7 @@ function rebuildExpandedEventsAndExportJSON() {
     var timestamp    = row[0]; // form timestamp
     var showName     = safeStr(row[1]);
     var startDateRaw = row[2]; // Date (Google Sheets date)
-    var stage        = safeStr(row[3]);
+    var venue        = safeStr(row[3]);
     var description  = safeStr(row[4]);
     var image        = safeStr(row[5]);
     var endDateRaw   = row[6]; // Date (Google Sheets date) - optional
@@ -77,8 +77,8 @@ function rebuildExpandedEventsAndExportJSON() {
 
     if (nonRecurring) {
       if (dateTime >= now) {
-        rowsToWrite.push([showName, dateTime, dateOnly, stage, description, image, genre, emailCell, instaCell, webCell, duration]);
-        jsonEvents.push(createEventObject(showName, dateTime, stage, description, image, genre, email, instagram, website, duration, TIMEZONE));
+        rowsToWrite.push([showName, dateTime, dateOnly, venue, description, image, genre, emailCell, instaCell, webCell, duration]);
+        jsonEvents.push(createEventObject(showName, dateTime, venue, description, image, genre, email, instagram, website, duration, TIMEZONE));
       }
       return;
     }
@@ -104,8 +104,8 @@ function rebuildExpandedEventsAndExportJSON() {
         if (showDate) {
           var dt = combineDateTime(showDate, timeVal); // same time each month
           if (dt >= now && dt <= endLimit && dt >= dateTime) { // don’t generate before initial start
-            rowsToWrite.push([showName, dt, stripTime(dt), stage, description, image, genre, emailCell, instaCell, webCell, duration]);
-            jsonEvents.push(createEventObject(showName, dt, stage, description, image, genre, email, instagram, website, duration, TIMEZONE));
+            rowsToWrite.push([showName, dt, stripTime(dt), venue, description, image, genre, emailCell, instaCell, webCell, duration]);
+            jsonEvents.push(createEventObject(showName, dt, venue, description, image, genre, email, instagram, website, duration, TIMEZONE));
           }
         }
       });
@@ -291,16 +291,13 @@ function addMonths(d, n) {
   return new Date(d.getFullYear(), d.getMonth() + n, d.getDate());
 }
 
-/**
- * Create event object with LOCAL ISO string (includes timezone offset).
- */
-function createEventObject(title, dateTime, stage, description, image, genre, email, instagram, website, duration, tz) {
+function createEventObject(title, dateTime, venue, description, image, genre, email, instagram, website, duration, tz) {
   var localISO = Utilities.formatDate(dateTime, tz, "yyyy-MM-dd'T'HH:mm:ssXXX");
   return {
     id: Utilities.getUuid(),
     title: title,
     date: localISO,
-    stage: stage || "",
+    venue: venue || "",
     genre: genre || "",
     description: description || "",
     image: image || "",
