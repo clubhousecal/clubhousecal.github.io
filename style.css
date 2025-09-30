@@ -134,44 +134,6 @@ a:hover {
   margin-top: 8px;
 }
 
-.segmented {
-  display: inline-flex;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--panel);
-}
-
-.seg-btn {
-  background: transparent;
-  border: none;
-  color: var(--text);
-  font-size: 14px;
-  padding: 8px 16px;
-  min-width: 80px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border 0.2s;
-}
-
-.seg-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.seg-btn + .seg-btn {
-  border-left: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.seg-btn.active,
-.today-btn.active {
-  background: var(--accent);
-  color: #fff;
-  font-weight: 600;
-}
-
-.today-btn:hover {
-  background: rgba(52, 152, 219, 0.25);
-}
-
 /* Highlight the current day in week view */
 .week-day.today {
   outline: 2px solid var(--accent);
