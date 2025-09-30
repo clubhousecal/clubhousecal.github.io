@@ -1,7 +1,5 @@
 /* ============================================================
-   Unofficial Clubhouse Show Calendar (Simplified Script)
-   ------------------------------------------------------------
-   Cleaned-up, modular version of original JS
+   LA Improv Calendar - Simplified Script
    ============================================================ */
 
 /* ---------- Constants & State ---------- */
@@ -13,14 +11,19 @@ let filtered = [];
 let selectedGenres = new Set();
 let allGenres = [];
 
-let currentView = 'calendar';
-let calendarMode = 'month';
-let cursorDate = new Date();
+/* Range that the UI is currently showing (month or week) */
+let currentRangeStart = null;
+let currentRangeEnd = null;
+
+/* View + calendar state */
+let currentView = 'calendar';   // 'calendar' | 'list'
+let calendarMode = 'month';     // 'month' | 'week'
+let cursorDate = new Date();    // anchor date for navigation
 
 const url = new URL(window.location.href);
 
 /* ---------- Shortcuts ---------- */
-const $ = (sel, el = document) => el.querySelector(sel);
+const $  = (sel, el = document) => el.querySelector(sel);
 const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 const safe = (s) => (s ?? '').toString();
 
@@ -32,42 +35,40 @@ const ym = (d) =>
   new Intl.DateTimeFormat('en-CA', { timeZone: VENUE_TZ, year: 'numeric', month: '2-digit' }).format(d);
 
 const fmtDate = (d) =>
-  d.toLocaleString('en-US', { timeZone: VENUE_TZ, weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'});
+  d.toLocaleString('en-US', { timeZone: VENUE_TZ, weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 
 const fmtDateNoTime = (d) =>
-  d.toLocaleString('en-US', { timeZone: VENUE_TZ, month: 'long', day: 'numeric'});
+  d.toLocaleString('en-US', { timeZone: VENUE_TZ, month: 'long', day: 'numeric' });
 
 const stageColor = (s) => {
+  s = safe(s);
   let hash = 0;
   for (let i = 0; i < s.length; i++) hash = (hash * 31 + s.charCodeAt(i)) >>> 0;
   return `hsl(${hash % 360} 55% 50%)`;
 };
 
-const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+const slugify = (s) => safe(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 const eventId = (e) => `${ymd(e.date)}-${slugify(e.title)}`;
 
 const setParam = (k, v) => {
-  if (v) url.searchParams.set(k, v);
+  if (v !== null && v !== '') url.searchParams.set(k, v);
   else url.searchParams.delete(k);
   history.replaceState(null, '', url);
 };
 
 const debounce = (fn, ms = 200) => {
   let t;
-  return (...args) => {
-    clearTimeout(t);
-    t = setTimeout(() => fn(...args), ms);
-  };
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
 };
 
-/* ---------- Initialization ---------- */
+/* ---------- Boot ---------- */
 document.addEventListener('DOMContentLoaded', () => loadEvents());
 
+/* ---------- Data Load ---------- */
 async function loadEvents() {
   try {
     const res = await fetch(`${DATA_SOURCE}?_=${Date.now()}`);
     const data = await res.json();
-
     if (!data?.events) throw new Error('Invalid data');
 
     events = data.events
@@ -82,21 +83,17 @@ async function loadEvents() {
         email: safe(e.email),
         instagram: safe(e.instagram),
         website: safe(e.website),
-        duration: safe(e.duration)
+        duration: safe(e.duration),
       }))
       .filter((e) => !isNaN(e.date))
       .sort((a, b) => a.date - b.date);
 
     filtered = [...events];
 
+    // UI init
     $('#loadingMessage').classList.add('hidden');
     $('#controls').classList.remove('hidden');
     $('#calendarView').classList.remove('hidden');
-
-    if (data.lastUpdated) {
-      $('#lastUpdated').textContent = 'Last updated: ' + new Date(data.lastUpdated).toLocaleString();
-      $('#lastUpdated').classList.remove('hidden');
-    }
     $('#tzLabel').textContent = 'Times shown in ' + VENUE_TZ;
     $('#tzLabel').classList.remove('hidden');
 
@@ -111,7 +108,7 @@ async function loadEvents() {
   }
 }
 
-/* ---------- Filtering ---------- */
+/* ---------- Filters ---------- */
 function parseGenres(g) {
   if (!g) return [];
   if (Array.isArray(g)) return g.filter(Boolean);
@@ -123,7 +120,7 @@ function parseGenres(g) {
 }
 
 function populateFilters() {
-  // Stage filter
+  // Stage
   const stages = [...new Set(events.map((e) => e.stage).filter(Boolean))].sort();
   const stageSel = $('#stageFilter');
   stageSel.innerHTML = '<option value="">Stage</option>' + stages.map((s) => `<option>${s}</option>`).join('');
@@ -134,10 +131,7 @@ function populateFilters() {
   for (const e of events) {
     for (const g of e.genres || []) {
       const key = g.toLowerCase();
-      if (!seen.has(key)) {
-        seen.add(key);
-        allGenres.push(g);
-      }
+      if (!seen.has(key)) { seen.add(key); allGenres.push(g); }
     }
   }
   allGenres.sort((a, b) => a.localeCompare(b));
@@ -147,9 +141,7 @@ function populateFilters() {
 
 function buildGenreList(list) {
   const cont = $('#genreList');
-  cont.innerHTML = list
-    .map((g) => `<label><input type="checkbox" value="${g}"> ${g}</label>`)
-    .join('');
+  cont.innerHTML = list.map((g) => `<label><input type="checkbox" value="${g}"> ${g}</label>`).join('');
 
   $$('input[type="checkbox"]', cont).forEach((cb) => {
     cb.checked = selectedGenres.has(cb.value.toLowerCase());
@@ -178,13 +170,14 @@ const applyFilters = debounce(() => {
   const stage = $('#stageFilter').value;
   const dateF = $('#dateFilter').value;
 
+  // Quick date filters (relative to "today" in VENUE_TZ)
   const today = new Date();
   const todayKey = ymd(today);
   const weekEndKey = ymd(new Date(today.getTime() + 7 * 86400000));
   const monthKey = ym(today);
 
   filtered = events.filter((e) => {
-    const text = (e.title + e.description + e.stage + (e.genres || []).join(' ')).toLowerCase();
+    const text = (e.title + ' ' + e.description + ' ' + e.stage + ' ' + (e.genres || []).join(' ')).toLowerCase();
     const matches =
       (!q || text.includes(q)) &&
       (!stage || e.stage === stage) &&
@@ -216,7 +209,6 @@ function clearFilters() {
 function renderCalendar() {
   const grid = $('#calendarGrid');
   grid.innerHTML = '';
-
   if (calendarMode === 'month') renderMonth(grid);
   else renderWeek(grid);
 }
@@ -224,10 +216,19 @@ function renderCalendar() {
 function renderMonth(grid) {
   const y = cursorDate.getFullYear();
   const m = cursorDate.getMonth();
+
   $('#monthLabel').textContent = cursorDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
-  const start = new Date(y, m, 1 - ((new Date(y, m, 1).getDay() + 6) % 7));
+  // Start from the first cell to render (Mon-first style grid)
+  const firstOfMonth = new Date(y, m, 1);
+  const offset = (new Date(y, m, 1).getDay() + 6) % 7; // Monday=0
+  const start = new Date(y, m, 1 - offset);
+
   const todayKey = ymd(new Date());
+
+  // Visible range for list syncing (first..last day of month)
+  currentRangeStart = new Date(y, m, 1);
+  currentRangeEnd = new Date(y, m + 1, 0);
 
   for (let i = 0; i < 42; i++) {
     const day = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
@@ -243,7 +244,7 @@ function renderMonth(grid) {
     for (const ev of dayEvents) {
       const item = document.createElement('div');
       item.className = 'event-item';
-      item.innerHTML = `${ev.title} <span class="event-chip" style="background:${stageColor(ev.stage)}">${ev.stage}</span>`;
+      item.innerHTML = `${ev.title}${ev.stage ? ` <span class="event-chip" style="background:${stageColor(ev.stage)}">${ev.stage}</span>` : ''}`;
       item.addEventListener('click', () => openModal(ev));
       cell.appendChild(item);
     }
@@ -253,30 +254,41 @@ function renderMonth(grid) {
 
 function renderWeek(grid) {
   grid.innerHTML = '';
-  const start = startOfWeek(cursorDate);
+  const start = startOfWeek(cursorDate);               // Monday-based
   const end = new Date(start.getTime() + 6 * 86400000);
+
+  // Title shows dates only (no "Week of", no times)
   $('#monthLabel').textContent = `${fmtDateNoTime(start)} – ${fmtDateNoTime(end)}`;
+
+  // Visible range for list syncing
+  currentRangeStart = start;
+  currentRangeEnd = end;
+
+  const todayKey = ymd(new Date());
 
   for (let i = 0; i < 7; i++) {
     const day = new Date(start.getTime() + i * 86400000);
     const section = document.createElement('div');
-    section.className = 'calendar-day';
+    section.className = 'calendar-day' + (ymd(day) === todayKey ? ' today' : '');
+
     const dayLabel = document.createElement('div');
     dayLabel.className = 'day-number';
-    dayLabel.textContent = fmtDate(day).split(',')[0];
+    // Short weekday + date, no time
+    dayLabel.textContent = day.toLocaleString('en-US', { timeZone: VENUE_TZ, weekday: 'short', month: 'short', day: 'numeric' });
     section.appendChild(dayLabel);
 
     const dayEvents = filtered.filter((e) => ymd(e.date) === ymd(day));
     if (dayEvents.length === 0) {
       const noE = document.createElement('div');
       noE.textContent = 'No events';
-      noE.style.opacity = 0.5;
+      noE.style.opacity = 0.6;
       section.appendChild(noE);
     } else {
       for (const ev of dayEvents) {
         const item = document.createElement('div');
         item.className = 'event-item';
-        item.innerHTML = `${ev.title} <span class="event-chip" style="background:${stageColor(ev.stage)}">${ev.stage}</span>`;
+        item.style.marginTop = '4px';
+        item.innerHTML = `${ev.title}${ev.stage ? ` <span class="event-chip" style="background:${stageColor(ev.stage)}">${ev.stage}</span>` : ''}`;
         item.addEventListener('click', () => openModal(ev));
         section.appendChild(item);
       }
@@ -286,10 +298,11 @@ function renderWeek(grid) {
 }
 
 const startOfWeek = (d) => {
-  const day = new Date(d);
-  const wd = (day.getDay() + 6) % 7;
-  day.setDate(day.getDate() - wd);
-  return day;
+  const x = new Date(d);
+  const wd = (x.getDay() + 6) % 7; // Monday=0
+  x.setDate(x.getDate() - wd);
+  x.setHours(0, 0, 0, 0);
+  return x;
 };
 
 /* ---------- List Rendering ---------- */
@@ -297,24 +310,56 @@ function renderList() {
   const wrap = $('#eventCards');
   wrap.innerHTML = '';
 
-  filtered.forEach((e) => {
+  // Optional small header above list (if present in HTML)
+  const listHeader = $('#listHeader');
+  if (listHeader && currentRangeStart && currentRangeEnd) {
+    if (calendarMode === 'month') {
+      listHeader.textContent = currentRangeStart.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    } else {
+      listHeader.textContent = `${fmtDateNoTime(currentRangeStart)} – ${fmtDateNoTime(currentRangeEnd)}`;
+    }
+  }
+
+  // Range-filtered view
+  const start = currentRangeStart ? new Date(currentRangeStart) : null;
+  const end = currentRangeEnd ? new Date(currentRangeEnd) : null;
+
+  const visibleEvents = filtered.filter((e) => {
+    const eventDate = new Date(e.date);
+    if (start && end) return eventDate >= start && eventDate <= end;
+    return true;
+  });
+
+  visibleEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  if (visibleEvents.length === 0) {
+    wrap.innerHTML = `<p class="no-events">No events in this period.</p>`;
+    return;
+  }
+
+  visibleEvents.forEach((e) => {
     const card = document.createElement('div');
     card.className = 'event-card';
     card.innerHTML = `
-      <img src="${e.image}" alt="${e.title}" class="event-image" onerror="this.src='https://via.placeholder.com/800x420/2d3748/ffffff?text=${encodeURIComponent(e.title)}'">
+      <img src="${e.image}" alt="${e.title}" class="event-image"
+           onerror="this.src='https://via.placeholder.com/800x420/2d3748/ffffff?text=${encodeURIComponent(e.title)}'">
       <div class="event-content">
-        <div class="event-title">${e.title} <span class="event-chip" style="background:${stageColor(e.stage)}">${e.stage}</span></div>
+        <div class="event-title">
+          ${e.title}
+          ${e.stage ? `<span class="event-chip" style="background:${stageColor(e.stage)}">${e.stage}</span>` : ''}
+        </div>
         <div class="event-date">${fmtDate(e.date)}</div>
         <div class="event-description">${e.description || ''}</div>
         <div class="links">
           ${e.email ? `<a class="link" href="mailto:${e.email}">Email</a>` : ''}
-          ${e.instagram ? `<a class="link" href="https://instagram.com/${e.instagram.replace('@','')}" target="_blank">Instagram</a>` : ''}
-          ${e.website ? `<a class="link" href="${e.website.startsWith('http') ? e.website : 'https://' + e.website}" target="_blank">Website</a>` : ''}
-          <a class="link" href="${googleCalendarUrl(e)}" target="_blank">Add to Calendar</a>
+          ${e.instagram ? `<a class="link" href="https://instagram.com/${e.instagram.replace('@','')}" target="_blank" rel="noopener">Instagram</a>` : ''}
+          ${e.website ? `<a class="link" href="${e.website.startsWith('http') ? e.website : 'https://' + e.website}" target="_blank" rel="noopener">Website</a>` : ''}
+          <a class="link" href="${googleCalendarUrl(e)}" target="_blank" rel="noopener">Add to Calendar</a>
           <a class="link" href="${buildICS(e)}" download="${eventId(e)}.ics">.ics</a>
           <button class="link" type="button">Details</button>
         </div>
       </div>`;
+
     card.querySelector('button').addEventListener('click', () => openModal(e));
     card.querySelector('.event-image').addEventListener('click', () => openModal(e));
     wrap.appendChild(card);
@@ -334,9 +379,9 @@ function openModal(e) {
     <p class="event-description">${e.description || ''}</p>
     <div class="links" style="margin-top:10px">
       ${e.email ? `<a class="link" href="mailto:${e.email}">Email</a>` : ''}
-      ${e.instagram ? `<a class="link" href="https://instagram.com/${e.instagram.replace('@','')}" target="_blank">Instagram</a>` : ''}
-      ${e.website ? `<a class="link" href="${e.website.startsWith('http') ? e.website : 'https://' + e.website}" target="_blank">Website</a>` : ''}
-      <a class="link" href="${googleCalendarUrl(e)}" target="_blank">Google Calendar</a>
+      ${e.instagram ? `<a class="link" href="https://instagram.com/${e.instagram.replace('@','')}" target="_blank" rel="noopener">Instagram</a>` : ''}
+      ${e.website ? `<a class="link" href="${e.website.startsWith('http') ? e.website : 'https://' + e.website}" target="_blank" rel="noopener">Website</a>` : ''}
+      <a class="link" href="${googleCalendarUrl(e)}" target="_blank" rel="noopener">Google Calendar</a>
       <a class="link" href="${buildICS(e)}" download="${eventId(e)}.ics">Download .ics</a>
     </div>`;
 }
@@ -357,10 +402,9 @@ const toISO = (d) => new Date(d).toISOString().replace(/[-:]/g, '').replace(/\.\
 
 function endFromDuration(start, dur) {
   const s = new Date(start);
+  if (!dur) { s.setHours(s.getHours() + 1); return s; }
   const m = /(\d+)\s*h|\b(\d+)\s*m/gi;
-  let hours = 0,
-    mins = 0,
-    match;
+  let hours = 0, mins = 0, match;
   while ((match = m.exec(dur)) !== null) {
     if (match[1]) hours += +match[1];
     if (match[2]) mins += +match[2];
@@ -390,47 +434,53 @@ END:VEVENT
 END:VCALENDAR`);
 }
 
-/* ---------- View Controls ---------- */
+/* ---------- Controls & Listeners ---------- */
 function setupListeners() {
+  // View toggle
   $('#listViewBtn').onclick = () => switchView('list');
   $('#calendarViewBtn').onclick = () => switchView('calendar');
+
+  // Filters
   $('#searchInput').addEventListener('input', applyFilters);
   $('#stageFilter').addEventListener('change', applyFilters);
   $('#dateFilter').addEventListener('change', applyFilters);
   $('#clearFiltersBtn').onclick = clearFilters;
 
+  // Nav (prev/next/today)
   $('#prevSpanBtn').onclick = () => changeSpan(-1);
   $('#nextSpanBtn').onclick = () => changeSpan(1);
   $('#todayBtn').onclick = () => {
     cursorDate = new Date();
     renderCalendar();
+    if (currentView === 'list') renderList();
+
+    // quick visual tap feedback (optional)
+    const t = $('#todayBtn');
+    t.classList.add('active'); setTimeout(() => t.classList.remove('active'), 500);
   };
 
+  // Mode toggle
   $('#modeMonthBtn').onclick = () => setMode('month');
   $('#modeWeekBtn').onclick = () => setMode('week');
 
-  const multi = $('#genreMulti');
-  const btn = $('#genreBtn');
-  const panel = $('#genrePanel');
+  // Genre dropdown
+  const multi  = $('#genreMulti');
+  const btn    = $('#genreBtn');
+  const panel  = $('#genrePanel');
   const search = $('#genreSearch');
 
   btn.onclick = () => {
     const open = multi.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     if (open) search.focus();
   };
-  document.getElementById('todayBtn').addEventListener('click', () => {
-    document.querySelectorAll('.today-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById('todayBtn').classList.add('active');
-    setTimeout(() => document.getElementById('todayBtn').classList.remove('active'), 500);
-  });
   document.addEventListener('click', (e) => {
-    if (!multi.contains(e.target)) multi.classList.remove('open');
+    if (!multi.contains(e.target)) { multi.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
   });
   search.addEventListener('input', () => {
     const q = search.value.toLowerCase();
-    const filtered = allGenres.filter((g) => g.toLowerCase().includes(q));
-    buildGenreList(filtered);
+    const list = allGenres.filter((g) => g.toLowerCase().includes(q));
+    buildGenreList(list);
   });
 }
 
@@ -439,7 +489,7 @@ function switchView(v) {
   setParam('view', v);
 
   const listBtn = $('#listViewBtn');
-  const calBtn = $('#calendarViewBtn');
+  const calBtn  = $('#calendarViewBtn');
 
   if (v === 'list') {
     $('#calendarView').classList.add('hidden');
@@ -461,23 +511,33 @@ function setMode(mode) {
   setParam('mode', mode);
   $('#modeMonthBtn').classList.toggle('active', mode === 'month');
   $('#modeWeekBtn').classList.toggle('active', mode === 'week');
+
   renderCalendar();
+  if (currentView === 'list') renderList();
 }
 
 function changeSpan(dir) {
-  cursorDate.setDate(cursorDate.getDate() + dir * (calendarMode === 'month' ? 30 : 7));
+  if (calendarMode === 'month') {
+    cursorDate.setMonth(cursorDate.getMonth() + dir);
+  } else {
+    cursorDate.setDate(cursorDate.getDate() + dir * 7);
+  }
   renderCalendar();
+  if (currentView === 'list') renderList();
 }
 
 /* ---------- URL Sync ---------- */
 function initFromURL() {
-  currentView = url.searchParams.get('view') || (window.innerWidth <= 768 ? 'list' : 'calendar');
+  currentView  = url.searchParams.get('view') || (window.innerWidth <= 768 ? 'list' : 'calendar');
   calendarMode = url.searchParams.get('mode') || (window.innerWidth <= 768 ? 'week' : 'month');
   $('#searchInput').value = url.searchParams.get('q') || '';
   $('#stageFilter').value = url.searchParams.get('stage') || '';
-  $('#dateFilter').value = url.searchParams.get('date') || '';
+  $('#dateFilter').value  = url.searchParams.get('date') || '';
+
   const g = url.searchParams.get('genres');
   if (g) g.split(',').forEach((x) => selectedGenres.add(x.toLowerCase()));
+  updateGenreLabel();
+  buildGenreList(allGenres);
 
   $('#filters').classList.toggle('collapsed', window.innerWidth <= 768);
   switchView(currentView);
