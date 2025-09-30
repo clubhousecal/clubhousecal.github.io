@@ -54,7 +54,7 @@
         </select>
         <button id="clearFiltersBtn" class="btn secondary">Clear</button>
       </div>
-
+      
       <div class="monthbar">
         <div class="mode-toggle">
           <div class="segmented" role="group" aria-label="Calendar display mode">
@@ -63,15 +63,12 @@
           </div>
         </div>
       
-        <div class="btns">
-          <button id="prevSpanBtn" class="btn" aria-label="Previous">← Prev</button>
-          <button id="todayBtn" class="btn" aria-label="Jump to current">Today</button>
-          <button id="nextSpanBtn" class="btn" aria-label="Next">Next →</button>
-        </div>
-      </div>
+        <button id="prevSpanBtn" class="nav-arrow" aria-label="Previous month or week">←</button>
+        <h2 id="monthLabel" class="calendar-title" aria-live="polite"></h2>
+        <button id="nextSpanBtn" class="nav-arrow" aria-label="Next month or week">→</button>
       
-      <!-- Move the title ABOVE the calendar -->
-      <h2 id="monthLabel" class="calendar-title" aria-live="polite"></h2>
+        <button id="todayBtn" class="btn today-btn" aria-label="Jump to current">Today</button>
+      </div>
     </section>
 
     <section id="calendarView" class="hidden">
