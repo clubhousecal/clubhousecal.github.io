@@ -214,32 +214,25 @@ function renderCalendar() {
 }
 
 function renderMonth(grid) {
-  // ✅ Clear old content
+  // clear grid cells
   grid.innerHTML = '';
 
-// ✅ Only insert weekday header if it doesn't already exist
-if (!grid.previousElementSibling || !grid.previousElementSibling.classList.contains('weekday-header')) {
-  grid.parentNode.insertBefore(renderWeekdayHeader(), grid);
-}
+  // remove any existing weekday header, then insert one above the grid
+  const parent = grid.parentNode; // #calendarScroll
+  parent.querySelectorAll('.calendar-weekdays').forEach(n => n.remove());
+  parent.insertBefore(renderWeekdayHeader(), grid);
 
-   const y = cursorDate.getFullYear();
+  const y = cursorDate.getFullYear();
   const m = cursorDate.getMonth();
 
-  $('#monthLabel').textContent = cursorDate.toLocaleDateString('en-US', {
-    month: 'long',
-    year: 'numeric'
-  });
+  $('#monthLabel').textContent = cursorDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
-  // Start from the first cell to render (Mon-first style grid)
-  const firstOfMonth = new Date(y, m, 1);
   const offset = (new Date(y, m, 1).getDay() + 6) % 7; // Monday=0
   const start = new Date(y, m, 1 - offset);
-
   const todayKey = ymd(new Date());
 
-  // Visible range for list syncing (first..last day of month)
   currentRangeStart = new Date(y, m, 1);
-  currentRangeEnd = new Date(y, m + 1, 0);
+  currentRangeEnd   = new Date(y, m + 1, 0);
 
   for (let i = 0; i < 42; i++) {
     const day = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
@@ -251,7 +244,7 @@ if (!grid.previousElementSibling || !grid.previousElementSibling.classList.conta
     dn.textContent = day.getDate();
     cell.appendChild(dn);
 
-    const dayEvents = filtered.filter((e) => ymd(e.date) === ymd(day));
+    const dayEvents = filtered.filter(e => ymd(e.date) === ymd(day));
     for (const ev of dayEvents) {
       const item = document.createElement('div');
       item.className = 'event-item';
@@ -318,20 +311,16 @@ const startOfWeek = (d) => {
 };
 
 function renderWeekdayHeader() {
-  const headerRow = document.createElement('div');
-  headerRow.className = 'calendar-weekdays';
-
-  const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-  weekdays.forEach((d) => {
+  const header = document.createElement('div');
+  header.className = 'calendar-weekdays';
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  for (const d of days) {
     const cell = document.createElement('div');
     cell.className = 'calendar-weekday';
     cell.textContent = d;
-    headerRow.appendChild(cell);
-  });
-
-  // ✅ Return instead of appending to the grid
-  return headerRow;
+    header.appendChild(cell);
+  }
+  return header;
 }
 
 /* ---------- List Rendering ---------- */
