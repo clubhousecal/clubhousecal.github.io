@@ -82,7 +82,7 @@ a:hover {
 
 .search-wrap input {
   width: 100%;
-  padding: 10px 12px;
+  padding: 8px 14px;
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--panel);
@@ -218,7 +218,7 @@ a:hover {
 /*.filters.collapsed { display: none; } */
 
 .select, .multi-btn {
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--panel);
@@ -266,10 +266,10 @@ a:hover {
 /* Search bar inside dropdown */
 .multi-search {
   width: 100%;
-  padding: 6px 8px;
+  padding: 8px 14px;
   margin-bottom: 6px;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.05);
   color: var(--text);
 }
