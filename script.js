@@ -32,7 +32,7 @@ const ym = (d) =>
   new Intl.DateTimeFormat('en-CA', { timeZone: VENUE_TZ, year: 'numeric', month: '2-digit' }).format(d);
 
 const fmtDate = (d) =>
-  d.toLocaleString('en-US', { timeZone: VENUE_TZ, weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  d.toLocaleString('en-US', { timeZone: VENUE_TZ, weekday: 'long', month: 'long', day: 'numeric'});
 
 const stageColor = (s) => {
   let hash = 0;
