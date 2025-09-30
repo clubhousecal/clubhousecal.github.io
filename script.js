@@ -35,7 +35,7 @@ const fmtDate = (d) =>
   d.toLocaleString('en-US', { timeZone: VENUE_TZ, weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'});
 
 const fmtDateNoTime = (d) =>
-  d.toLocaleString('en-US', { timeZone: VENUE_TZ, weekday: 'long', month: 'long', day: 'numeric'});
+  d.toLocaleString('en-US', { timeZone: VENUE_TZ, month: 'long', day: 'numeric'});
 
 const stageColor = (s) => {
   let hash = 0;
@@ -255,7 +255,7 @@ function renderWeek(grid) {
   grid.innerHTML = '';
   const start = startOfWeek(cursorDate);
   const end = new Date(start.getTime() + 6 * 86400000);
-  $('#monthLabel').textContent = `Week of ${fmtDateNoTime(start)} – ${fmtDateNoTime(end)}`;
+  $('#monthLabel').textContent = `${fmtDateNoTime(start)} – ${fmtDateNoTime(end)}`;
 
   for (let i = 0; i < 7; i++) {
     const day = new Date(start.getTime() + i * 86400000);
