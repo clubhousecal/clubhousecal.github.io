@@ -168,7 +168,7 @@ function updateGenreLabel() {
 const applyFilters = debounce(() => {
   const q = $('#searchInput').value.toLowerCase();
   const venue = $('#venueFilter').value;
-  const dateF = $('#dateFilter').value;
+  //const dateF = $('#dateFilter').value;
 
   // Quick date filters (relative to "today" in VENUE_TZ)
   const today = new Date();
