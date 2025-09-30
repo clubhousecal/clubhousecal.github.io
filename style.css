@@ -156,7 +156,7 @@ a:hover {
   position: absolute;
   top: 110%;
   left: 0;
-  z-index: 100;
+  z-index: 9999; /* ensures it appears above calendar and modal background */
   display: none;
   background: var(--panel);
   border: 1px solid var(--border);
@@ -165,7 +165,9 @@ a:hover {
   min-width: 200px;
   max-height: 250px;
   overflow-y: auto;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  background: rgba(39, 53, 72, 0.95);
 }
 
 /* Show panel when open */
