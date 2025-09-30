@@ -214,6 +214,7 @@ function renderCalendar() {
 }
 
 function renderMonth(grid) {
+  renderWeekdayHeader(grid);
   const y = cursorDate.getFullYear();
   const m = cursorDate.getMonth();
 
@@ -304,6 +305,21 @@ const startOfWeek = (d) => {
   x.setHours(0, 0, 0, 0);
   return x;
 };
+
+function renderWeekdayHeader(grid) {
+  const headerRow = document.createElement('div');
+  headerRow.className = 'calendar-weekdays';
+  const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+  weekdays.forEach((d) => {
+    const cell = document.createElement('div');
+    cell.className = 'calendar-weekday';
+    cell.textContent = d;
+    headerRow.appendChild(cell);
+  });
+
+  grid.appendChild(headerRow);
+}
 
 /* ---------- List Rendering ---------- */
 function renderList() {
