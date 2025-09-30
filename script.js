@@ -214,11 +214,19 @@ function renderCalendar() {
 }
 
 function renderMonth(grid) {
-  renderWeekdayHeader(grid);
+  // ✅ Clear old content
+  grid.innerHTML = '';
+
+  // ✅ Insert weekday header ABOVE the grid
+  grid.parentNode.insertBefore(renderWeekdayHeader(), grid);
+
   const y = cursorDate.getFullYear();
   const m = cursorDate.getMonth();
 
-  $('#monthLabel').textContent = cursorDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  $('#monthLabel').textContent = cursorDate.toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric'
+  });
 
   // Start from the first cell to render (Mon-first style grid)
   const firstOfMonth = new Date(y, m, 1);
@@ -249,6 +257,7 @@ function renderMonth(grid) {
       item.addEventListener('click', () => openModal(ev));
       cell.appendChild(item);
     }
+
     grid.appendChild(cell);
   }
 }
@@ -306,9 +315,10 @@ const startOfWeek = (d) => {
   return x;
 };
 
-function renderWeekdayHeader(grid) {
+function renderWeekdayHeader() {
   const headerRow = document.createElement('div');
   headerRow.className = 'calendar-weekdays';
+
   const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   weekdays.forEach((d) => {
@@ -318,7 +328,8 @@ function renderWeekdayHeader(grid) {
     headerRow.appendChild(cell);
   });
 
-  grid.appendChild(headerRow);
+  // ✅ Return instead of appending to the grid
+  return headerRow;
 }
 
 /* ---------- List Rendering ---------- */
