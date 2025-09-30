@@ -56,19 +56,22 @@
       </div>
 
       <div class="monthbar">
-        <div class="btns">
-          <button id="prevSpanBtn" class="btn">← Prev</button>
-          <button id="todayBtn" class="btn">Today</button>
-          <button id="nextSpanBtn" class="btn">Next →</button>
-        </div>
         <div class="mode-toggle">
-          <div id="monthLabel" class="month-title"></div>
-          <div class="segmented">
-            <button id="modeMonthBtn" class="seg-btn active">Month</button>
-            <button id="modeWeekBtn" class="seg-btn">Week</button>
+          <div class="segmented" role="group" aria-label="Calendar display mode">
+            <button id="modeMonthBtn" class="seg-btn" type="button">Month</button>
+            <button id="modeWeekBtn"  class="seg-btn" type="button">Week</button>
           </div>
         </div>
+      
+        <div class="btns">
+          <button id="prevSpanBtn" class="btn" aria-label="Previous">← Prev</button>
+          <button id="todayBtn" class="btn" aria-label="Jump to current">Today</button>
+          <button id="nextSpanBtn" class="btn" aria-label="Next">Next →</button>
+        </div>
       </div>
+      
+      <!-- Move the title ABOVE the calendar -->
+      <h2 id="monthLabel" class="calendar-title" aria-live="polite"></h2>
     </section>
 
     <section id="calendarView" class="hidden">
