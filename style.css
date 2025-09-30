@@ -62,6 +62,8 @@ a:hover {
   margin-bottom: 16px;
 }
 
+.hidden { display: none !important; }
+
 .topbar {
   display: flex;
   flex-wrap: wrap;
