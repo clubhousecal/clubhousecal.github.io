@@ -56,18 +56,17 @@
       </div>
       
       <div class="monthbar">
-        <div class="mode-toggle">
-          <div class="segmented" role="group" aria-label="Calendar display mode">
-            <button id="modeMonthBtn" class="seg-btn" type="button">Month</button>
-            <button id="modeWeekBtn"  class="seg-btn" type="button">Week</button>
-          </div>
-        </div>
-      
-        <button id="prevSpanBtn" class="nav-arrow" aria-label="Previous month or week">←</button>
+        <button id="prevSpanBtn" class="arrow-btn" aria-label="Previous">◀</button>
         <h2 id="monthLabel" class="calendar-title" aria-live="polite"></h2>
-        <button id="nextSpanBtn" class="nav-arrow" aria-label="Next month or week">→</button>
+        <button id="nextSpanBtn" class="arrow-btn" aria-label="Next">▶</button>
+      </div>
       
-        <button id="todayBtn" class="btn today-btn" aria-label="Jump to current">Today</button>
+      <div class="mode-toggle">
+        <div class="segmented" role="group" aria-label="Calendar display mode">
+          <button id="modeMonthBtn" class="seg-btn" type="button">Month</button>
+          <button id="modeWeekBtn"  class="seg-btn" type="button">Week</button>
+        </div>
+        <button id="todayBtn" class="btn" aria-label="Jump to current">Today</button>
       </div>
     </section>
 
