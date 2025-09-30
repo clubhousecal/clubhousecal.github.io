@@ -156,18 +156,17 @@ a:hover {
   position: absolute;
   top: 110%;
   left: 0;
-  z-index: 9999; /* ensures it appears above calendar and modal background */
+  z-index: 9999;
   display: none;
-  background: var(--panel);
+  background: linear-gradient(180deg, rgba(39,53,72,1) 0%, rgba(39,53,72,0.97) 100%);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 8px;
   min-width: 200px;
   max-height: 250px;
   overflow-y: auto;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
   backdrop-filter: blur(6px);
-  background: rgba(39, 53, 72, 0.95);
 }
 
 /* Show panel when open */
