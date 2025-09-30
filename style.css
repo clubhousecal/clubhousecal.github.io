@@ -163,39 +163,50 @@ a:hover {
   font-weight: 600;
 }
 
-/* Reposition month/week bar and title */
 .monthbar {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: 16px;
-  margin: 12px 0;
-}
-
-.calendar-title {
-  flex: 0 0 auto;
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 0.4px;
-  padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  margin: 16px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06); /* unified background */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .arrow-btn {
   background: transparent;
   border: none;
   color: var(--text);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
-  padding: 6px 12px;
-  transition: color 0.2s, transform 0.2s;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
 }
 
+/* Hover effects */
 .arrow-btn:hover {
+  background: rgba(52, 152, 219, 0.25);
   color: var(--accent);
-  transform: scale(1.15);
+  transform: scale(1.05);
+}
+
+/* Center section (month/week label) */
+.calendar-title {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.4px;
+  color: var(--text);
+  padding: 10px 0;
+  background: rgba(255, 255, 255, 0.06); /* same as parent so it blends */
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .view-toggle button,
