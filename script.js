@@ -377,7 +377,6 @@ function renderList() {
           ${e.website ? `<a class="link" href="${e.website.startsWith('http') ? e.website : 'https://' + e.website}" target="_blank" rel="noopener">Website</a>` : ''}
           <a class="link" href="${googleCalendarUrl(e)}" target="_blank" rel="noopener">Add to Calendar</a>
           <a class="link" href="${buildICS(e)}" download="${eventId(e)}.ics">.ics</a>
-          <button class="link" type="button">Details</button>
         </div>
       </div>`;
 
