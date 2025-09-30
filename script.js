@@ -560,7 +560,7 @@ function initFromURL() {
   updateGenreLabel();
   buildGenreList(allGenres);
 
-  $('#filters').classList.toggle('collapsed', window.innerWidth <= 768);
+  //$('#filters').classList.toggle('collapsed', window.innerWidth <= 768);
   switchView(currentView);
   setMode(calendarMode);
 }
