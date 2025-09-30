@@ -122,11 +122,11 @@ a:hover {
   border-color: var(--accent);
 }
 
-/* Mode toggle (Month / Week) */
+/* Month / Week toggle (left-aligned, smaller but same style) */
 .mode-toggle {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
 }
 
 .segmented {
@@ -135,13 +135,12 @@ a:hover {
 }
 
 .seg-btn {
-  @apply none; /* ignore if unsupported */
   background: var(--panel);
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 14px;
+  padding: 6px 10px; /* smaller than list/calendar buttons */
+  font-size: 13px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border 0.2s;
 }
@@ -150,8 +149,11 @@ a:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.seg-btn:active {
-  background: rgba(255, 255, 255, 0.12);
+.seg-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  font-weight: 600;
 }
 
 .seg-btn.active {
@@ -159,6 +161,22 @@ a:hover {
   color: #fff;
   border-color: var(--accent);
   font-weight: 600;
+}
+
+/* Reposition month/week bar and title */
+.monthbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.calendar-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.4px;
+  margin: 16px 0 8px;
 }
 
 .view-toggle button,
