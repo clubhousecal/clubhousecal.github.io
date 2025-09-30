@@ -198,7 +198,7 @@ const applyFilters = debounce(() => {
 function clearFilters() {
   $('#searchInput').value = '';
   $('#venueFilter').value = '';
-  $('#dateFilter').value = '';
+  //$('#dateFilter').value = '';
   selectedGenres.clear();
   buildGenreList(allGenres);
   updateGenreLabel();
@@ -463,7 +463,7 @@ function setupListeners() {
   // Filters
   $('#searchInput').addEventListener('input', applyFilters);
   $('#venueFilter').addEventListener('change', applyFilters);
-  $('#dateFilter').addEventListener('change', applyFilters);
+  //$('#dateFilter').addEventListener('change', applyFilters);
   $('#clearFiltersBtn').onclick = clearFilters;
 
   // Nav (prev/next/today)
@@ -552,7 +552,7 @@ function initFromURL() {
   calendarMode = url.searchParams.get('mode') || (window.innerWidth <= 768 ? 'week' : 'month');
   $('#searchInput').value = url.searchParams.get('q') || '';
   $('#venueFilter').value = url.searchParams.get('venue') || '';
-  $('#dateFilter').value  = url.searchParams.get('date') || '';
+  //$('#dateFilter').value  = url.searchParams.get('date') || '';
 
   const g = url.searchParams.get('genres');
   if (g) g.split(',').forEach((x) => selectedGenres.add(x.toLowerCase()));
