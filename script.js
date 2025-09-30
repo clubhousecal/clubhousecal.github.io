@@ -381,8 +381,13 @@ function renderList() {
         </div>
       </div>`;
 
-    card.querySelector('button').addEventListener('click', () => openModal(e));
-    card.querySelector('.event-image').addEventListener('click', () => openModal(e));
+card.addEventListener('click', (ev) => {
+  // Prevent double-trigger if user clicked a link or button
+  if (!ev.target.closest('a') && !ev.target.closest('button')) {
+    openModal(e);
+  }
+});
+
     wrap.appendChild(card);
   });
 }
