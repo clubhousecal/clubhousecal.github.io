@@ -259,15 +259,17 @@ function renderMonth(grid) {
 
 function renderWeek(grid) {
   grid.innerHTML = '';
-  const start = startOfWeek(cursorDate);               // Monday-based
-  const end = new Date(start.getTime() + 6 * 86400000);
 
-  // Title shows dates only (no "Week of", no times)
+  // remove header so it doesn’t stack when switching modes
+  const parent = grid.parentNode;
+  parent.querySelectorAll('.calendar-weekdays').forEach(n => n.remove());
+
+  const start = startOfWeek(cursorDate);
+  const end   = new Date(start.getTime() + 6 * 86400000);
   $('#monthLabel').textContent = `${fmtDateNoTime(start)} – ${fmtDateNoTime(end)}`;
 
-  // Visible range for list syncing
   currentRangeStart = start;
-  currentRangeEnd = end;
+  currentRangeEnd   = end;
 
   const todayKey = ymd(new Date());
 
@@ -278,11 +280,10 @@ function renderWeek(grid) {
 
     const dayLabel = document.createElement('div');
     dayLabel.className = 'day-number';
-    // Short weekday + date, no time
     dayLabel.textContent = day.toLocaleString('en-US', { timeZone: VENUE_TZ, weekday: 'short', month: 'short', day: 'numeric' });
     section.appendChild(dayLabel);
 
-    const dayEvents = filtered.filter((e) => ymd(e.date) === ymd(day));
+    const dayEvents = filtered.filter(e => ymd(e.date) === ymd(day));
     if (dayEvents.length === 0) {
       const noE = document.createElement('div');
       noE.textContent = 'No events';
@@ -301,6 +302,7 @@ function renderWeek(grid) {
     grid.appendChild(section);
   }
 }
+
 
 const startOfWeek = (d) => {
   const x = new Date(d);
