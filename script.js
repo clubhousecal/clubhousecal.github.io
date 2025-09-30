@@ -190,7 +190,7 @@ const applyFilters = debounce(() => {
 //    else if (dateF === 'this-month') dateMatch = ym(e.date) === monthKey;
 
 //    return matches && dateMatch;
-    return matches && dateMatch;
+    return matches;
   });
 
   currentView === 'list' ? renderList() : renderCalendar();
