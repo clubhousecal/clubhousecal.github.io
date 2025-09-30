@@ -127,20 +127,24 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 8px;
 }
 
 .segmented {
-  display: flex;
-  gap: 8px;
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--panel);
 }
 
 .seg-btn {
-  background: var(--panel);
-  border: 1px solid var(--border);
+  background: transparent;
+  border: none;
   color: var(--text);
-  border-radius: 8px;
-  padding: 6px 10px; /* smaller than list/calendar buttons */
-  font-size: 13px;
+  font-size: 14px;
+  padding: 8px 16px;
+  min-width: 80px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border 0.2s;
 }
@@ -149,18 +153,19 @@ a:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.seg-btn.active {
+.seg-btn + .seg-btn {
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.seg-btn.active,
+.today-btn.active {
   background: var(--accent);
   color: #fff;
-  border-color: var(--accent);
   font-weight: 600;
 }
 
-.seg-btn.active {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-  font-weight: 600;
+.today-btn:hover {
+  background: rgba(52, 152, 219, 0.25);
 }
 
 .monthbar {
