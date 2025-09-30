@@ -458,6 +458,18 @@ a:hover {
   #lastUpdated, #tzLabel {
     display: none !important;
   }
+
+  .header h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+  
+  .header p {
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0.8;
+  }
   
   /* --- General adjustments --- */
   .controls {
@@ -499,8 +511,7 @@ a:hover {
 
   .calendar-title {
     font-size: 1.1rem;
-    padding: 8px 6px;
-    flex: 1;
+    padding: 6px 0;
   }
 
   /* --- Segmented controls (Month / Week / Today) --- */
