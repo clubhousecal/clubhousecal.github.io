@@ -156,8 +156,7 @@ a:hover {
   position: absolute;
   top: 110%;
   left: 0;
-  z-index: 25;
-  isolation: isolate; /* create new stacking context inside */
+  z-index: 2;
   display: none;
   background: linear-gradient(180deg, rgba(39,53,72,1) 0%, rgba(39,53,72,0.97) 100%);
   border: 1px solid var(--border);
