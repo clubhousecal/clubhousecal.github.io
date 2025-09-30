@@ -217,10 +217,12 @@ function renderMonth(grid) {
   // ✅ Clear old content
   grid.innerHTML = '';
 
-  // ✅ Insert weekday header ABOVE the grid
+// ✅ Only insert weekday header if it doesn't already exist
+if (!grid.previousElementSibling || !grid.previousElementSibling.classList.contains('weekday-header')) {
   grid.parentNode.insertBefore(renderWeekdayHeader(), grid);
+}
 
-  const y = cursorDate.getFullYear();
+   const y = cursorDate.getFullYear();
   const m = cursorDate.getMonth();
 
   $('#monthLabel').textContent = cursorDate.toLocaleDateString('en-US', {
