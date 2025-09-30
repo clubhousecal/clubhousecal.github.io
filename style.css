@@ -531,16 +531,9 @@ a:hover {
 
   /* --- Segmented controls (Month / Week / Today) --- */
   .mode-toggle {
-    flex-direction: column;
-    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 6px;
-    margin-top: 8px;
-  }
-
-  .segmented {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
   }
 
   .seg-btn {
