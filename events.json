@@ -1,169 +1,13 @@
 {
-  "lastUpdated": "2025-09-07T11:37:20-07:00",
+  "lastUpdated": "2025-09-30T10:57:57-07:00",
   "tz": "America/Los_Angeles",
-  "totalEvents": 190,
+  "totalEvents": 178,
   "events": [
     {
-      "id": "0b1142a1-ab41-430f-b6be-ced1fb86e9c7",
-      "title": "Jamwitch",
-      "date": "2025-09-07T19:30:00-07:00",
-      "stage": "Upstairs",
-      "genre": "Improv, Jam",
-      "description": "",
-      "image": "",
-      "email": "monooutbreak@gmail.com",
-      "instagram": "@outbreakimprov",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "4d094a35-c973-48e9-8c98-54a0864d5ba4",
-      "title": "Monday Music Jam",
-      "date": "2025-09-08T19:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Musical Improv, Jam",
-      "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
-      "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
-      "email": "musicalimprovjam@gmail.com",
-      "instagram": "@musicalimprovjam",
-      "website": "http://www.musicalimprovjam.com",
-      "duration": "90 mins"
-    },
-    {
-      "id": "958ccff8-f08a-49c4-a268-8b02d12ee2a1",
-      "title": "Key Party Musical Improv",
-      "date": "2025-09-10T20:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Musical Improv",
-      "description": "Musical improv mash up show for musical improv students and alumni.",
-      "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
-      "email": "",
-      "instagram": "@key_party_musical_improv",
-      "website": "",
-      "duration": "60 mins"
-    },
-    {
-      "id": "a502b126-ffd4-4386-9212-86d84b5a51f2",
-      "title": "The Honeymoon Sweet",
-      "date": "2025-09-10T21:00:00-07:00",
-      "stage": "Upstairs",
-      "genre": "Improv",
-      "description": "",
-      "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
-      "email": "Honeymoonimprov@gmail.com",
-      "instagram": "@honeymoonimprov",
-      "website": "",
-      "duration": "60 mins"
-    },
-    {
-      "id": "7dfdae08-6749-4a5c-a1b9-8ba7cc356452",
-      "title": "Columbo at The Clubhouse",
-      "date": "2025-09-13T19:30:00-07:00",
-      "stage": "Upstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "sgsullivan86@gmail.com",
-      "instagram": "",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "005eb315-3205-450a-933d-67df3cafa20e",
-      "title": "Musical Improv is Cool Again",
-      "date": "2025-09-17T20:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Musical Improv",
-      "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
-      "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
-      "email": "",
-      "instagram": "@candyappleredimprov",
-      "website": "https://docs.google.com/forms/d/e/1FAIpQLSeycFPaKkaHRxKLfccugaehifY-Ip7yW9r2yyhXERWGnj_2pQ/viewform",
-      "duration": "90 mins"
-    },
-    {
-      "id": "a00f7ddf-7b2a-4e8d-8190-6c644782a88d",
-      "title": "Drawing With Sharpies",
-      "date": "2025-09-18T22:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Improv",
-      "description": "",
-      "image": "",
-      "email": "thesilversharpies@gmail.com",
-      "instagram": "",
-      "website": "",
-      "duration": "60 mins"
-    },
-    {
-      "id": "bb050932-2568-4290-b4a1-c0d3ea93c7a4",
-      "title": "Jamwitch",
-      "date": "2025-09-21T19:30:00-07:00",
-      "stage": "Upstairs",
-      "genre": "Improv, Jam",
-      "description": "",
-      "image": "",
-      "email": "monooutbreak@gmail.com",
-      "instagram": "@outbreakimprov",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "3ec4b096-2046-4765-98c0-44989d8c8abe",
-      "title": "Toast, a Jam",
-      "date": "2025-09-21T20:30:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Jam",
-      "description": "",
-      "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
-      "email": "classes@improv-la.com",
-      "instagram": "@improvla",
-      "website": "",
-      "duration": "1 hr"
-    },
-    {
-      "id": "2242fe66-fb88-4ef0-bcf6-57c057d075f7",
-      "title": "Monday Music Jam",
-      "date": "2025-09-22T19:00:00-07:00",
-      "stage": "Downstairs",
-      "genre": "Musical Improv, Jam",
-      "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
-      "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
-      "email": "musicalimprovjam@gmail.com",
-      "instagram": "@musicalimprovjam",
-      "website": "http://www.musicalimprovjam.com",
-      "duration": "90 mins"
-    },
-    {
-      "id": "913c163f-6cad-4f4e-8244-92a2951291bf",
-      "title": "The Honeymoon Sweet",
-      "date": "2025-09-24T21:00:00-07:00",
-      "stage": "Upstairs",
-      "genre": "Improv",
-      "description": "",
-      "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
-      "email": "Honeymoonimprov@gmail.com",
-      "instagram": "@honeymoonimprov",
-      "website": "",
-      "duration": "60 mins"
-    },
-    {
-      "id": "88cbcf8d-bcc1-45d1-9366-2d54032a00d4",
-      "title": "Columbo at The Clubhouse",
-      "date": "2025-09-27T19:30:00-07:00",
-      "stage": "Upstairs",
-      "genre": "Variety, Improv",
-      "description": "",
-      "image": "",
-      "email": "sgsullivan86@gmail.com",
-      "instagram": "",
-      "website": "",
-      "duration": "90 mins"
-    },
-    {
-      "id": "00438b3b-17fc-46cd-98b1-9a3ed9c3550c",
+      "id": "e350006e-9190-47cc-b5cf-801b3cf7d5e6",
       "title": "Musical Improv is Cool Again",
       "date": "2025-10-01T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -173,10 +17,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "57740e25-c7ed-4978-ba79-8fabb8a337d4",
+      "id": "5151d9f4-96b5-4994-842a-421a21020c3e",
       "title": "Jamwitch",
       "date": "2025-10-05T19:30:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -186,10 +30,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "3e129cea-e877-46cf-80eb-f6809da548da",
+      "id": "bdc8358b-eb56-4504-bd80-89e000f0c4fc",
       "title": "Crash This Party",
       "date": "2025-10-06T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -199,10 +43,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "dbfaf3cf-0159-454e-8f71-31330fc1085e",
+      "id": "973f437f-a00c-488b-ae76-0fbd4e88904b",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2025-10-07T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "https://i.postimg.cc/LsgPzq25/b5d444-eb4b7270beb246aa8374c3e84a214c84-mv2.avif",
@@ -212,10 +56,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "3b59f469-97d4-4aa7-8c9e-7ddce14b5608",
+      "id": "5e76bd04-a0d4-4847-b166-08056a1b17cc",
       "title": "Key Party Musical Improv",
       "date": "2025-10-08T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -225,10 +69,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "3404305a-6a2c-435e-b83d-ec412ef92720",
+      "id": "5ef383f5-e31a-41bb-ab5d-2a1e26148e0f",
       "title": "The Honeymoon Sweet",
       "date": "2025-10-08T21:00:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -238,10 +82,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "065626ed-ac31-45c3-975a-644870cf57ea",
+      "id": "e8f1820e-9a6f-4aa5-a990-68483ca12a48",
       "title": "Columbo at The Clubhouse",
       "date": "2025-10-11T19:30:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -251,10 +95,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "426cfd21-ddea-4243-aa0f-364ea482661f",
+      "id": "6f242964-2af7-4367-9b3b-2ba3d55468de",
       "title": "Monday Music Jam",
       "date": "2025-10-13T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -264,10 +108,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "79b90436-f650-462e-90fb-2743892d7467",
+      "id": "c77ee8f8-29ec-4f9c-b0ed-40daa9d4a5e9",
       "title": "Musical Improv is Cool Again",
       "date": "2025-10-15T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -277,10 +121,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "b58584cd-8ba9-49e8-bcd1-bec8cde8844d",
+      "id": "5aed44cf-3b3b-4c64-8f21-7c8d2fb7c6d8",
       "title": "Drawing With Sharpies",
       "date": "2025-10-16T22:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Improv",
       "description": "",
       "image": "",
@@ -290,10 +134,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "0a47887f-de32-4a65-a1d8-ae0bf33483d3",
+      "id": "50b990c8-2734-4f38-b6cb-5cd0c6b72fde",
       "title": "Jamwitch",
       "date": "2025-10-19T19:30:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -303,10 +147,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "911b6ffb-8e25-4df5-8d4c-fd97f4cb5894",
+      "id": "5a46e68e-bbb1-4ea8-bb32-bdd20ac003f3",
       "title": "Toast, a Jam",
       "date": "2025-10-19T20:30:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Jam",
       "description": "",
       "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
@@ -316,10 +160,10 @@
       "duration": "1 hr"
     },
     {
-      "id": "400e38a2-15cc-4d31-a7fa-c2798a6d5844",
+      "id": "ffc17376-5da4-4410-853b-61354ab54cfb",
       "title": "Crash This Party",
       "date": "2025-10-20T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -329,10 +173,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "8b4e2b50-4698-46a8-88a8-8b2d67f27d17",
+      "id": "c9723642-34b5-468d-bcc5-6600a1238556",
       "title": "The Honeymoon Sweet",
       "date": "2025-10-22T21:00:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -342,10 +186,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "75a67695-8fd4-4d6b-9dcd-56751458d1b1",
+      "id": "0736be51-9a6f-4065-89a6-b9b43cab8be4",
       "title": "Columbo at The Clubhouse",
       "date": "2025-10-25T19:30:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -355,10 +199,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "78d9abe8-80e6-4c6a-af3d-07f07c4f63f2",
+      "id": "6f60f7cb-96d1-4d24-a5a4-06faae352326",
       "title": "Monday Music Jam",
       "date": "2025-10-27T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -368,10 +212,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "2c2d4f4b-ad15-4d6f-8969-d5cf86664252",
+      "id": "4e14ae84-f29b-4394-b097-b7e08dae06bd",
       "title": "Jamwitch",
       "date": "2025-11-02T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -381,10 +225,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "28dba38e-e3ba-41c6-81e6-0c249479c50c",
+      "id": "5d9e5335-3cc3-48b1-a9d1-3ed63b860b29",
       "title": "Crash This Party",
       "date": "2025-11-03T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -394,10 +238,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "9a62bf24-ae9d-4314-9da9-fca65e8b0995",
+      "id": "caf5355c-7105-40e7-8717-b9ce849be63c",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2025-11-04T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "https://i.postimg.cc/LsgPzq25/b5d444-eb4b7270beb246aa8374c3e84a214c84-mv2.avif",
@@ -407,10 +251,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "d921418c-3882-41a3-9cbb-e105506b5bbc",
+      "id": "0fc64db9-fef1-4ea3-b873-6cf6a7b93a25",
       "title": "Musical Improv is Cool Again",
       "date": "2025-11-05T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -420,10 +264,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "ca3ce53b-0c7b-45fb-b878-67a1a7bf6865",
+      "id": "4cb84ec0-f1d1-4268-aa03-3205cad2af95",
       "title": "Columbo at The Clubhouse",
       "date": "2025-11-08T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -433,10 +277,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "2a80e3ce-55f9-4832-af2d-20d7a1c20dc9",
+      "id": "8907f4e3-d11b-4673-86b7-51311baa5548",
       "title": "Monday Music Jam",
       "date": "2025-11-10T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -446,10 +290,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "b92e3ed3-20dc-4a39-b768-3ac681587bf3",
+      "id": "d33d7126-381c-479e-8773-359d93f52093",
       "title": "Key Party Musical Improv",
       "date": "2025-11-12T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -459,10 +303,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "d7819cc8-e5cf-4325-949f-0b59420aa133",
+      "id": "c58adc00-0193-4f11-9537-dd09b22798c1",
       "title": "The Honeymoon Sweet",
       "date": "2025-11-12T21:00:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -472,10 +316,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "980006b0-6454-4ffa-a84c-5c310a5f582a",
+      "id": "4de5f028-b5dd-45de-800f-41fed2339ada",
       "title": "Jamwitch",
       "date": "2025-11-16T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -485,10 +329,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "afb73923-bf91-4b50-b984-88b7b851ebed",
+      "id": "890f2290-4ad2-449c-9acb-01528cd0f94c",
       "title": "Toast, a Jam",
       "date": "2025-11-16T20:30:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Jam",
       "description": "",
       "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
@@ -498,10 +342,10 @@
       "duration": "1 hr"
     },
     {
-      "id": "f022bfdb-1003-4f5d-8373-e6a236050939",
+      "id": "7e9a99ad-1cbd-40ff-b89f-c22960b3e16b",
       "title": "Crash This Party",
       "date": "2025-11-17T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -511,10 +355,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "9739acbe-7f1b-4ccc-8191-52458e4cabda",
+      "id": "2eab207c-51c5-49dc-8878-06060141a3ea",
       "title": "Musical Improv is Cool Again",
       "date": "2025-11-19T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -524,10 +368,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "8f9b8e69-e401-4c96-a774-a5584760fffd",
+      "id": "05c93466-d238-494a-9d53-2f74729d1514",
       "title": "Drawing With Sharpies",
       "date": "2025-11-20T22:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Improv",
       "description": "",
       "image": "",
@@ -537,10 +381,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "b793b815-9769-40bb-8129-03ee838a30d4",
+      "id": "980b09c7-fccd-490f-b743-0c485773b10f",
       "title": "Columbo at The Clubhouse",
       "date": "2025-11-22T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -550,10 +394,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "396ab144-99fb-4708-8eb1-20e902ec77cc",
+      "id": "d9e894f9-5696-4bfc-af9a-49606e8db34e",
       "title": "Monday Music Jam",
       "date": "2025-11-24T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -563,10 +407,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "982a1e60-5feb-4a5d-96d2-2e54f5ce8a98",
+      "id": "af2aebb9-d38b-4a21-a883-d3f81ac31faa",
       "title": "The Honeymoon Sweet",
       "date": "2025-11-26T21:00:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -576,10 +420,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "9aca7b1d-8e23-4d2d-a950-64451e93378f",
+      "id": "2ea07c2a-6e75-4f0c-93ff-d47c549074f7",
       "title": "Crash This Party",
       "date": "2025-12-01T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -589,10 +433,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "e4bd4890-43c2-4055-9c9a-b8890d291b4a",
+      "id": "00b55c94-6305-40ec-9261-6993763db63d",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2025-12-02T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "https://i.postimg.cc/LsgPzq25/b5d444-eb4b7270beb246aa8374c3e84a214c84-mv2.avif",
@@ -602,10 +446,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "7b211fb3-9da8-4562-a599-a664d31f948c",
+      "id": "3c2f5a8a-e46b-44c0-807a-6c32532f0503",
       "title": "Musical Improv is Cool Again",
       "date": "2025-12-03T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -615,10 +459,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "a42b39cb-84b9-489c-aed8-fa6ae722cec1",
+      "id": "bc52f161-732d-476d-8dc7-821180606682",
       "title": "Jamwitch",
       "date": "2025-12-07T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -628,10 +472,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "4991164e-23c4-43eb-9bcc-2705a51c3b3b",
+      "id": "2ac2a7c6-d772-4006-8b70-c8ec7f8f411c",
       "title": "Monday Music Jam",
       "date": "2025-12-08T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -641,10 +485,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "3837f1d8-e93d-4f91-a49e-e3a5b90b0754",
+      "id": "d615b081-61ea-49e0-8890-0bbffb9129a9",
       "title": "Key Party Musical Improv",
       "date": "2025-12-10T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -654,10 +498,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "a19f1103-e4a3-4c0b-a49b-451b83ebf844",
+      "id": "8d91e7d1-39b2-41d4-815b-f94334ae10b7",
       "title": "The Honeymoon Sweet",
       "date": "2025-12-10T21:00:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -667,10 +511,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "04eeaeb8-8281-4757-bad3-a12d326f7f26",
+      "id": "198ea5f1-beeb-48ad-bf0b-1765aa81d95e",
       "title": "Columbo at The Clubhouse",
       "date": "2025-12-13T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -680,10 +524,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "25a4daec-1a20-42df-9c87-0ca617ec92df",
+      "id": "02038dcf-2f9b-4930-b747-134070693684",
       "title": "Crash This Party",
       "date": "2025-12-15T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -693,10 +537,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "26bd16dc-c351-4645-b72e-4ef38a243680",
+      "id": "7aa545c0-bc2c-4688-b00a-3acbde6ee961",
       "title": "Musical Improv is Cool Again",
       "date": "2025-12-17T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -706,10 +550,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "7644d2db-20c0-4042-b6b6-c5da9eb9cc2c",
+      "id": "92c39764-30e4-43ec-bdc0-491ce7a4cebf",
       "title": "Drawing With Sharpies",
       "date": "2025-12-18T22:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Improv",
       "description": "",
       "image": "",
@@ -719,10 +563,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "e698713c-8446-483e-950c-f0670d55f681",
+      "id": "a0f9cc04-9262-4da2-90e0-d25281e44113",
       "title": "Jamwitch",
       "date": "2025-12-21T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -732,10 +576,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "b404bd61-ac8b-4fc2-bfbd-7de9b16e3bce",
+      "id": "ee76d535-bb11-41b6-9083-befafa33a95a",
       "title": "Toast, a Jam",
       "date": "2025-12-21T20:30:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Jam",
       "description": "",
       "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
@@ -745,10 +589,10 @@
       "duration": "1 hr"
     },
     {
-      "id": "bbc0029c-6dd6-4c7d-a662-064012602cef",
+      "id": "a9bd6628-ea4d-4328-869a-274bcb1756b9",
       "title": "Monday Music Jam",
       "date": "2025-12-22T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -758,10 +602,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "23c582cd-9171-4f6a-aa27-b1b89fa95627",
+      "id": "ed04f5ea-2c2f-4ba1-b813-066545de281d",
       "title": "The Honeymoon Sweet",
       "date": "2025-12-24T21:00:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -771,10 +615,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "39378f3a-3398-4a72-bf52-c4efb32cfb71",
+      "id": "28314490-ba09-4c0d-ac65-638f069b2845",
       "title": "Columbo at The Clubhouse",
       "date": "2025-12-27T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -784,10 +628,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "5410e72b-582f-495b-8f53-5134b67449d4",
+      "id": "6cdf16e4-0fbd-4c55-8e4e-ce6a626cdcc4",
       "title": "Jamwitch",
       "date": "2026-01-04T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -797,10 +641,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "55c49702-f6f9-4b7a-b511-3b11c9f1eb84",
+      "id": "bfdaa10a-5988-4d3e-9085-6a3052ac6357",
       "title": "Crash This Party",
       "date": "2026-01-05T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -810,10 +654,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "d9372b50-2827-4d67-aa75-1464cda4c680",
+      "id": "8dd3d2eb-e349-4e29-8719-d4357f3b0b46",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2026-01-06T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "https://i.postimg.cc/LsgPzq25/b5d444-eb4b7270beb246aa8374c3e84a214c84-mv2.avif",
@@ -823,10 +667,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "820b1bdc-8bc6-455f-aeb4-6838e15a9ae4",
+      "id": "60daf9b1-b739-44a3-a23b-c88497bbeed0",
       "title": "Musical Improv is Cool Again",
       "date": "2026-01-07T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -836,10 +680,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "59f57ea4-df71-4417-a60d-768d6a364b70",
+      "id": "99c94efd-b808-4caf-969a-ddcf3b9af5a8",
       "title": "Columbo at The Clubhouse",
       "date": "2026-01-10T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -849,10 +693,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "90483d6e-baa4-4b03-8ca5-ddc1e93af12c",
+      "id": "84ca0e4f-e55c-4dae-ab01-d8b84b0c8427",
       "title": "Monday Music Jam",
       "date": "2026-01-12T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -862,10 +706,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "bc4ac4ce-d3c7-4d2f-b8c3-8db9cb52b679",
+      "id": "8154415b-292b-4032-aa7d-1301aec6f573",
       "title": "Key Party Musical Improv",
       "date": "2026-01-14T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -875,10 +719,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "0d9f1438-105f-4e63-accf-a83e42845738",
+      "id": "a260b7af-976f-468f-9d34-428b1519c8f6",
       "title": "The Honeymoon Sweet",
       "date": "2026-01-14T21:00:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -888,10 +732,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "e9d8bb70-dbe8-48e0-85d6-111423dcdd9d",
+      "id": "a6b0e0a5-34ea-4846-a182-9eaecd552de9",
       "title": "Drawing With Sharpies",
       "date": "2026-01-15T22:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Improv",
       "description": "",
       "image": "",
@@ -901,10 +745,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "c79b5e0f-6ac5-4768-9b6b-c9102b1063e8",
+      "id": "f73d9929-4a3c-4338-908a-038efe567c89",
       "title": "Jamwitch",
       "date": "2026-01-18T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -914,10 +758,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "0b340bfd-7d4f-4423-a953-ad06feeee9c0",
+      "id": "2319f0fb-98c6-437a-8472-152f2346ed3d",
       "title": "Toast, a Jam",
       "date": "2026-01-18T20:30:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Jam",
       "description": "",
       "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
@@ -927,10 +771,10 @@
       "duration": "1 hr"
     },
     {
-      "id": "2bac711d-ee72-42b6-8d4f-790c68ccca37",
+      "id": "b0bea534-8500-43e2-9ef4-1b986cdd0b46",
       "title": "Crash This Party",
       "date": "2026-01-19T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -940,10 +784,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "ddf01271-400a-4d99-9f87-de2a08ad7551",
+      "id": "ec7fe2be-9c05-48e9-a810-fd39dd76e0e9",
       "title": "Musical Improv is Cool Again",
       "date": "2026-01-21T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -953,10 +797,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "867b5408-a0c3-4af7-b17c-6631301fe50b",
+      "id": "6b40f683-04f1-437a-a94d-08a6737d0faa",
       "title": "Columbo at The Clubhouse",
       "date": "2026-01-24T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -966,10 +810,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "e54d0b4a-93bb-47a5-9a3a-8823e6859915",
+      "id": "046eca96-fd6c-4897-a6e4-5320e298f22e",
       "title": "Monday Music Jam",
       "date": "2026-01-26T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -979,10 +823,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "38bbcbce-259b-44fe-bb2a-80692081cdfe",
+      "id": "52b1bb48-6738-431b-9348-a578e0f918f5",
       "title": "The Honeymoon Sweet",
       "date": "2026-01-28T21:00:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -992,10 +836,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "84c1b067-b79f-4854-9fe9-f69c2d21f86d",
+      "id": "c1167757-1255-40f9-b657-557834364fd9",
       "title": "Jamwitch",
       "date": "2026-02-01T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -1005,10 +849,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "42a24d03-dd78-45c6-be8a-e678ce5816fd",
+      "id": "c6b5e56c-6232-4977-821e-e7f737a8d953",
       "title": "Crash This Party",
       "date": "2026-02-02T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1018,10 +862,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "f833fb1a-a2e2-4303-8f34-0b47ee2bd33b",
+      "id": "0ea0abfa-c328-4aed-aa2f-2ec32f953dca",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2026-02-03T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "https://i.postimg.cc/LsgPzq25/b5d444-eb4b7270beb246aa8374c3e84a214c84-mv2.avif",
@@ -1031,10 +875,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "20ada1f7-5721-4ac1-99a4-bceb8194d51a",
+      "id": "e39b6170-8216-4ff0-8d16-22242b2ade29",
       "title": "Musical Improv is Cool Again",
       "date": "2026-02-04T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1044,10 +888,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "42aced40-a92a-4aad-9f97-2a133ecba6c4",
+      "id": "dea69a1e-c4c5-43af-a58b-ab18a777f99e",
       "title": "Monday Music Jam",
       "date": "2026-02-09T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1057,10 +901,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "7c383f7c-f5e6-4eb0-a2d1-b5008452d791",
+      "id": "b7f2850d-3fb5-470e-b0ac-9ff0321b662f",
       "title": "Key Party Musical Improv",
       "date": "2026-02-11T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1070,10 +914,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "1dcf6ffd-f00f-4d48-a7ba-bcffe5370a18",
+      "id": "2d2c670b-0767-4785-90a1-cd9c8425c751",
       "title": "The Honeymoon Sweet",
       "date": "2026-02-11T21:00:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -1083,10 +927,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "421440c8-60ac-44d8-935b-a8bfcda302bc",
+      "id": "4cb7db9d-e7d6-442e-8f37-ddbf179b6d84",
       "title": "Jamwitch",
       "date": "2026-02-15T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -1096,10 +940,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "e0f4e393-7d68-4b5c-bcb9-644205045afe",
+      "id": "24543774-c1a4-4393-9941-7e5e848ec12e",
       "title": "Toast, a Jam",
       "date": "2026-02-15T20:30:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Jam",
       "description": "",
       "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
@@ -1109,10 +953,10 @@
       "duration": "1 hr"
     },
     {
-      "id": "c0ad037d-040c-4fec-94ab-bbd5b3b75bd8",
+      "id": "c5d0d558-92dd-4e34-b97a-ca5dbf7d784b",
       "title": "Crash This Party",
       "date": "2026-02-16T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1122,10 +966,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "7551dd30-30f6-4ddc-9bf4-5a396059cfa7",
+      "id": "f5223ce0-9bb7-4ad6-9860-5a341eea01e4",
       "title": "Musical Improv is Cool Again",
       "date": "2026-02-18T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1135,10 +979,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "2658248a-524e-430e-a9c0-eaee082ace02",
+      "id": "0588fd83-4daa-4619-83e0-c8af231e0d9f",
       "title": "Drawing With Sharpies",
       "date": "2026-02-19T22:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Improv",
       "description": "",
       "image": "",
@@ -1148,10 +992,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "ff085c44-611c-4e48-9ea2-f87899e57666",
+      "id": "b3173402-8bec-422c-a086-3cd90cc9cf26",
       "title": "Monday Music Jam",
       "date": "2026-02-23T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1161,10 +1005,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "61ff7ff8-ddb2-4c0b-95c2-36d0da31b7e7",
+      "id": "c5f1be24-e9d5-4525-b7dc-6eeafe5982f1",
       "title": "The Honeymoon Sweet",
       "date": "2026-02-25T21:00:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -1174,10 +1018,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "9fc243b4-2ce3-4fd1-8b64-689321da5c2b",
+      "id": "c1818c1a-18a2-47b7-b322-51129fdc6d26",
       "title": "Jamwitch",
       "date": "2026-03-01T19:30:00-08:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -1187,10 +1031,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "79971f6c-e1d2-4523-943a-254cf3c66071",
+      "id": "e12c0595-e42b-4431-a803-4028770317f7",
       "title": "Crash This Party",
       "date": "2026-03-02T19:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1200,10 +1044,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "90113d80-9401-4b6b-98e2-b391514359f9",
+      "id": "da0ac610-f030-45e3-8b48-bac011ec4b4a",
       "title": "The Father Bible Super Holy Variety Hour",
       "date": "2026-03-03T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "https://i.postimg.cc/LsgPzq25/b5d444-eb4b7270beb246aa8374c3e84a214c84-mv2.avif",
@@ -1213,10 +1057,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "6529a93d-e756-4d7d-85ea-adb6e30e236e",
+      "id": "8730ad04-76d9-48f5-b44f-a5c8a4d0ae8a",
       "title": "Musical Improv is Cool Again",
       "date": "2026-03-04T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1226,10 +1070,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "6ccbe71d-5554-4e03-8322-efc09a93d042",
+      "id": "2996390a-c1c7-462a-882d-caea5dc0aee4",
       "title": "Monday Music Jam",
       "date": "2026-03-09T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1239,10 +1083,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "1621516a-6cc1-458e-acfb-c0a38effa476",
+      "id": "1df227a3-861e-4632-ba98-8d97f3e96729",
       "title": "Key Party Musical Improv",
       "date": "2026-03-11T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1252,10 +1096,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "1cf851fb-99bb-4132-9fa1-21d1f7c8abe5",
+      "id": "6ecacfcd-d1e1-432e-93ff-0ca87e45a0e1",
       "title": "The Honeymoon Sweet",
       "date": "2026-03-11T21:00:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv",
       "description": "",
       "image": "https://i.postimg.cc/MHPg2349/307938258-428589759416253-1162716648308144554-n.jpg",
@@ -1265,10 +1109,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "a2280943-1e33-40eb-b2ce-026b7ed8fe4e",
+      "id": "c18c9c53-31de-4087-befe-58c23018770d",
       "title": "Jamwitch",
       "date": "2026-03-15T19:30:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -1278,10 +1122,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "94a4b611-3af2-4929-b4b6-d3a91350cf49",
+      "id": "5354123a-fa03-4ae2-a79c-85e0596e43b1",
       "title": "Toast, a Jam",
       "date": "2026-03-15T20:30:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Jam",
       "description": "",
       "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
@@ -1291,10 +1135,10 @@
       "duration": "1 hr"
     },
     {
-      "id": "9f4270f9-f8d5-4dd5-88f2-5406eefee660",
+      "id": "e94ac3a0-b777-4181-92a9-b964f6b5bafb",
       "title": "Crash This Party",
       "date": "2026-03-16T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1304,10 +1148,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "b7dca2a4-00f7-43ba-a352-b12cbd558437",
+      "id": "112da55d-586a-4a78-9c2b-cd26e2d02d91",
       "title": "Musical Improv is Cool Again",
       "date": "2026-03-18T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1317,10 +1161,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "dbc3c2cf-91b8-4755-a380-2a34b3e484ef",
+      "id": "551059c5-8149-4575-9bba-68cffb110c31",
       "title": "Drawing With Sharpies",
       "date": "2026-03-19T22:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Improv",
       "description": "",
       "image": "",
@@ -1330,10 +1174,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "54a2d807-193a-4a2a-8cc5-c91a664ef4c8",
+      "id": "3f51898a-b932-496c-8800-0c29a42589c0",
       "title": "Monday Music Jam",
       "date": "2026-03-23T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1343,10 +1187,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "aa8bfe3e-a95d-4017-ad9d-543ea15fde7d",
+      "id": "f302f76b-331e-4b9f-9223-3a2cf2c12025",
       "title": "Musical Improv is Cool Again",
       "date": "2026-04-01T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1356,10 +1200,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "9456751f-9633-42d0-8cec-1d1e6cc5766b",
+      "id": "848d7ef5-ffc9-4a1e-98d3-40a2a5c3f6ee",
       "title": "Jamwitch",
       "date": "2026-04-05T19:30:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -1369,10 +1213,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "58172b86-0993-48d0-940a-3dcc5dc00788",
+      "id": "56502ba6-b24b-4cac-a282-1cf66d2e34cc",
       "title": "Crash This Party",
       "date": "2026-04-06T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1382,10 +1226,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "24dca62c-a472-4edb-a3a6-268d6afd2850",
+      "id": "0f938aa6-f311-4290-8bd2-0972a7ad4f90",
       "title": "Key Party Musical Improv",
       "date": "2026-04-08T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1395,10 +1239,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "bcb4a11d-e754-413b-a98a-3960446f3845",
+      "id": "5c53bc9d-17ef-4670-a6ad-9a9925057f3a",
       "title": "Monday Music Jam",
       "date": "2026-04-13T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1408,10 +1252,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "1504de90-978e-4c5b-abab-deb8e7108f05",
+      "id": "70789be0-2ba4-4e3c-8b4c-667a5e009931",
       "title": "Musical Improv is Cool Again",
       "date": "2026-04-15T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1421,10 +1265,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "07a626fa-9287-4fea-8ea6-e9c375e03a91",
+      "id": "603d6791-18d1-42dc-a36a-eb5c3b73c9e1",
       "title": "Drawing With Sharpies",
       "date": "2026-04-16T22:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Improv",
       "description": "",
       "image": "",
@@ -1434,10 +1278,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "33623312-24c6-4ff1-a765-5579ddb52b86",
+      "id": "59d707cb-b7f9-4a71-a4dc-49b1626383ed",
       "title": "Jamwitch",
       "date": "2026-04-19T19:30:00-07:00",
-      "stage": "Upstairs",
+      "venue": "Upstairs",
       "genre": "Improv, Jam",
       "description": "",
       "image": "",
@@ -1447,10 +1291,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "fd1a0be5-da4d-4ffe-b0e0-d33030458d0b",
+      "id": "c6bfe4b7-471d-4507-80c5-0f0eb44bb176",
       "title": "Toast, a Jam",
       "date": "2026-04-19T20:30:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Jam",
       "description": "",
       "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
@@ -1460,10 +1304,10 @@
       "duration": "1 hr"
     },
     {
-      "id": "f1ad11b4-44d9-4aa0-8eb6-44641f71675a",
+      "id": "c69c2787-b731-4b4a-999d-f9f50ba5cfd6",
       "title": "Crash This Party",
       "date": "2026-04-20T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1473,10 +1317,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "56508bdb-a3fc-4fb7-85bd-9a35d2350692",
+      "id": "a183c614-d561-4590-9da0-d1d71294cc8d",
       "title": "Monday Music Jam",
       "date": "2026-04-27T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1486,10 +1330,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "bcfed919-ddc3-47d0-bdb9-e249e2312540",
+      "id": "630bd24e-74de-4600-8488-8c853737fadb",
       "title": "Crash This Party",
       "date": "2026-05-04T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1499,10 +1343,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "707642bb-b118-4018-bad0-9d066b562032",
+      "id": "c5fc2594-6590-4640-a0b6-35195d852c07",
       "title": "Musical Improv is Cool Again",
       "date": "2026-05-06T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1512,10 +1356,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "143da52c-3933-4792-a63c-85029f972730",
+      "id": "d01fc986-a11f-4daa-a9c4-6ca39b809c69",
       "title": "Monday Music Jam",
       "date": "2026-05-11T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1525,10 +1369,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "1dc7e146-d1f1-4e6e-a1a7-3ddf83ff9a87",
+      "id": "2b509429-76bc-41d0-aaa7-9641df00bf44",
       "title": "Key Party Musical Improv",
       "date": "2026-05-13T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1538,10 +1382,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "eb7869ad-0215-4b26-958b-c5f8fb5ea254",
+      "id": "5f15a52d-b910-49e0-8dac-1b349f27f74b",
       "title": "Toast, a Jam",
       "date": "2026-05-17T20:30:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Jam",
       "description": "",
       "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
@@ -1551,10 +1395,10 @@
       "duration": "1 hr"
     },
     {
-      "id": "d5f59b25-cac7-40ef-9920-e81c7ecebf92",
+      "id": "e2f99eb8-4ab5-46ec-bb39-c33031c5fdab",
       "title": "Crash This Party",
       "date": "2026-05-18T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1564,10 +1408,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "bccadd38-5073-4467-a705-c51e1870c5fc",
+      "id": "15497b1c-8203-4d9b-af5c-d26007dee990",
       "title": "Musical Improv is Cool Again",
       "date": "2026-05-20T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1577,10 +1421,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "f6e4abe1-127d-4731-80ae-cfb94e98f1d3",
+      "id": "03f5e54b-8422-4d88-a2e9-a7dd696c38f3",
       "title": "Drawing With Sharpies",
       "date": "2026-05-21T22:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Improv",
       "description": "",
       "image": "",
@@ -1590,10 +1434,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "8e23aac6-8f13-40a2-91f6-0021c59c8efe",
+      "id": "11f01456-8fb6-4345-b20b-5ea8487d3437",
       "title": "Monday Music Jam",
       "date": "2026-05-25T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1603,10 +1447,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "ae06e4df-f7c0-463d-afd1-6d6dc34a34f5",
+      "id": "263b421e-9552-4326-88e1-7054c26034b5",
       "title": "Crash This Party",
       "date": "2026-06-01T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1616,10 +1460,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "19cc8957-2c87-4829-902e-9b3990e09aac",
+      "id": "f1e70ee5-8831-4ce5-89c0-e08de8858853",
       "title": "Musical Improv is Cool Again",
       "date": "2026-06-03T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1629,10 +1473,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "dbaece15-ccfe-4527-8d01-a0011623d150",
+      "id": "8f9ba639-7d3f-45ec-9f1f-96cec1d3a804",
       "title": "Monday Music Jam",
       "date": "2026-06-08T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1642,10 +1486,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "5e394c00-97fd-4c34-8831-32585fab2341",
+      "id": "5869931c-f69c-49ec-82bc-df21e0e44fc0",
       "title": "Key Party Musical Improv",
       "date": "2026-06-10T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1655,10 +1499,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "f1e25727-2906-4c3e-9a39-cafb33f65508",
+      "id": "75f74aaf-c1c6-4f29-b724-77f4b2befdc4",
       "title": "Crash This Party",
       "date": "2026-06-15T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1668,10 +1512,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "bd1b4f31-4d0f-4d54-b82a-37c0abd49efc",
+      "id": "594ef2c8-552e-4c22-8840-7cbd114506cb",
       "title": "Musical Improv is Cool Again",
       "date": "2026-06-17T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1681,10 +1525,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "f235c26b-ce39-437e-8848-3a5b146c23d3",
+      "id": "1a09e562-c1a7-4024-b2eb-6392da57ded9",
       "title": "Toast, a Jam",
       "date": "2026-06-21T20:30:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Jam",
       "description": "",
       "image": "https://i.postimg.cc/L6rtbc2C/TOAST-poster-Instagram-Post.avif",
@@ -1694,10 +1538,10 @@
       "duration": "1 hr"
     },
     {
-      "id": "46405dd2-cf2d-4676-af14-14222c9a072f",
+      "id": "04e3ab75-b5a5-4565-9f7d-f24126c338f0",
       "title": "Monday Music Jam",
       "date": "2026-06-22T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1707,10 +1551,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "74b47a0a-feb7-4236-b849-c57a0322b336",
+      "id": "148ec16b-4d70-4074-85c2-e4b9625e0d84",
       "title": "Musical Improv is Cool Again",
       "date": "2026-07-01T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1720,10 +1564,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "9f044906-41ac-4a86-91ee-ee212d4bf581",
+      "id": "e8c8efed-84c0-46f6-921b-add5478432a4",
       "title": "Crash This Party",
       "date": "2026-07-06T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Variety, Improv",
       "description": "",
       "image": "",
@@ -1733,10 +1577,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "026833d8-df60-41e3-a131-a7e700796609",
+      "id": "4ddb19df-e827-472c-a3ea-32558c21de71",
       "title": "Key Party Musical Improv",
       "date": "2026-07-08T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1746,10 +1590,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "6521e2d1-f9e3-45c1-8f13-c904e6f4d418",
+      "id": "749f206d-9111-4438-bfb2-0610bf5d6f5f",
       "title": "Monday Music Jam",
       "date": "2026-07-13T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1759,10 +1603,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "ac8cebfb-318e-4334-9350-f1c34967cb2b",
+      "id": "cdff521e-d7b4-4217-9dae-9e3271318d11",
       "title": "Musical Improv is Cool Again",
       "date": "2026-07-15T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1772,10 +1616,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "7a5b2a1e-0cef-41c7-a8a6-bf8eb511633b",
+      "id": "b46b818f-148d-4c9c-b068-e50b11630e0b",
       "title": "Monday Music Jam",
       "date": "2026-07-27T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1785,10 +1629,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "adc07a05-d6c8-49e0-b029-2be9bcb99008",
+      "id": "17f7e5ef-b1c8-4e13-9b64-2fbdd666ad24",
       "title": "Musical Improv is Cool Again",
       "date": "2026-08-05T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1798,10 +1642,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "153e31c3-2bbe-4b48-b319-49b91804a23d",
+      "id": "c64db0aa-f995-4d91-85ec-ed5bf125399f",
       "title": "Monday Music Jam",
       "date": "2026-08-10T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1811,10 +1655,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "82d73659-249f-49f5-aed4-b654ad42c6fb",
+      "id": "6a55310b-5a4e-419b-9ca7-6967d480e41a",
       "title": "Key Party Musical Improv",
       "date": "2026-08-12T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1824,10 +1668,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "f3fc7f72-ff00-4453-b8b7-7d6e73085aca",
+      "id": "faad3bc1-00a9-4f65-bb7d-693cad737287",
       "title": "Musical Improv is Cool Again",
       "date": "2026-08-19T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Home to some of LA’s best musical improv where every character, scene, and song is created on the spot before your eyes and ears!",
       "image": "https://i.postimg.cc/qv6x5BT0/https-cdn-evbuc-com-images-331965879-1087790410663-1-original.jpg",
@@ -1837,10 +1681,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "cec18616-c315-434c-b26e-6babb67d217f",
+      "id": "5be7898a-439a-4745-a708-7d9bbb7cb177",
       "title": "Monday Music Jam",
       "date": "2026-08-24T19:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv, Jam",
       "description": "Monday Music Jam is an open audience jam for people who want to try musical improv comedy.  We start each jam with a vocal warm up led by our pianist, then we break into groups and perform montage scene to song musical improv.  Participation is not mandatory and you can feel free to sit and watch.",
       "image": "https://i.postimg.cc/vH2YTQPs/music-Jam-Logo.png",
@@ -1850,10 +1694,10 @@
       "duration": "90 mins"
     },
     {
-      "id": "d8de9de8-46d6-4165-b0dd-56951f3d71ee",
+      "id": "46fc8787-aa63-478b-8f33-4aa4f1593575",
       "title": "Key Party Musical Improv",
       "date": "2026-09-09T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1863,10 +1707,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "e82d5e75-5273-428f-a6df-fb88d6af211c",
+      "id": "03688047-b32d-4a0e-9898-63f29c07e80d",
       "title": "Key Party Musical Improv",
       "date": "2026-10-14T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1876,10 +1720,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "0295846d-43bf-4652-bba1-6490e63a61d1",
+      "id": "54cfb3ce-ce24-4aad-a5af-c321c42d6f27",
       "title": "Key Party Musical Improv",
       "date": "2026-11-11T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1889,10 +1733,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "e98cb6bb-dea6-47b2-9567-fec63fe1e422",
+      "id": "e207df84-c3a6-4cb9-8d16-723f53cd840a",
       "title": "Key Party Musical Improv",
       "date": "2026-12-09T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1902,10 +1746,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "2e2a702a-3430-43d4-9363-46370eb2b83a",
+      "id": "d542da2d-8bfa-48ed-8a50-cdd176eb43b9",
       "title": "Key Party Musical Improv",
       "date": "2027-01-13T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1915,10 +1759,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "5c9f2e4c-269d-488f-9734-74e37eba10b0",
+      "id": "d74e6f16-3855-4973-a7bc-af0c5a35e3ae",
       "title": "Key Party Musical Improv",
       "date": "2027-02-10T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1928,10 +1772,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "63b35912-66bd-4fb0-88b1-f031a9d0a4d1",
+      "id": "73996d3b-da92-458f-9a2f-12aaaa67ed31",
       "title": "Key Party Musical Improv",
       "date": "2027-03-10T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1941,10 +1785,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "a1e636bf-e741-446e-9aed-16814a837e30",
+      "id": "3227d334-55b6-491f-847a-c12254fcc93e",
       "title": "Key Party Musical Improv",
       "date": "2027-04-14T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1954,10 +1798,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "f942318f-8e24-453b-a2a3-80f17d0942a7",
+      "id": "e68f3eee-add0-443e-8bad-385c67493f5e",
       "title": "Key Party Musical Improv",
       "date": "2027-05-12T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1967,10 +1811,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "d279b955-d17a-4698-b585-19fb3a7d9d84",
+      "id": "c298ea07-a0f1-4589-b393-d04b7574493e",
       "title": "Key Party Musical Improv",
       "date": "2027-06-09T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1980,10 +1824,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "1784fe41-b1ca-454c-a430-6d773b7c71d3",
+      "id": "c587de62-9500-402d-b1a9-516342db6f3d",
       "title": "Key Party Musical Improv",
       "date": "2027-07-14T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -1993,10 +1837,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "3ee3483c-1ae3-4b3e-a194-85e01a81e829",
+      "id": "e07a565c-0960-4824-bdb7-d163f971c84c",
       "title": "Key Party Musical Improv",
       "date": "2027-08-11T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2006,10 +1850,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "b5f204a0-8f08-4176-8b46-81af37392616",
+      "id": "a20cc5df-1790-421e-a73a-74855da88618",
       "title": "Key Party Musical Improv",
       "date": "2027-09-08T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2019,10 +1863,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "32270e2b-464f-4409-9555-a010cbc8eacb",
+      "id": "cb9562e4-8e3d-463e-96ed-8e544d1c1448",
       "title": "Key Party Musical Improv",
       "date": "2027-10-13T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2032,10 +1876,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "c16bfa86-2430-434b-bc23-c1419b860440",
+      "id": "02d9c9a9-fde2-464a-85c1-1db9e37b54a0",
       "title": "Key Party Musical Improv",
       "date": "2027-11-10T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2045,10 +1889,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "d12b5261-e9ac-46c1-a3e0-9af5d6ddaedc",
+      "id": "829b62b5-f268-4827-a787-f51b0d114d17",
       "title": "Key Party Musical Improv",
       "date": "2027-12-08T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2058,10 +1902,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "488434bb-b3f7-46fe-9cdd-47180fa693ce",
+      "id": "d583aea0-b61d-41f0-bdb1-9e39fdbbf979",
       "title": "Key Party Musical Improv",
       "date": "2028-01-12T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2071,10 +1915,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "18dec6b8-3eb8-42ee-8196-539ef13d683d",
+      "id": "496c793c-b5e8-4a85-821e-8827d7ce548f",
       "title": "Key Party Musical Improv",
       "date": "2028-02-09T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2084,10 +1928,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "52e80fdd-b11d-4e08-9ad4-9abab2584800",
+      "id": "226ca929-d8bf-48ae-98f3-5648f0ba0c96",
       "title": "Key Party Musical Improv",
       "date": "2028-03-08T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2097,10 +1941,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "4a169cb7-4b95-4004-855f-2d5b60752b5d",
+      "id": "439b06af-6a84-4c83-9542-956a56a37947",
       "title": "Key Party Musical Improv",
       "date": "2028-04-12T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2110,10 +1954,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "be3bc599-1b88-4aee-95b6-cc5e18f7f4f6",
+      "id": "ecd660ff-161b-4814-a4cf-8a509f7891ff",
       "title": "Key Party Musical Improv",
       "date": "2028-05-10T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2123,10 +1967,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "fc1b6b47-5ac5-46a9-9e6e-336870c084f1",
+      "id": "1bd1efe4-897f-40cd-bc2c-e6181b3276da",
       "title": "Key Party Musical Improv",
       "date": "2028-06-14T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2136,10 +1980,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "5b726976-1fce-4116-becf-f15aaa6fa8cd",
+      "id": "d359cc71-8773-4faa-9b0d-5aa752dd2562",
       "title": "Key Party Musical Improv",
       "date": "2028-07-12T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2149,10 +1993,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "397d026c-c8c3-4eca-b465-2db795a9eb7c",
+      "id": "8a9b8107-e325-4023-acc7-657ab784a7ff",
       "title": "Key Party Musical Improv",
       "date": "2028-08-09T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2162,10 +2006,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "52304dc8-7ed4-4d94-813c-500aeb3616c3",
+      "id": "bc5a47ef-acd1-4ef7-9bb2-b6a388a5d665",
       "title": "Key Party Musical Improv",
       "date": "2028-09-13T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2175,10 +2019,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "3c515120-63b7-4a9e-8421-925a83868f94",
+      "id": "d6485ddd-8270-411b-b085-7f80bc4a0101",
       "title": "Key Party Musical Improv",
       "date": "2028-10-11T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2188,10 +2032,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "bf83f9f6-0e02-4ecf-b43a-a4620c4a0ed0",
+      "id": "363519c9-8483-4775-8d1f-c661c0c68381",
       "title": "Key Party Musical Improv",
       "date": "2028-11-08T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2201,10 +2045,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "8dff1893-8f23-4f14-8fd1-a3d45911344f",
+      "id": "584c0c6d-48c5-4794-8f4a-8038284736b5",
       "title": "Key Party Musical Improv",
       "date": "2028-12-13T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2214,10 +2058,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "aa37ceaf-e019-4947-97e5-da2d9078af7d",
+      "id": "08bcef21-d80f-44b0-9d3d-181c8babfb67",
       "title": "Key Party Musical Improv",
       "date": "2029-01-10T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2227,10 +2071,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "289e5fff-e4e5-4bfe-a832-805d605845ed",
+      "id": "273bc1aa-60f8-4e11-9d0d-210a92d294e8",
       "title": "Key Party Musical Improv",
       "date": "2029-02-14T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2240,10 +2084,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "28ed73a2-0e80-4b2c-b78d-773d7d4c887f",
+      "id": "39151c78-d2fa-4069-8fa6-fdb9efa98745",
       "title": "Key Party Musical Improv",
       "date": "2029-03-14T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2253,10 +2097,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "4fe96851-24ac-44fe-a2d9-2c3e13e99f2b",
+      "id": "1b4a65af-cd7a-4bc9-a4e2-b49fce04579c",
       "title": "Key Party Musical Improv",
       "date": "2029-04-11T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2266,10 +2110,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "994d192d-8856-49e1-9107-03d2182c7edb",
+      "id": "d6024ea1-90b4-417a-ac11-eb91824bdee7",
       "title": "Key Party Musical Improv",
       "date": "2029-05-09T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2279,10 +2123,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "1d4d8bbc-5296-4ab2-baed-0ce702474f54",
+      "id": "6080994e-542d-4fe1-a69f-4a42aeda6eb0",
       "title": "Key Party Musical Improv",
       "date": "2029-06-13T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2292,10 +2136,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "59792273-34b7-485a-a3bb-acc393741d5b",
+      "id": "b0d94521-1cb8-459a-9e6e-173d2c92a442",
       "title": "Key Party Musical Improv",
       "date": "2029-07-11T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2305,10 +2149,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "5b8fd02c-17ca-4ece-9c45-646256210818",
+      "id": "52b4a80b-60b3-4623-a12d-5695b0d4a1b0",
       "title": "Key Party Musical Improv",
       "date": "2029-08-08T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2318,10 +2162,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "38b51026-94e7-4489-bea0-1fdef479d667",
+      "id": "a8bec591-4910-470b-aa99-a67f1e561662",
       "title": "Key Party Musical Improv",
       "date": "2029-09-12T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2331,10 +2175,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "ca9d13d2-4e96-438e-8a55-879e5d234c56",
+      "id": "013cef50-6a51-4cac-940d-3fafe979e780",
       "title": "Key Party Musical Improv",
       "date": "2029-10-10T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2344,10 +2188,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "b212c21a-ff3d-45ea-b93c-4a68406f16c3",
+      "id": "0f0db04c-1207-4a39-bd89-76a779794855",
       "title": "Key Party Musical Improv",
       "date": "2029-11-14T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2357,10 +2201,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "3f39cf5d-8b0b-4521-9f34-92888d7226ae",
+      "id": "4e3454b1-3e50-4cbf-91b2-9d4736af6161",
       "title": "Key Party Musical Improv",
       "date": "2029-12-12T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2370,10 +2214,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "ba2b0246-1fc7-466b-b3e2-8c3e99d81879",
+      "id": "8db98bb7-ad81-4562-a751-005127a8c233",
       "title": "Key Party Musical Improv",
       "date": "2030-01-09T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2383,10 +2227,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "c19dc411-413f-4a54-aad0-d67ea3e2431a",
+      "id": "e8ad4a9f-72e9-4c05-9b4b-bcbac48bc38c",
       "title": "Key Party Musical Improv",
       "date": "2030-02-13T20:00:00-08:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2396,10 +2240,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "4c3674f4-5312-42c8-827c-d9c5f1055ab7",
+      "id": "bbcb2e1e-68ee-4985-a50e-34baf0ca9a01",
       "title": "Key Party Musical Improv",
       "date": "2030-03-13T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2409,10 +2253,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "e539a136-54be-4dbf-9d83-918f1ff6ac9c",
+      "id": "e7a52173-0065-4cde-9a14-476a0287e7a5",
       "title": "Key Party Musical Improv",
       "date": "2030-04-10T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2422,10 +2266,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "80a0c766-acdb-4566-9b16-020c360e5867",
+      "id": "5e0fecf9-1a4a-4236-8574-11f0d4d8fa6f",
       "title": "Key Party Musical Improv",
       "date": "2030-05-08T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2435,10 +2279,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "b106f4ca-aeb6-404f-8de7-bed2c3736a12",
+      "id": "c4b8bb14-4ec8-408c-953f-68c437cd3594",
       "title": "Key Party Musical Improv",
       "date": "2030-06-12T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2448,10 +2292,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "dc050e47-655d-4fd8-a50f-d11aec5f835c",
+      "id": "94b73cb4-d4fb-4a41-b0d8-61330b7aceb8",
       "title": "Key Party Musical Improv",
       "date": "2030-07-10T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
@@ -2461,10 +2305,10 @@
       "duration": "60 mins"
     },
     {
-      "id": "0f31de49-a92a-40d9-a6df-1c4f19d92226",
+      "id": "8f844490-262d-4e5b-8ac8-a7c93b0aaa7d",
       "title": "Key Party Musical Improv",
       "date": "2030-08-14T20:00:00-07:00",
-      "stage": "Downstairs",
+      "venue": "Downstairs",
       "genre": "Musical Improv",
       "description": "Musical improv mash up show for musical improv students and alumni.",
       "image": "https://i.postimg.cc/W1Rckpdb/IMG-3638.jpg",
