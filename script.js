@@ -183,12 +183,13 @@ const applyFilters = debounce(() => {
       (!venue || e.venue === venue) &&
       (selectedGenres.size === 0 || e.genres.some((g) => selectedGenres.has(g.toLowerCase())));
 
-    let dateMatch = true;
-    const key = ymd(e.date);
-    if (dateF === 'today') dateMatch = key === todayKey;
-    else if (dateF === 'this-week') dateMatch = key >= todayKey && key <= weekEndKey;
-    else if (dateF === 'this-month') dateMatch = ym(e.date) === monthKey;
+//    let dateMatch = true;
+//    const key = ymd(e.date);
+//    if (dateF === 'today') dateMatch = key === todayKey;
+//    else if (dateF === 'this-week') dateMatch = key >= todayKey && key <= weekEndKey;
+//    else if (dateF === 'this-month') dateMatch = ym(e.date) === monthKey;
 
+//    return matches && dateMatch;
     return matches && dateMatch;
   });
 
