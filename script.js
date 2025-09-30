@@ -260,11 +260,18 @@ function renderWeek(grid) {
   for (let i = 0; i < 7; i++) {
     const day = new Date(start.getTime() + i * 86400000);
     const section = document.createElement('div');
-    section.className = 'calendar-day';
+    section.className = 'week-day';
     const dayLabel = document.createElement('div');
     dayLabel.className = 'day-number';
     dayLabel.textContent = fmtDate(day).split(',')[0];
     section.appendChild(dayLabel);
+
+    // 🔹 Highlight today's date
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const dayKey = d.toISOString().split('T')[0];
+    const todayKey = today.toISOString().split('T')[0];
+    if (dayKey === todayKey) section.classList.add('today');
 
     const dayEvents = filtered.filter((e) => ymd(e.date) === ymd(day));
     if (dayEvents.length === 0) {
