@@ -419,6 +419,11 @@ function setupListeners() {
     btn.setAttribute('aria-expanded', open);
     if (open) search.focus();
   };
+  document.getElementById('todayBtn').addEventListener('click', () => {
+    document.querySelectorAll('.today-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById('todayBtn').classList.add('active');
+    setTimeout(() => document.getElementById('todayBtn').classList.remove('active'), 500);
+  });
   document.addEventListener('click', (e) => {
     if (!multi.contains(e.target)) multi.classList.remove('open');
   });
