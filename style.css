@@ -168,7 +168,6 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255,255,255,0.05);
   margin-top: 6px;
 }
 
