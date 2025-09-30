@@ -455,6 +455,10 @@ a:hover {
 /* Mobile */
 @media (max-width: 768px) {
 
+  #lastUpdated, #tzLabel {
+    display: none !important;
+  }
+  
   /* --- General adjustments --- */
   .controls {
     border-radius: 0;
