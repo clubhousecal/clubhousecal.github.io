@@ -1,17 +1,12 @@
-/* ============================================================
-   LA Improv Calendar - Unified Stylesheet
-   ============================================================ */
-
 :root {
   --bg: #1e293b;
   --panel: #273548;
   --accent: #3aa6ff;
   --text: #f5f5f5;
   --muted: #9ca3af;
-  --border: rgba(255, 255, 255, 0.15);
+  --border: rgba(255,255,255,0.15);
 }
 
-/* ---------- Global Reset ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +25,7 @@ a {
   color: var(--accent);
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
@@ -40,7 +36,11 @@ a:hover {
   padding: 20px;
 }
 
-/* ---------- Header ---------- */
+#lastUpdated, #tzLabel {
+  display: none !important;
+}
+
+/* Header */
 .header {
   text-align: center;
   margin-bottom: 24px;
@@ -54,11 +54,11 @@ a:hover {
   font-size: 0.95rem;
 }
 
-/* ---------- Controls Panel ---------- */
+/* Controls */
 .controls {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 1; /* must be higher than calendar but below dropdown */
   background: rgba(39, 53, 72, 0.9);
   backdrop-filter: blur(6px);
   border: 1px solid var(--border);
@@ -89,132 +89,44 @@ a:hover {
   color: var(--text);
 }
 
-/* ============================================================
-   UNIFIED BUTTON SYSTEM
-   ============================================================ */
-
-button,
-.btn,
-.seg-btn,
-.arrow-btn,
-.link,
-#clearFiltersBtn {
-  background: rgba(255, 255, 255, 0.05);
+/* Buttons */
+.btn {
+  background: var(--panel);
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: 8px;
   padding: 8px 14px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.2;
+  transition: background 0.2s, color 0.2s, border 0.2s;
 }
 
-button:hover,
-.btn:hover,
-.seg-btn:hover,
-.arrow-btn:hover,
-.link:hover,
-#clearFiltersBtn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+.btn:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
-button:active,
-.btn:active,
-.seg-btn:active,
-.arrow-btn:active,
-.link:active,
-#clearFiltersBtn:active {
-  background: #2563eb;
-  border-color: #2563eb;
-  transform: scale(0.97);
+.btn:active {
+  background: rgba(255, 255, 255, 0.12);
 }
 
-button.active,
-.btn.active,
-.seg-btn.active,
-.arrow-btn.active,
-.link.active,
-#clearFiltersBtn.active {
+.btn.active {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
   font-weight: 600;
 }
 
-/* Segmented groups (Month/Week/Today etc.) */
-.segmented,
-.seg-group {
-  display: inline-flex;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--border);
+.btn.secondary {
   background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
 }
 
-.seg-btn {
-  border: none;
-  border-right: 1px solid var(--border);
-  background: transparent;
-  flex: 1;
-  text-align: center;
-  padding: 8px 12px;
-  transition: all 0.2s ease;
-}
-.seg-btn:last-child {
-  border-right: none;
-}
-.seg-btn.active {
-  background: var(--accent);
-  color: #fff;
-  font-weight: 600;
-}
-
-/* Arrows (Month navigation) */
-.arrow-btn {
-  background: transparent;
-  border: none;
-  color: var(--text);
-  font-size: 1.4rem;
-  font-weight: bold;
-  width: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.arrow-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--accent);
-  transform: scale(1.1);
-}
-.arrow-btn:active {
-  transform: scale(0.95);
-}
-
-/* Clear filters */
-#clearFiltersBtn {
-  margin-left: 6px;
-}
-
-/* Links inside event cards */
-.link {
-  background: rgba(255,255,255,0.08);
-  color: var(--accent);
-  border-radius: 6px;
-  font-size: 13px;
-  border: 1px solid var(--border);
-  text-decoration: none;
-}
-.link:hover {
+.btn.secondary.active {
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
 }
 
-/* ---------- Mode Toggle ---------- */
+/* Month / Week toggle (left-aligned, smaller but same style) */
 .mode-toggle {
   display: flex;
   align-items: center;
@@ -222,7 +134,52 @@ button.active,
   margin-top: 8px;
 }
 
-/* ---------- Calendar Navigation Bar ---------- */
+.segmented {
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.seg-btn {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 14px;
+  padding: 8px 16px;
+  min-width: 80px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.seg-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.seg-btn + .seg-btn {
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.seg-btn.active,
+.today-btn.active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.today-btn:hover {
+  background: rgba(52, 152, 219, 0.25);
+}
+
+/* Highlight the current day in week view */
+.week-day.today {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  background: rgba(52, 152, 219, 0.15);
+  border-radius: 10px;
+}
+
 .monthbar {
   display: flex;
   align-items: stretch;
@@ -230,10 +187,32 @@ button.active,
   margin: 16px 0;
   border-radius: 10px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.06); /* unified background */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+.arrow-btn {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+/* Hover effects */
+.arrow-btn:hover {
+  background: rgba(52, 152, 219, 0.25);
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+/* Center section (month/week label) */
 .calendar-title {
   flex: 1;
   text-align: center;
@@ -242,12 +221,11 @@ button.active,
   letter-spacing: 0.4px;
   color: var(--text);
   padding: 10px 0;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.06); /* same as parent so it blends */
   border-left: 1px solid rgba(255, 255, 255, 0.08);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ---------- Calendar Grid ---------- */
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -263,6 +241,106 @@ button.active,
   color: var(--text-muted, rgba(255, 255, 255, 0.75));
 }
 
+.view-toggle button,
+.mode-toggle button {
+  min-width: 90px;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.filters.collapsed { display: none; }
+
+.select, .multi-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* Multi-select dropdown */
+.multi {
+  position: relative;
+  z-index: 2; /* create stacking context above calendar */
+  display: inline-block;
+}
+
+.multi-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.multi-panel {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  z-index: 3;
+  display: none;
+  background: linear-gradient(180deg, rgba(39,53,72,1) 0%, rgba(39,53,72,0.97) 100%);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  min-width: 200px;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+}
+
+/* Show panel when open */
+.multi.open .multi-panel {
+  display: block;
+}
+
+/* Search bar inside dropdown */
+.multi-search {
+  width: 100%;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+/* Checkbox list inside dropdown */
+.multi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.multi-list label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.multi-list input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+
+/* Pills shown when multiple genres selected */
+.pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Calendar */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -278,11 +356,18 @@ button.active,
   outline: 2px solid var(--accent);
 }
 
+#calendarView,
+.calendar-grid,
+.calendar-day,
+.calendar-header {
+  position: relative;
+  z-index: 0;
+}
+
 .day-number {
   font-size: 12px;
   opacity: 0.7;
 }
-
 .event-item {
   background: var(--accent);
   color: #fff;
@@ -293,14 +378,14 @@ button.active,
   cursor: pointer;
 }
 .event-chip {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0,0,0,0.2);
   border-radius: 999px;
   padding: 1px 6px;
   margin-left: 4px;
   font-size: 11px;
 }
 
-/* ---------- Event Cards (List View) ---------- */
+/* Event Cards */
 .event-cards {
   display: grid;
   gap: 16px;
@@ -344,16 +429,24 @@ button.active,
   gap: 8px;
   margin-top: 8px;
 }
+.link {
+  background: rgba(255,255,255,0.08);
+  color: var(--accent);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+}
 
-/* ---------- Modal ---------- */
+/* Modal */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 5;
+  z-index:  5;
 }
 .modal {
   background: var(--panel);
@@ -361,149 +454,65 @@ button.active,
   max-width: 700px;
   width: 100%;
   overflow: hidden;
-  z-index: 6;
+  z-index:  6;
 }
 .modal-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255,255,255,0.05);
   padding: 12px 16px;
 }
 .modal-body {
   padding: 16px;
 }
-/* ============================================================
-   Filter Dropdown Styling (Venue + Genre)
-   ============================================================ */
 
-/* --- Select dropdown (Venue) --- */
-select,
-.select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border);
-  color: var(--text);
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 14px;
-  cursor: pointer;
-  width: 100%;
-  transition: background 0.2s, border 0.2s;
-}
-
-select:hover,
-.select:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--accent);
-}
-
-select:focus,
-.select:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-/* --- Genre dropdown button --- */
-.multi-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 12px;
-  color: var(--text);
-  font-size: 14px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.2s ease;
-}
-.multi-btn:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-
-/* --- Genre dropdown panel --- */
-.multi-panel {
-  margin-top: 6px;
-  background: rgba(39, 53, 72, 0.97);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 10px;
-  min-width: 220px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* --- Genre search input --- */
-.multi-search {
-  width: 100%;
-  padding: 6px 8px;
-  margin-bottom: 8px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text);
-  font-size: 14px;
-}
-.multi-search:focus {
-  border-color: var(--accent);
-  outline: none;
-}
-
-/* --- Genre checkbox list --- */
-.multi-list {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.multi-list label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  color: var(--text);
-}
-.multi-list input[type="checkbox"] {
-  accent-color: var(--accent);
-  width: 16px;
-  height: 16px;
-}
-
-
-/* ============================================================
-   Mobile
-   ============================================================ */
+/* Mobile */
 @media (max-width: 768px) {
-  .header h1 {
-    font-size: 1.4rem;
+
+  #lastUpdated, #tzLabel {
+    display: none !important;
   }
 
+  .header h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+  
+  .header p {
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0.8;
+  }
+  
+  /* --- General adjustments --- */
   .controls {
     border-radius: 0;
     margin: 0 -20px 10px;
     padding: 12px 16px;
   }
 
+  /* Stack top buttons */
   .topbar {
+    display: flex;
     flex-direction: column;
     gap: 10px;
   }
 
+  /* Search bar full width */
   .search-wrap {
     width: 100%;
   }
 
+  /* View toggle (List / Calendar) */
   .view-toggle {
     justify-content: center;
     flex-wrap: wrap;
     gap: 6px;
   }
 
+  /* Monthbar (arrows + title) */
   .monthbar {
     gap: 4px;
     margin: 10px 0;
@@ -520,13 +529,17 @@ select:focus,
     padding: 6px 0;
   }
 
+  /* --- Segmented controls (Month / Week / Today) --- */
   .mode-toggle {
     flex-direction: column;
     align-items: stretch;
     gap: 6px;
+    margin-top: 8px;
   }
 
   .segmented {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
   }
 
@@ -536,16 +549,39 @@ select:focus,
     padding: 10px 0;
   }
 
+  /* --- Filters --- */
+  #filters {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #filtersToggleBtn {
+    width: 100%;
+  }
+
+  /* --- Calendar grid --- */
   .calendar-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Week view scroll fix */
+  .calendar-grid.week {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .calendar-weekday {
     font-size: 0.75rem;
   }
+  
+  .week-day {
+    padding: 10px;
+    border-radius: 8px;
+  }
 
   .btn,
   .seg-btn {
-    min-height: 44px;
+    min-height: 44px; /* recommended for mobile accessibility */
   }
 }
