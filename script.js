@@ -429,13 +429,21 @@ function setupListeners() {
 function switchView(v) {
   currentView = v;
   setParam('view', v);
+
+  const listBtn = $('#listViewBtn');
+  const calBtn = $('#calendarViewBtn');
+
   if (v === 'list') {
     $('#calendarView').classList.add('hidden');
     $('#listView').classList.remove('hidden');
+    listBtn.classList.add('active');
+    calBtn.classList.remove('active');
     renderList();
   } else {
     $('#listView').classList.add('hidden');
     $('#calendarView').classList.remove('hidden');
+    calBtn.classList.add('active');
+    listBtn.classList.remove('active');
     renderCalendar();
   }
 }
