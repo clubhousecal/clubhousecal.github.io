@@ -63,7 +63,7 @@ a:hover {
   backdrop-filter: blur(6px);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 4px 4px;
+  padding: 8px 8px;
   margin-bottom: 16px;
 }
 
@@ -82,7 +82,7 @@ a:hover {
 
 .search-wrap input {
   width: 100%;
-  padding: 4px 4px;
+  padding: 8px 14px;
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--panel);
@@ -95,7 +95,7 @@ a:hover {
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: 8px;
-  padding: 4px 4px;
+  padding: 8px 14px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border 0.2s;
 }
@@ -446,7 +446,7 @@ a:hover {
   .controls {
     border-radius: 0;
     margin: 0 -20px 10px;
-    padding: 4px 4px;
+    padding: 8px 14px;
   }
 
   /* Stack top buttons */
@@ -482,7 +482,7 @@ a:hover {
 
   .calendar-title {
     font-size: 1.1rem;
-    padding: 4px 0;
+    padding: 8px 0;
   }
 
   /* --- Filters --- */
