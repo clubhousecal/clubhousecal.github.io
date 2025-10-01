@@ -463,9 +463,10 @@ a:hover {
 
   /* View toggle (List / Calendar) */
   .view-mode-toggle {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 8px;
   }
 
   /* Monthbar (arrows + title) */
